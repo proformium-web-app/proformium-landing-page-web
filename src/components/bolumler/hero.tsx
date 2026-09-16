@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check, PenLine, PlayCircle, Send, Zap } from "lucide-react";
+import { ArrowRight, Check, CheckCheck, PenLine, PlayCircle } from "lucide-react";
 import { AltiCizgili } from "@/components/ui/alti-cizgili";
 import { Daktilo } from "@/components/ui/daktilo";
 import { Kapsayici } from "@/components/ui/parcalar";
@@ -175,8 +175,7 @@ export function Hero() {
                 </div>
               </div>
               <div className="absolute -bottom-5 left-6 z-30 flex items-center gap-2 rounded-xl bg-emerald-600 px-3.5 py-2 text-white shadow-lg sm:left-12">
-                <Send className="size-4" />
-                <Zap className="size-3.5" />
+                <CheckCheck className="size-4" strokeWidth={2.5} />
                 <span className="text-xs font-bold">WhatsApp ile iletildi</span>
               </div>
             </div>
