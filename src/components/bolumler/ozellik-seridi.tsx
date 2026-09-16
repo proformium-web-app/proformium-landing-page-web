@@ -41,12 +41,12 @@ export function OzellikSeridi({ ozellikler = OZELLIKLER }: { ozellikler?: SeritO
   return (
     <div
       data-belir
-      className="mt-10 grid gap-6 rounded-3xl border border-slate-200/80 bg-background-light p-5 sm:p-6 lg:grid-cols-[1fr_1.35fr] lg:items-center lg:gap-8"
+      className="mt-10 grid gap-6 rounded-3xl border border-slate-200/80 bg-background-light p-5 sm:p-6 lg:grid-cols-[1fr_1.35fr] lg:items-start lg:gap-8"
     >
       {/* Ayrıntı paneli */}
       <div
         key={o.baslik}
-        className="animate-belir flex min-h-[168px] items-center gap-5 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-card-soft sm:p-7"
+        className="animate-belir flex min-h-[212px] items-center gap-5 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-card-soft sm:p-7"
       >
         <span className={cn("flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl shadow-sm", TONLAR[o.ton])}>
           <o.ikon className="size-8" />

@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { UstMenu } from "@/components/layout/ust-menu";
 import { AltBilgi } from "@/components/layout/alt-bilgi";
 import { Belirici } from "@/components/ui/belirici";
+import { YukariOk } from "@/components/ui/yukari-ok";
 import { SITE } from "@/content/site";
 import "./globals.css";
 
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex-1">{children}</main>
         <AltBilgi />
         <Belirici />
+        <YukariOk />
         <Analytics />
       </body>
     </html>
