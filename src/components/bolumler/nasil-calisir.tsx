@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Eye, Trophy } from "lucide-react";
 import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
 import { Kapsayici } from "@/components/ui/parcalar";
+import { MockupAkis, MockupTarayiciTelefon, MockupTelefon } from "@/components/bolumler/mockuplar";
 
 type Adim = { no: string; baslik: string; aciklama: string };
 
@@ -84,6 +85,25 @@ export function NasilCalisir() {
           </div>
 
           <AdimSutunu adimlar={TEKLIF_VER.slice(2)} />
+        </div>
+
+        {/* DENEME: ortadaki görsel için üç öneri; Adem seçince biri ortaya alınacak, diğerleri silinecek */}
+        <div className="mt-16 rounded-3xl border border-dashed border-slate-300 bg-white/60 p-6 sm:p-8">
+          <p className="mb-8 text-center text-xs font-bold uppercase tracking-widest text-slate-400">Deneme · ortadaki görsel için öneriler</p>
+          <div className="grid gap-10 lg:grid-cols-3 lg:items-start">
+            <div>
+              <p className="mb-6 text-center text-sm font-bold text-slate-500">A · Müşterinin telefonu</p>
+              <MockupTelefon />
+            </div>
+            <div>
+              <p className="mb-6 text-center text-sm font-bold text-slate-500">B · Uygulama + WhatsApp</p>
+              <MockupTarayiciTelefon />
+            </div>
+            <div>
+              <p className="mb-6 text-center text-sm font-bold text-slate-500">C · Teklifin yaşam akışı</p>
+              <MockupAkis />
+            </div>
+          </div>
         </div>
 
         {/* Teklif İste */}
