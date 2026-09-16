@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useId, useState } from "react";
-import { ArrowRight, BadgeCheck, Car, Check, Fan, LayoutPanelTop, Megaphone, Send, Sofa } from "lucide-react";
+import { ArrowRight, BadgeCheck, Car, Check, Cog, Ellipsis, Fan, HardHat, LayoutPanelTop, Megaphone, PlugZap, Scissors, Send, Sofa, Truck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Kapsayici, Rozet } from "@/components/ui/parcalar";
 import { SEKTORLER, type Sektor } from "@/content/sektorler";
@@ -25,7 +25,14 @@ const IKON_ZEMIN: Record<Sektor["ton"], string> = {
   mor: "bg-violet-50 text-violet-600",
 };
 
-const DIGER_SEKTORLER = ["İnşaat / Yapı", "Elektrik / Tesisat", "Makine", "Nakliye / Lojistik", "Güzellik / Bakım", "Diğer"];
+const DIGER_SEKTORLER: { ad: string; ikon: LucideIcon }[] = [
+  { ad: "İnşaat / Yapı", ikon: HardHat },
+  { ad: "Elektrik / Tesisat", ikon: PlugZap },
+  { ad: "Makine", ikon: Cog },
+  { ad: "Nakliye / Lojistik", ikon: Truck },
+  { ad: "Güzellik / Bakım", ikon: Scissors },
+  { ad: "Diğer", ikon: Ellipsis },
+];
 
 export function Sektorler() {
   const [aktif, setAktif] = useState(SEKTORLER[0].anahtar);
@@ -164,7 +171,21 @@ export function Sektorler() {
           </div>
         </div>
 
-        <p className="mt-10 text-center text-base text-slate-500">Ayrıca: {DIGER_SEKTORLER.join(" · ")}</p>
+        {/* Diğer sektörler: ikonlu çipler */}
+        <div data-belir className="mt-10 flex flex-col items-center gap-4 rounded-2xl border border-slate-200/80 bg-white px-5 py-5 shadow-sm sm:flex-row sm:justify-center sm:px-8">
+          <span className="text-sm font-bold text-slate-900">Diğer sektörler</span>
+          <div className="flex flex-wrap justify-center gap-2">
+            {DIGER_SEKTORLER.map((d) => (
+              <span
+                key={d.ad}
+                className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-600 transition-colors hover:border-primary/40 hover:text-primary"
+              >
+                <d.ikon className="size-3.5" />
+                {d.ad}
+              </span>
+            ))}
+          </div>
+        </div>
       </Kapsayici>
     </section>
   );
