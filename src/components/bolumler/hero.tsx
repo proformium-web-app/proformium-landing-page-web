@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Check, PenLine, PlayCircle, Send, Sparkles, Zap } from "lucide-react";
 import { AltiCizgili } from "@/components/ui/alti-cizgili";
+import { Daktilo } from "@/components/ui/daktilo";
 import { Kapsayici } from "@/components/ui/parcalar";
 import { SITE, UYGULAMA } from "@/content/site";
 import { FIYAT } from "@/content/fiyatlar";
@@ -9,6 +10,13 @@ import { FIYAT } from "@/content/fiyatlar";
  * Stitch hero: solda slogan + butonlar, sağda üst üste iki mockup kartı (genel bakış + teklif belgesi),
  * yüzen "Müşteri teklifi açtı" ve "WhatsApp ile iletildi" rozetleri. Rakamlar temsilidir; özellikler gerçek.
  */
+/**
+ * Rozet metni daktilo gibi yazılır. Tek cümle: bir kez yazılır, durur (Adem kararı).
+ * Dönüşümlü istenirse diziye çevrilir, ör.:
+ * const ROZET_METNI = ["KOBİ'ler için akıllı teklif ve takip uygulaması", "Teklifi WhatsApp'tan gönderin, açılınca görün", "Tedarikçilerden fiyat toplayın, yan yana karşılaştırın"];
+ */
+const ROZET_METNI = "KOBİ'ler için akıllı teklif ve takip uygulaması";
+
 export function Hero() {
   return (
     <section className="relative overflow-hidden pb-24 pt-12 lg:pb-32 lg:pt-20">
@@ -23,7 +31,14 @@ export function Hero() {
             <div className="inline-flex items-center gap-2.5 rounded-full border border-primary/20 bg-primary-50 px-4 py-2 text-xs font-semibold tracking-wide text-primary sm:text-sm">
               <span className="flex h-2 w-2 rounded-full bg-primary animate-ping" />
               <Sparkles className="size-4" />
-              <span>KOBİ&apos;ler için akıllı teklif ve takip uygulaması</span>
+              <Daktilo
+                metin={ROZET_METNI}
+                hiz={45}
+                baslangicGecikmesi={400}
+                dongu={false}
+                imlec="_"
+                imlecClassName="ml-0.5 font-bold"
+              />
             </div>
             <h1 className="font-display text-4xl font-extrabold leading-[1.15] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
               Teklif Oluştur. <br />
