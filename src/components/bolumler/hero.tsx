@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check, PenLine, PlayCircle, Send } from "lucide-react";
+import { ArrowRight, Check, PenLine, PlayCircle, Send, Sparkles, Zap } from "lucide-react";
 import { Kapsayici } from "@/components/ui/parcalar";
 import { SITE, UYGULAMA } from "@/content/site";
 import { FIYAT } from "@/content/fiyatlar";
@@ -21,7 +21,8 @@ export function Hero() {
           <div className="space-y-8 text-left lg:col-span-6" data-belir>
             <div className="inline-flex items-center gap-2.5 rounded-full border border-primary/20 bg-primary-50 px-4 py-2 text-xs font-semibold tracking-wide text-primary sm:text-sm">
               <span className="flex h-2 w-2 rounded-full bg-primary animate-ping" />
-              <span>✨ KOBİ&apos;ler için akıllı teklif ve takip uygulaması</span>
+              <Sparkles className="size-4" />
+              <span>KOBİ&apos;ler için akıllı teklif ve takip uygulaması</span>
             </div>
             <h1 className="font-display text-4xl font-extrabold leading-[1.15] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
               Teklif Oluştur. <br />
@@ -159,7 +160,8 @@ export function Hero() {
               </div>
               <div className="absolute -bottom-5 left-6 z-30 flex items-center gap-2 rounded-xl bg-emerald-600 px-3.5 py-2 text-white shadow-lg sm:left-12">
                 <Send className="size-4" />
-                <span className="text-xs font-bold">⚡ WhatsApp ile iletildi</span>
+                <Zap className="size-3.5" />
+                <span className="text-xs font-bold">WhatsApp ile iletildi</span>
               </div>
             </div>
           </div>

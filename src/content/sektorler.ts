@@ -9,7 +9,6 @@ export type Sektor = {
   anahtar: string;
   ad: string;
   kisaAd: string;
-  emoji: string;
   /** lucide ikon adı (bileşende eşleştirilir) */
   ikon: "car" | "sofa" | "fan" | "layout-panel-top" | "megaphone";
   /** Stitch'teki renkli rozet tonu */
@@ -35,7 +34,6 @@ export const SEKTORLER: Sektor[] = [
     anahtar: "oto-servis",
     ad: "Oto servis & otomotiv",
     kisaAd: "Oto Servis",
-    emoji: "🚗",
     ikon: "car",
     ton: "mavi",
     baslik: "Plakayı yazın, müşteri ve geçmiş teklifler önünüze gelsin.",
@@ -67,7 +65,6 @@ export const SEKTORLER: Sektor[] = [
     anahtar: "mobilya",
     ad: "Mobilya & iç mimari",
     kisaAd: "Mobilya & İç Mimari",
-    emoji: "🛋️",
     ikon: "sofa",
     ton: "amber",
     baslik: "Ölçü değişti, fiyat değişti: revize edin, link aynı kalsın.",
@@ -99,7 +96,6 @@ export const SEKTORLER: Sektor[] = [
     anahtar: "klima-tesisat",
     ad: "Klima, kombi & tesisat",
     kisaAd: "Klima & Tesisat",
-    emoji: "❄️",
     ikon: "fan",
     ton: "cyan",
     baslik: "Keşifteyken telefondan teklifi yazın, çıkmadan gönderin.",
@@ -131,7 +127,6 @@ export const SEKTORLER: Sektor[] = [
     anahtar: "cam-balkon",
     ad: "Cam balkon & PVC",
     kisaAd: "Cam Balkon & PVC",
-    emoji: "🪟",
     ikon: "layout-panel-top",
     ton: "ok",
     baslik: "Cam ve profil fiyatlarını tedarikçilerden toplayın, yan yana görün.",
@@ -163,7 +158,6 @@ export const SEKTORLER: Sektor[] = [
     anahtar: "reklam-tabela",
     ad: "Reklam & tabela",
     kisaAd: "Reklam & Tabela",
-    emoji: "🪧",
     ikon: "megaphone",
     ton: "mor",
     baslik: "Yüzlerce ürününüzü Excel'den yükleyin, teklifi dakikada hazırlayın.",

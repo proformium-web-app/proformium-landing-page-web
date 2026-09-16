@@ -55,6 +55,7 @@ export function Sektorler() {
           <div role="tablist" aria-label="Sektör seçimi" className="inline-flex gap-2 rounded-2xl border border-slate-200/80 bg-white p-1.5 shadow-sm">
             {SEKTORLER.map((s) => {
               const secili = s.anahtar === aktif;
+              const SekmeIkon = IKONLAR[s.ikon];
               return (
                 <button
                   key={s.anahtar}
@@ -71,7 +72,7 @@ export function Sektorler() {
                       : "font-semibold text-slate-600 hover:bg-slate-50 hover:text-primary",
                   )}
                 >
-                  <span>{s.emoji}</span>
+                  <SekmeIkon className="size-4" />
                   <span>{s.kisaAd}</span>
                 </button>
               );
