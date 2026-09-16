@@ -49,7 +49,7 @@ export function Sorun() {
                   <span className="text-primary">&quot;Düşüneyim&quot; diyen müşteriyi unutmak</span> ve satışı
                   başkasına kaptırmak.
                 </h2>
-                <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
+                <p className="text-base leading-relaxed text-slate-600 sm:text-lg">
                   Teklif gönderen her işletme aynı yerde satış kaybeder: gönderdikten sonra. Proformium bu dört
                   sızıntıyı kapatır.
                 </p>
@@ -68,25 +68,25 @@ export function Sorun() {
             <div className="w-full overflow-x-auto">
               <table className="w-full border-collapse text-left">
                 <thead className="border-b border-slate-200">
-                  <tr className="text-xs font-bold text-slate-900 sm:text-sm">
-                    <th className="pb-4 font-semibold text-slate-500">Özellik / Senaryo</th>
+                  <tr className="text-sm font-bold text-slate-900 sm:text-base">
+                    <th className="pb-4 text-sm font-semibold text-slate-500 sm:text-base">Özellik / Senaryo</th>
                     <th className="whitespace-nowrap px-3 pb-4 text-center sm:px-4">Klasik yöntem</th>
                     <th className="whitespace-nowrap px-3 pb-4 text-center text-primary sm:px-4">Proformium</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-200/70 text-xs sm:text-sm">
+                <tbody className="divide-y divide-slate-200/70 text-sm sm:text-base">
                   {SATIRLAR.map((s) => (
                     <tr key={s.baslik} className="group">
                       <td className="py-5 pr-4">
-                        <div className="mb-1 text-sm font-bold text-slate-900 sm:text-base">{s.baslik}</div>
-                        <p className="text-xs leading-relaxed text-slate-500">{s.aciklama}</p>
+                        <div className="mb-1 text-base font-bold text-slate-900 sm:text-lg">{s.baslik}</div>
+                        <p className="text-sm leading-relaxed text-slate-500 sm:text-[15px]">{s.aciklama}</p>
                       </td>
                       <td className="whitespace-nowrap px-3 py-5 text-center align-middle sm:px-4">
                         <div className="inline-flex flex-col items-center gap-1.5">
                           <div className="flex h-8 w-8 items-center justify-center rounded-full border border-rose-200/80 bg-rose-50 text-rose-500">
                             <X className="size-4" strokeWidth={3} />
                           </div>
-                          <span className="hidden text-[10px] text-slate-500 sm:inline-block">{s.eski}</span>
+                          <span className="hidden text-xs text-slate-500 sm:inline-block">{s.eski}</span>
                         </div>
                       </td>
                       <td className="whitespace-nowrap px-3 py-5 text-center align-middle sm:px-4">
@@ -94,7 +94,7 @@ export function Sorun() {
                           <div className="flex h-8 w-8 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-600">
                             <Check className="size-4" strokeWidth={3} />
                           </div>
-                          <span className="hidden text-[10px] font-semibold text-emerald-700 sm:inline-block">{s.yeni}</span>
+                          <span className="hidden text-xs font-semibold text-emerald-700 sm:inline-block">{s.yeni}</span>
                         </div>
                       </td>
                     </tr>

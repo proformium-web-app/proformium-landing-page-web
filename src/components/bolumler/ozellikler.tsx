@@ -40,10 +40,10 @@ export function Ozellikler() {
             <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary/10 via-rose-100/50 to-transparent blur-2xl" />
             <div className="group relative w-full overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl transition-all duration-500 hover:shadow-glow">
               <Image
-                src="/gorseller/uygulama-genel-bakis.webp"
-                alt="Proformium uygulaması: teklifler, müşteriler ve takip edilmesi gerekenler tek ekranda"
-                width={1600}
-                height={756}
+                src="/gorseller/teklif-belgeleri.webp"
+                alt="Proformium ile hazırlanmış, logolu, kaşeli ve imzalı üç fiyat teklifi belgesi"
+                width={1200}
+                height={896}
                 sizes="(min-width: 1024px) 600px, 100vw"
                 className="block h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               />
@@ -54,7 +54,7 @@ export function Ozellikler() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-slate-900">Resmi &amp; kurumsal görünüm</h4>
-                    <p className="text-xs text-slate-500">Logo, kaşe ve imzalı teklif belgesi</p>
+                    <p className="text-sm text-slate-500">Logo, kaşe ve imzalı teklif belgesi</p>
                   </div>
                 </div>
                 <span className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-600 sm:inline-block">
@@ -77,7 +77,7 @@ export function Ozellikler() {
                 </IkonKaresi>
                 <div className="space-y-1.5">
                   <h3 className="text-base font-bold text-slate-900 sm:text-lg">{o.baslik}</h3>
-                  <p className="text-xs leading-relaxed text-slate-600 sm:text-sm">{o.aciklama}</p>
+                  <p className="text-sm leading-relaxed text-slate-600 sm:text-[15px]">{o.aciklama}</p>
                 </div>
               </div>
             ))}
@@ -96,8 +96,8 @@ export function Ozellikler() {
                 <o.ikon className="size-5" />
               </IkonKaresi>
               <div className="space-y-1">
-                <h3 className="text-sm font-bold text-slate-900">{o.baslik}</h3>
-                <p className="text-xs leading-relaxed text-slate-600">{o.aciklama}</p>
+                <h3 className="text-base font-bold text-slate-900">{o.baslik}</h3>
+                <p className="text-sm leading-relaxed text-slate-600">{o.aciklama}</p>
               </div>
             </div>
           ))}

@@ -41,8 +41,8 @@ export function Guven() {
                   <m.ikon className="size-5" />
                 </IkonKaresi>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 sm:text-base">{m.baslik}</h3>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">{m.aciklama}</p>
+                  <h3 className="text-base font-bold text-slate-900">{m.baslik}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600 sm:text-[15px]">{m.aciklama}</p>
                 </div>
               </li>
             ))}

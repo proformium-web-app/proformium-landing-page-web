@@ -12,7 +12,7 @@ export function Sss() {
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             Sıkça sorulan sorular
           </h2>
-          <p className="text-slate-600">Proformium hakkında en çok merak edilen soruların yanıtları.</p>
+          <p className="text-base text-slate-600 sm:text-lg">Proformium hakkında en çok merak edilen soruların yanıtları.</p>
         </div>
         <div className="space-y-4">
           {SSS.map((s, i) => (
@@ -26,7 +26,7 @@ export function Sss() {
                 {s.soru}
                 <ChevronDown className="size-5 shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-180" />
               </summary>
-              <p className="px-6 pb-6 text-sm leading-relaxed text-slate-600">{s.cevap}</p>
+              <p className="px-6 pb-6 text-base leading-relaxed text-slate-600">{s.cevap}</p>
             </details>
           ))}
         </div>

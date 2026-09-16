@@ -15,7 +15,7 @@ export function AltBilgi() {
             <Link href="/" aria-label="Proformium ana sayfa" className="inline-block">
               <LogoYatay />
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-slate-500">
+            <p className="mt-4 text-[15px] leading-relaxed text-slate-500">
               KOBİ&apos;ler için akıllı teklif ve takip uygulaması. Teklifi hazırlayın, WhatsApp&apos;tan
               gönderin, müşteri açınca görün, takibi unutmayın.
             </p>
@@ -66,7 +66,7 @@ export function AltBilgi() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-2 border-t border-slate-200 pt-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-2 border-t border-slate-200 pt-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
           <p>© {SITE.kurulusYili} {unvan ?? SITE.ad}. Tüm hakları saklıdır.</p>
           <p>Veriler Avrupa Birliği&apos;nde (Frankfurt) saklanır.</p>
         </div>

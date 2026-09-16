@@ -48,7 +48,7 @@ export function Hero() {
                 Nasıl Çalıştığını Gör
               </Link>
             </div>
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-xs font-medium text-slate-500 sm:text-sm">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-sm font-medium text-slate-500 sm:text-[15px]">
               {["Kredi kartı gerekmez", "Kurulum yok, tarayıcıda çalışır", "AB Frankfurt sunucularında güvenli"].map((m) => (
                 <span key={m} className="flex items-center gap-1.5">
                   <Check className="size-4 text-primary" strokeWidth={3} />
@@ -168,7 +168,7 @@ export function Hero() {
 
       {/* GEO: yapay zekâ asistanlarının alıntılayacağı net tanım */}
       <Kapsayici className="relative pt-16">
-        <p className="mx-auto max-w-3xl text-center text-sm leading-relaxed text-slate-500">{SITE.tanim}</p>
+        <p className="mx-auto max-w-3xl text-center text-base leading-relaxed text-slate-500">{SITE.tanim}</p>
       </Kapsayici>
     </section>
   );

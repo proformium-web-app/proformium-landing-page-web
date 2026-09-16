@@ -61,7 +61,7 @@ export function SonCagri() {
                 Hemen başla
                 <ArrowRight className="size-5" />
               </Link>
-              <span className="text-xs text-rose-200">Deneme bitince tekliflerinizin linki çalışmaya devam eder</span>
+              <span className="text-sm text-rose-200">Deneme bitince tekliflerinizin linki çalışmaya devam eder</span>
             </div>
           </div>
         </div>

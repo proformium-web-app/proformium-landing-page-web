@@ -2,6 +2,13 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.2.1 — 16.09.2026 · Logo, görseller, yazı boyutu
+
+- Yatay logo (marka/logo-yatay-proformium.svg) üst menü, alt bilgi ve paylaşım görselinde.
+- Özellikler bölümünde teklif belgeleri görseli (Site İçin resimler telifsiz/screen.png → WebP).
+- Adem'in Pexels fotoğrafları WebP'ye çevrilip public/gorseller/ altına kondu (henüz yerleştirilmedi).
+- Küçük yazılar büyütüldü: karşılaştırma tablosu, adım açıklamaları, özellik/sektör/güven kartları, fiyat ve SSS metinleri.
+
 ## 0.2.0 — 16.09.2026 · Tasarım Stitch'e göre yeniden
 
 - Adem geri bildirimi: sade sürüm beğenilmedi; görünüm, yazı tipleri (Plus Jakarta Sans + Space Grotesk), renk

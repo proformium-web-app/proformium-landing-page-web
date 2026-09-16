@@ -25,7 +25,7 @@ function AdimSutunu({ adimlar, saga }: { adimlar: Adim[]; saga?: boolean }) {
         <div key={a.no} data-belir data-gecikme={String(i + 1)}>
           <div className="mb-2 font-display text-4xl font-bold tracking-tight text-primary/80 lg:text-5xl">{a.no}</div>
           <h3 className="mb-2 text-xl font-bold text-slate-900">{a.baslik}</h3>
-          <p className="text-sm leading-relaxed text-slate-600">{a.aciklama}</p>
+          <p className="text-base leading-relaxed text-slate-600">{a.aciklama}</p>
         </div>
       ))}
     </div>

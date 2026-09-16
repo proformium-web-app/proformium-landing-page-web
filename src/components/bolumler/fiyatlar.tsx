@@ -19,7 +19,7 @@ export function Fiyatlar() {
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             KOBİ bütçesine uygun fiyatlandırma
           </h2>
-          <p className="text-slate-600">
+          <p className="text-base text-slate-600 sm:text-lg">
             {FIYAT_GOSTER
               ? `Sürpriz ek ücret yok. Fiyatlar KDV dahil. Pro'yu ${FIYAT.denemeGun} gün ücretsiz deneyin; kredi kartı gerekmez.`
               : `Sürpriz ek ücret yok. Pro paketi ${FIYAT.denemeGun} gün ücretsiz deneyin; kredi kartı gerekmez. Fiyatlar yakında açıklanacak.`}
@@ -73,7 +73,7 @@ export function Fiyatlar() {
                     <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">Temel ihtiyaç</span>
                   )}
                 </div>
-                <p className="mb-6 text-sm text-slate-500">{p.aciklama}</p>
+                <p className="mb-6 text-base text-slate-500">{p.aciklama}</p>
 
                 <div className="mb-8 min-h-16">
                   {p.anahtar === "free" ? (
@@ -89,7 +89,7 @@ export function Fiyatlar() {
                         </span>
                         <span className="text-sm font-medium text-slate-500">{yillik ? "/ yıl" : "/ ay"}</span>
                       </div>
-                      <p className="mt-1 text-xs text-slate-400">
+                      <p className="mt-1 text-sm text-slate-400">
                         {yillik
                           ? `Yıllık peşin, KDV dahil (ayda ${tlBicimle(Math.round(FIYAT.pro.yillik / 12))} eder)`
                           : "Aylık, KDV dahil. Dilediğinizde iptal edebilirsiniz."}
@@ -98,14 +98,14 @@ export function Fiyatlar() {
                   ) : (
                     <>
                       <span className="font-display text-4xl font-extrabold text-slate-900 sm:text-5xl">Yakında</span>
-                      <p className="mt-1 text-xs text-slate-400">
+                      <p className="mt-1 text-sm text-slate-400">
                         Aylık ve yıllık seçenek olacak; yıllıkta {FIYAT.pro.yillikAvantajAy} ay avantaj. KDV dahil.
                       </p>
                     </>
                   )}
                 </div>
 
-                <ul className="mb-8 space-y-3.5 text-sm text-slate-700">
+                <ul className="mb-8 space-y-3.5 text-[15px] text-slate-700">
                   {p.ozellikler.map((o) => (
                     <li key={o.metin} className={cn("flex items-start gap-3", !o.var && "text-slate-400 line-through")}>
                       {o.var ? (
@@ -152,7 +152,7 @@ export function Fiyatlar() {
           ))}
         </div>
 
-        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-slate-500">
+        <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-slate-500">
           Aylık sayımlar takvim ayının başında yenilenir. Deneme bitince mevcut teklifleriniz ve müşterilerinize giden
           linkler çalışmaya devam eder.
         </p>

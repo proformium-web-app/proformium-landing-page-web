@@ -96,8 +96,8 @@ export function Sektorler() {
               <h3 className="font-display text-2xl font-extrabold leading-snug tracking-tight text-slate-900 sm:text-3xl">
                 {sektor.baslik}
               </h3>
-              <p className="text-sm leading-relaxed text-slate-600 sm:text-base">{sektor.aciklama}</p>
-              <ul className="space-y-3 text-xs text-slate-700 sm:text-sm">
+              <p className="text-base leading-relaxed text-slate-600 sm:text-lg">{sektor.aciklama}</p>
+              <ul className="space-y-3 text-sm text-slate-700 sm:text-base">
                 {sektor.maddeler.map((m) => (
                   <li key={m} className="flex items-start gap-2.5">
                     <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
@@ -109,7 +109,7 @@ export function Sektorler() {
               </ul>
               <div className="flex flex-wrap items-center gap-2 pt-2">
                 {sektor.etiketler.map((e) => (
-                  <span key={e} className="rounded-lg bg-slate-100 px-2.5 py-1 font-mono text-[11px] text-slate-600">
+                  <span key={e} className="rounded-lg bg-slate-100 px-2.5 py-1 font-mono text-xs text-slate-600">
                     {e}
                   </span>
                 ))}
@@ -138,12 +138,12 @@ export function Sektorler() {
                     {sektor.ornek.durum}
                   </span>
                 </div>
-                <div className="mb-5 space-y-2.5 text-xs">
+                <div className="mb-5 space-y-2.5 text-sm">
                   {sektor.ornek.kalemler.map((k) => (
                     <div key={k.ad} className="flex items-center justify-between rounded-xl border border-slate-200/70 bg-white p-2.5">
                       <div>
                         <p className="font-bold text-slate-800">{k.ad}</p>
-                        {k.not && <p className="text-[10px] text-slate-400">{k.not}</p>}
+                        {k.not && <p className="text-xs text-slate-400">{k.not}</p>}
                       </div>
                       <span className="font-bold tabular-nums text-slate-900">{k.tutar}</span>
                     </div>
@@ -183,15 +183,15 @@ export function Sektorler() {
                   <I className="size-5" />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="truncate text-xs font-bold text-slate-900">{s.kisaAd}</h4>
-                  <p className="truncate text-[11px] text-slate-500">{s.kisaNot}</p>
+                  <h4 className="truncate text-sm font-bold text-slate-900">{s.kisaAd}</h4>
+                  <p className="truncate text-xs text-slate-500">{s.kisaNot}</p>
                 </div>
               </button>
             );
           })}
         </div>
 
-        <p className="mt-8 text-center text-sm text-slate-500">Ayrıca: {DIGER_SEKTORLER.join(" · ")}</p>
+        <p className="mt-8 text-center text-base text-slate-500">Ayrıca: {DIGER_SEKTORLER.join(" · ")}</p>
       </Kapsayici>
     </section>
   );
