@@ -2,106 +2,130 @@
 
 /*
   Proformium tanıtım sitesi tasarım sistemi.
-  Kaynak: DESIGN.md (Stitch, 16.09.2026) + uygulamanın kullandığı marka renkleri.
-  Koyu tema yok (Adem kararı).
+  Kaynak: Stitch çıktısı (code.html, 16.09.2026) — Adem kararı: görünüm, yazı tipi, renkler ve
+  animasyonlar Stitch'teki gibi; logo marka dosyasından; koyu tema yok.
 */
 
 @theme inline {
-  /* Yazı tipleri (next/font ile yerelden yüklenir) */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* Yazı tipleri (next/font ile yerelden): gövde Plus Jakarta Sans, başlık Space Grotesk */
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-grotesk), var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-display);
 
-  /* Marka renkleri */
-  --color-brand: #8b1f3c;          /* logo bordosu, ana buton */
-  --color-brand-strong: #6b142d;   /* hover, koyu vurgu */
-  --color-brand-bright: #b03a5b;   /* uygulamanın canlı bordosu, ikincil vurgu */
-  --color-brand-soft: #fbeaef;     /* gül zemin: rozet, ikon karesi */
-  --color-brand-faint: #fdf2f4;    /* çok açık gül zemin */
+  /* Stitch tailwind.config renkleri */
+  --color-primary: #8b1f3c;
+  --color-primary-dark: #6b142d;
+  --color-primary-light: #a82b4b;
+  --color-primary-50: #fdf2f4;
+  --color-primary-100: #fbe6ea;
+  --color-background-light: #f8fafc;
 
-  /* Nötr tonlar */
-  --color-ink: #1e2229;            /* ana metin */
-  --color-ink-soft: #4b5563;       /* ikincil metin */
-  --color-ink-muted: #64748b;      /* açıklama, etiket */
-  --color-canvas: #f8f9fa;         /* sayfa zemini */
-  --color-surface: #ffffff;        /* kart zemini */
-  --color-line: #eaecef;           /* çizgiler */
-  --color-line-brand: #f2d6df;     /* bordo tonlu çizgi */
-
-  /* Durum renkleri (uygulamayla aynı his) */
+  /* Önceki bölümlerde (blog, yasal) kullanılan takma adlar */
+  --color-brand: #8b1f3c;
+  --color-brand-strong: #6b142d;
+  --color-brand-bright: #b03a5b;
+  --color-brand-soft: #fbe6ea;
+  --color-brand-faint: #fdf2f4;
+  --color-ink: #0f172a;
+  --color-ink-soft: #475569;
+  --color-ink-muted: #64748b;
+  --color-canvas: #f8fafc;
+  --color-surface: #ffffff;
+  --color-line: #e2e8f0;
+  --color-line-brand: #f2d6df;
   --color-ok: #10b981;
   --color-ok-soft: #ecfdf5;
   --color-warn: #d97706;
   --color-warn-soft: #fffbeb;
 
-  /* Gölgeler (DESIGN.md) */
+  /* Stitch gölgeleri */
+  --shadow-glow: 0 20px 40px -15px rgb(139 31 60 / 0.25);
+  --shadow-card-soft: 0 10px 30px -5px rgb(0 0 0 / 0.04), 0 20px 25px -5px rgb(0 0 0 / 0.02);
   --shadow-card: 0 4px 20px -2px rgb(30 34 41 / 0.04), 0 2px 6px -1px rgb(30 34 41 / 0.02);
   --shadow-raised: 0 16px 36px -4px rgb(139 31 60 / 0.08), 0 6px 12px -2px rgb(30 34 41 / 0.03);
   --shadow-brand: 0 8px 20px -4px rgb(139 31 60 / 0.35);
 
   --radius-card: 1rem;
   --radius-panel: 1.5rem;
+
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem; /* sabit üst menü altında bölüm başlıkları görünsün */
+  scroll-padding-top: 5.5rem;
 }
 
 body {
-  background: var(--color-canvas);
-  color: var(--color-ink);
+  background: var(--color-background-light);
+  color: #1e293b;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-heading);
-  letter-spacing: -0.01em;
+/* Stitch: gradient başlık vurgusu */
+.text-gradient {
+  background: linear-gradient(135deg, #8b1f3c 0%, #c0325a 60%, #e25579 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Klavye ile gezenler için belirgin odak halkası */
+.glass-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Kaydırınca belirme: [data-belir] öğeleri görünür olunca .belir-goster alır */
+@keyframes belir {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+[data-belir] { opacity: 0; }
+[data-belir].belir-goster { animation: belir 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-belir { animation: belir 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+[data-belir][data-gecikme="1"].belir-goster { animation-delay: 0.1s; }
+[data-belir][data-gecikme="2"].belir-goster { animation-delay: 0.2s; }
+[data-belir][data-gecikme="3"].belir-goster { animation-delay: 0.3s; }
+[data-belir][data-gecikme="4"].belir-goster { animation-delay: 0.4s; }
+
 :focus-visible {
-  outline: 2px solid var(--color-brand);
+  outline: 2px solid var(--color-primary);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* Hareket azaltma tercihine saygı */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  [data-belir] { opacity: 1; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
 /* Blog yazısı gövdesi */
-.yazi-govde {
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  color: var(--color-ink-soft);
-}
+.yazi-govde { font-size: 1.0625rem; line-height: 1.75; color: #475569; }
 .yazi-govde > * + * { margin-top: 1.1em; }
-.yazi-govde h2 { font-size: 1.5rem; margin-top: 2.2em; color: var(--color-ink); font-weight: 700; }
-.yazi-govde h3 { font-size: 1.2rem; margin-top: 1.8em; color: var(--color-ink); font-weight: 600; }
-.yazi-govde strong { color: var(--color-ink); font-weight: 600; }
-.yazi-govde a { color: var(--color-brand); text-decoration: underline; text-underline-offset: 3px; }
+.yazi-govde h2 { font-size: 1.5rem; margin-top: 2.2em; color: #0f172a; font-weight: 700; font-family: var(--font-display); }
+.yazi-govde h3 { font-size: 1.2rem; margin-top: 1.8em; color: #0f172a; font-weight: 600; }
+.yazi-govde strong { color: #0f172a; font-weight: 600; }
+.yazi-govde a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; }
 .yazi-govde ul, .yazi-govde ol { padding-left: 1.4em; }
 .yazi-govde ul { list-style: disc; }
 .yazi-govde ol { list-style: decimal; }
 .yazi-govde li + li { margin-top: 0.4em; }
-.yazi-govde blockquote { border-left: 3px solid var(--color-brand); padding-left: 1em; color: var(--color-ink-muted); font-style: italic; }
-.yazi-govde img { border-radius: var(--radius-card); border: 1px solid var(--color-line); }
-.yazi-govde hr { border: 0; border-top: 1px solid var(--color-line); margin: 2.5em 0; }
+.yazi-govde blockquote { border-left: 3px solid var(--color-primary); padding-left: 1em; color: #64748b; font-style: italic; }
+.yazi-govde img { border-radius: 1rem; border: 1px solid #e2e8f0; }
+.yazi-govde hr { border: 0; border-top: 1px solid #e2e8f0; margin: 2.5em 0; }
 
 /* Yasal metin gövdesi */
-.yasal-govde { font-size: 0.9375rem; line-height: 1.7; color: var(--color-ink-soft); }
+.yasal-govde { font-size: 0.9375rem; line-height: 1.7; color: #475569; }
 .yasal-govde > * + * { margin-top: 0.9em; }
-.yasal-govde h2 { font-size: 1.125rem; margin-top: 2em; color: var(--color-ink); font-weight: 600; }
-.yasal-govde h3 { font-size: 1rem; margin-top: 1.4em; color: var(--color-ink); font-weight: 600; }
+.yasal-govde h2 { font-size: 1.125rem; margin-top: 2em; color: #0f172a; font-weight: 700; }
+.yasal-govde h3 { font-size: 1rem; margin-top: 1.4em; color: #0f172a; font-weight: 600; }
 .yasal-govde ul { list-style: disc; padding-left: 1.4em; }
 .yasal-govde li + li { margin-top: 0.3em; }
-.yasal-govde strong { color: var(--color-ink); font-weight: 600; }
-.yasal-govde a { color: var(--color-brand); text-decoration: underline; text-underline-offset: 3px; }
+.yasal-govde strong { color: #0f172a; font-weight: 600; }
+.yasal-govde a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; }
 .yasal-govde table { width: 100%; text-align: left; border-collapse: collapse; }
-.yasal-govde th { font-weight: 600; color: var(--color-ink); padding: 0.5rem 0.75rem 0.5rem 0; width: 11rem; vertical-align: top; }
-.yasal-govde td { border-top: 1px solid var(--color-line); padding: 0.5rem 0; vertical-align: top; }
+.yasal-govde th { font-weight: 600; color: #0f172a; padding: 0.5rem 0.75rem 0.5rem 0; width: 11rem; vertical-align: top; }
+.yasal-govde td { border-top: 1px solid #e2e8f0; padding: 0.5rem 0; vertical-align: top; }
 .yasal-govde tr:first-child td { border-top: 0; }

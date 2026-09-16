@@ -1,78 +1,110 @@
-import { Check, X } from "lucide-react";
-import { Bolum, BolumBasligi, Kapsayici } from "@/components/ui/parcalar";
+import Link from "next/link";
+import { ArrowRight, Check, X } from "lucide-react";
+import { Kapsayici } from "@/components/ui/parcalar";
 
 const SATIRLAR = [
   {
-    baslik: "Unutulan takip",
-    aciklama: "Teklif gider, müşteri \"düşüneyim\" der, araya işler girer, takip unutulur.",
-    eski: "Müşteri başkasından alır",
-    yeni: "Takip zamanı gelince hatırlatır, tek tıkla \"takip ettim\" dersiniz",
+    baslik: "Unutulan takipler",
+    aciklama: "Teklifi gönderdikten sonra araya günlük işler girer, müşteri rakibe gider.",
+    eski: "Unutulur, satış kaçar",
+    yeni: "Takip zamanı hatırlatması",
   },
   {
-    baslik: "Baktı mı, bakmadı mı?",
+    baslik: "\"Baktı mı, bakmadı mı?\" belirsizliği",
     aciklama: "WhatsApp'a atılan PDF sessizdir. Müşteri açtı mı, ne zaman açtı, bilemezsiniz.",
     eski: "Karanlıkta tahmin",
-    yeni: "Müşteri linki açınca teklif \"Görüntülendi\" olur, kaç kez ve ne zaman açıldığı görünür",
+    yeni: "Görüntülendi bilgisi",
   },
   {
-    baslik: "Revize karmaşası",
-    aciklama: "Fiyat değişir, yeni PDF gider, müşteride eski ve yeni dosya birbirine karışır.",
-    eski: "Hangisi son hali?",
-    yeni: "Link aynı kalır, her zaman son revizyonu gösterir; geçmiş saklanır",
+    baslik: "WhatsApp'ta kaybolan dosyalar",
+    aciklama: "Revize istendiğinde eski ve yeni PDF'ler birbirine karışır, hangisi son hali belli olmaz.",
+    eski: "Karışıklık, açılmayan PDF",
+    yeni: "Tek link, hep son revizyon",
   },
   {
-    baslik: "Tedarikçiden fiyat toplamak",
-    aciklama: "Beş tedarikçiyi tek tek arayıp fiyatları Excel'e yazmak saatler alır.",
+    baslik: "Saatler süren fiyat toplama",
+    aciklama: "Tedarikçileri tek tek arayıp WhatsApp'tan sormak, Excel'de karşılaştırmak saatlerinizi çalar.",
     eski: "Telefon, not, tablo",
-    yeni: "Kalemleri yazın, linkler gitsin, fiyatlar yan yana gelsin, kazananı seçin",
+    yeni: "Yan yana teklif toplama",
   },
 ];
 
 export function Sorun() {
   return (
-    <Bolum id="neden" zemin="surface">
+    <section id="neden" className="border-y border-slate-200/80 bg-white py-20">
       <Kapsayici>
-        <BolumBasligi
-          etiket="Neden Proformium?"
-          baslik={
-            <>
-              Sorun PDF hazırlayamamak değil.{" "}
-              <span className="text-brand">&quot;Düşüneyim&quot; diyen müşteriyi unutmak.</span>
-            </>
-          }
-          aciklama="Teklif gönderen her işletme aynı yerde satış kaybeder: gönderdikten sonra. Proformium o boşluğu kapatır."
-        />
+        <div
+          data-belir
+          className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-tr from-primary-50/70 via-white to-rose-50/50 p-8 shadow-sm sm:p-12 lg:p-16"
+        >
+          <div className="flex flex-col gap-10">
+            <div className="flex flex-col justify-between gap-6 border-b border-slate-200/80 pb-6 md:flex-row md:items-end">
+              <div className="max-w-3xl space-y-3">
+                <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-50 px-3 py-1 font-mono text-xs font-bold uppercase tracking-widest text-primary">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  Karşılaştırma
+                </div>
+                <h2 className="font-display text-2xl font-extrabold leading-snug tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
+                  Sorun PDF hazırlayamamak değil;{" "}
+                  <span className="text-primary">&quot;Düşüneyim&quot; diyen müşteriyi unutmak</span> ve satışı
+                  başkasına kaptırmak.
+                </h2>
+                <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
+                  Teklif gönderen her işletme aynı yerde satış kaybeder: gönderdikten sonra. Proformium bu dört
+                  sızıntıyı kapatır.
+                </p>
+              </div>
+              <div className="shrink-0">
+                <Link
+                  href="#ozellikler"
+                  className="group inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-primary shadow-sm transition-all hover:text-primary-dark"
+                >
+                  Tüm özellikleri inceleyin
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
 
-        <div className="mt-12 overflow-hidden rounded-panel border border-line">
-          <div className="hidden grid-cols-[1.3fr_1fr_1.3fr] gap-6 border-b border-line bg-canvas px-6 py-3 text-xs font-semibold uppercase tracking-wider text-ink-muted md:grid">
-            <span>Durum</span>
-            <span>Bugün nasıl</span>
-            <span className="text-brand">Proformium ile</span>
+            <div className="w-full overflow-x-auto">
+              <table className="w-full border-collapse text-left">
+                <thead className="border-b border-slate-200">
+                  <tr className="text-xs font-bold text-slate-900 sm:text-sm">
+                    <th className="pb-4 font-semibold text-slate-500">Özellik / Senaryo</th>
+                    <th className="whitespace-nowrap px-3 pb-4 text-center sm:px-4">Klasik yöntem</th>
+                    <th className="whitespace-nowrap px-3 pb-4 text-center text-primary sm:px-4">Proformium</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200/70 text-xs sm:text-sm">
+                  {SATIRLAR.map((s) => (
+                    <tr key={s.baslik} className="group">
+                      <td className="py-5 pr-4">
+                        <div className="mb-1 text-sm font-bold text-slate-900 sm:text-base">{s.baslik}</div>
+                        <p className="text-xs leading-relaxed text-slate-500">{s.aciklama}</p>
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-5 text-center align-middle sm:px-4">
+                        <div className="inline-flex flex-col items-center gap-1.5">
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-rose-200/80 bg-rose-50 text-rose-500">
+                            <X className="size-4" strokeWidth={3} />
+                          </div>
+                          <span className="hidden text-[10px] text-slate-500 sm:inline-block">{s.eski}</span>
+                        </div>
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-5 text-center align-middle sm:px-4">
+                        <div className="inline-flex flex-col items-center gap-1.5">
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-600">
+                            <Check className="size-4" strokeWidth={3} />
+                          </div>
+                          <span className="hidden text-[10px] font-semibold text-emerald-700 sm:inline-block">{s.yeni}</span>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-          <ul className="divide-y divide-line bg-surface">
-            {SATIRLAR.map((s) => (
-              <li key={s.baslik} className="grid gap-4 px-5 py-5 md:grid-cols-[1.3fr_1fr_1.3fr] md:gap-6 md:px-6">
-                <div>
-                  <h3 className="text-base font-semibold text-ink">{s.baslik}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-ink-muted">{s.aciklama}</p>
-                </div>
-                <div className="flex items-start gap-2.5 text-sm text-ink-soft">
-                  <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-rose-50 text-rose-500">
-                    <X className="size-3" strokeWidth={3} />
-                  </span>
-                  {s.eski}
-                </div>
-                <div className="flex items-start gap-2.5 text-sm font-medium text-ink">
-                  <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-ok-soft text-emerald-600">
-                    <Check className="size-3" strokeWidth={3} />
-                  </span>
-                  {s.yeni}
-                </div>
-              </li>
-            ))}
-          </ul>
         </div>
       </Kapsayici>
-    </Bolum>
+    </section>
   );
 }

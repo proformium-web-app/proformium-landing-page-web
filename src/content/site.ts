@@ -30,12 +30,12 @@ export const UYGULAMA = {
 /** Üst menü bağlantıları (ana sayfa bölümleri). */
 export const MENU = [
   { href: "/#neden", etiket: "Neden Proformium?" },
-  { href: "/#nasil-calisir", etiket: "Nasıl çalışır" },
+  { href: "/#nasil-calisir", etiket: "İki Ana Güç" },
   { href: "/#ozellikler", etiket: "Özellikler" },
   { href: "/#sektorler", etiket: "Sektörler" },
-  { href: "/#fiyatlar", etiket: "Fiyatlar" },
+  { href: "/#fiyatlar", etiket: "Fiyatlandırma" },
   { href: "/blog", etiket: "Blog" },
-  { href: "/#sss", etiket: "SSS" },
+  { href: "/#sss", etiket: "S.S.S." },
 ] as const;
 
 export const YASAL_SAYFALAR = [

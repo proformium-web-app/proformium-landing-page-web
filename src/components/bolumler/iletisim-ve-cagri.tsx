@@ -1,63 +1,67 @@
+import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
-import { ButonLink } from "@/components/ui/buton";
-import { Bolum, Kapsayici } from "@/components/ui/parcalar";
+import { Kapsayici } from "@/components/ui/parcalar";
 import { FIYAT } from "@/content/fiyatlar";
 import { SITE, UYGULAMA } from "@/content/site";
 
 /** İletişim: şimdilik yalnızca e-posta (Adem, 16.09.2026). Form ve WhatsApp ileride. */
 export function Iletisim() {
   return (
-    <Bolum id="iletisim" className="py-12 sm:py-16 lg:py-16">
+    <section id="iletisim" className="pb-8 pt-4">
       <Kapsayici>
-        <div className="flex flex-col items-start gap-6 rounded-panel border border-line bg-surface p-7 shadow-card sm:flex-row sm:items-center sm:justify-between sm:p-9">
+        <div
+          data-belir
+          className="flex flex-col items-start gap-6 rounded-3xl border border-slate-200/80 bg-white p-8 shadow-card-soft sm:flex-row sm:items-center sm:justify-between sm:p-10"
+        >
           <div>
-            <h2 className="text-2xl font-bold text-ink">Sorunuz mu var, Pro&apos;ya mı geçmek istiyorsunuz?</h2>
-            <p className="mt-2 text-base text-ink-soft">
-              Bize yazın, aynı gün dönelim. Kurulum, paket ve fatura sorularınız için:
-            </p>
+            <h2 className="font-display text-2xl font-extrabold tracking-tight text-slate-900">
+              Sorunuz mu var, Pro&apos;ya mı geçmek istiyorsunuz?
+            </h2>
+            <p className="mt-2 text-base text-slate-600">Bize yazın, aynı gün dönelim. Kurulum, paket ve fatura soruları için:</p>
           </div>
           <a
             href={`mailto:${SITE.destekEposta}`}
-            className="inline-flex items-center gap-2.5 rounded-xl bg-brand-soft px-5 py-3.5 font-heading text-base font-semibold text-brand transition-colors hover:bg-brand hover:text-white"
+            className="inline-flex items-center gap-2.5 rounded-xl bg-primary-50 px-5 py-3.5 text-base font-bold text-primary transition-all hover:scale-[1.02] hover:bg-primary hover:text-white"
           >
             <Mail className="size-5" />
             {SITE.destekEposta}
           </a>
         </div>
       </Kapsayici>
-    </Bolum>
+    </section>
   );
 }
 
 export function SonCagri() {
   return (
-    <section className="pb-16 sm:pb-20 lg:pb-24">
+    <section className="py-16 sm:py-24">
       <Kapsayici>
-        <div className="relative overflow-hidden rounded-panel bg-brand px-6 py-14 text-center text-white sm:px-12 sm:py-20">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_70%_at_80%_10%,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0)_70%)]"
-          />
-          <div className="relative mx-auto max-w-2xl">
-            <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-[44px]">
-              Teklifi gönderip beklemeyin.
+        <div
+          data-belir
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary via-primary-dark to-[#4a0d1e] p-8 text-white shadow-glow sm:p-16"
+        >
+          <div className="pointer-events-none absolute -bottom-10 -right-10 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+          <div className="pointer-events-none absolute -left-10 -top-10 h-80 w-80 rounded-full bg-rose-400/20 blur-2xl" />
+          <div className="relative z-10 mx-auto max-w-2xl space-y-6 text-center">
+            <span className="inline-block rounded-full bg-white/15 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider backdrop-blur-md">
+              Hemen bugün başlayın
+            </span>
+            <h2 className="font-display text-3xl font-black leading-tight tracking-tight sm:text-5xl">
+              Satışlarınızı takipsizlikten kaybetmeyin.
             </h2>
-            <p className="mt-4 text-base text-white/85 sm:text-lg">
-              {FIYAT.denemeGun} gün ücretsiz deneyin. Kredi kartı yok, kurulum yok. İlk teklifinizi bugün gönderin.
+            <p className="text-base text-rose-100 sm:text-lg">
+              Bugün {FIYAT.denemeGun} gün ücretsiz deneyin. Kredi kartı gerekmez, kurulum yok. İlk profesyonel teklifinizi
+              bugün gönderin.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <ButonLink href={UYGULAMA.kayit} gorunum="beyaz" boyut="lg">
-                Ücretsiz başla
-                <ArrowRight className="size-4" />
-              </ButonLink>
-              <ButonLink
-                href={UYGULAMA.giris}
-                gorunum="sade"
-                boyut="lg"
-                className="text-white hover:text-white/80"
+            <div className="flex flex-col items-center justify-center gap-4 pt-4 sm:flex-row">
+              <Link
+                href={UYGULAMA.kayit}
+                className="inline-flex w-full items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 text-base font-bold text-primary shadow-xl transition-all hover:scale-[1.02] hover:bg-slate-100 active:scale-[0.98] sm:w-auto"
               >
-                Hesabım var, giriş yap
-              </ButonLink>
+                Hemen başla
+                <ArrowRight className="size-5" />
+              </Link>
+              <span className="text-xs text-rose-200">Deneme bitince tekliflerinizin linki çalışmaya devam eder</span>
             </div>
           </div>
         </div>

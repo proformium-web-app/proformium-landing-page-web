@@ -5,27 +5,27 @@ import { cn } from "@/lib/cn";
 type Gorunum = "birincil" | "ikincil" | "sade" | "beyaz";
 type Boyut = "sm" | "md" | "lg";
 
+// Stitch buton dili: rounded-xl, kalın yazı, hover'da hafif büyüme, basınca küçülme
 const temel =
-  "inline-flex items-center justify-center gap-2 rounded-xl font-heading font-semibold whitespace-nowrap " +
-  "transition-[background-color,box-shadow,transform,color] duration-200 active:translate-y-px " +
+  "inline-flex items-center justify-center gap-2 rounded-xl font-bold whitespace-nowrap " +
+  "transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] " +
   "disabled:pointer-events-none disabled:opacity-50";
 
 const gorunumler: Record<Gorunum, string> = {
-  birincil: "bg-brand text-white shadow-brand hover:bg-brand-strong",
-  ikincil: "border border-line bg-surface text-ink hover:border-brand/40 hover:text-brand",
-  sade: "text-ink hover:text-brand",
-  beyaz: "bg-white text-brand hover:bg-brand-faint",
+  birincil: "bg-primary text-white shadow-md shadow-primary/25 hover:bg-primary-dark",
+  ikincil: "border border-slate-300 bg-white text-slate-700 font-semibold hover:bg-slate-50",
+  sade: "text-slate-700 font-bold hover:text-primary hover:scale-100",
+  beyaz: "bg-white text-primary shadow-xl hover:bg-slate-100",
 };
 
 const boyutlar: Record<Boyut, string> = {
-  sm: "h-9 px-3.5 text-sm",
-  md: "h-11 px-5 text-[15px]",
-  lg: "h-12 px-6 text-base sm:h-13 sm:px-7",
+  sm: "px-5 py-2.5 text-sm",
+  md: "px-6 py-3 text-[15px]",
+  lg: "px-8 py-4 text-base",
 };
 
 type Ortak = { gorunum?: Gorunum; boyut?: Boyut; className?: string; children: ReactNode };
 
-/** Bağlantı olarak buton. Dış adresler için otomatik `target` verilmez; ana akış aynı sekmede kalır. */
 export function ButonLink({
   gorunum = "birincil",
   boyut = "md",

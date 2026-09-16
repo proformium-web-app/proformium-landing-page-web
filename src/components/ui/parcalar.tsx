@@ -1,12 +1,12 @@
 import type { ComponentProps, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-/** Sayfa genişliği: 1240px, telefonda 16px kenar boşluğu. */
+/** Sayfa genişliği: Stitch max-w-7xl. */
 export function Kapsayici({ className, ...props }: ComponentProps<"div">) {
-  return <div className={cn("mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8", className)} {...props} />;
+  return <div className={cn("mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8", className)} {...props} />;
 }
 
-/** Bölüm sarmalayıcı: tutarlı dikey boşluk ve isteğe bağlı zemin. */
+/** Bölüm sarmalayıcı. zemin="surface" Stitch'teki beyaz, çizgili bantlar. */
 export function Bolum({
   id,
   className,
@@ -15,15 +15,16 @@ export function Bolum({
 }: {
   id?: string;
   className?: string;
-  zemin?: "canvas" | "surface";
+  zemin?: "canvas" | "surface" | "soft";
   children: ReactNode;
 }) {
   return (
     <section
       id={id}
       className={cn(
-        "py-16 sm:py-20 lg:py-24",
-        zemin === "surface" && "border-y border-line bg-surface",
+        "py-20 lg:py-24",
+        zemin === "surface" && "border-y border-slate-200/80 bg-white",
+        zemin === "soft" && "border-y border-slate-200/80 bg-slate-50",
         className,
       )}
     >
@@ -32,7 +33,7 @@ export function Bolum({
   );
 }
 
-/** Bölüm başlığı: küçük üst etiket, başlık, açıklama. */
+/** Bölüm başlığı: küçük üst etiket, Space Grotesk başlık, açıklama. */
 export function BolumBasligi({
   etiket,
   baslik,
@@ -47,57 +48,84 @@ export function BolumBasligi({
   className?: string;
 }) {
   return (
-    <div className={cn("max-w-2xl", hizala === "orta" && "mx-auto text-center", className)}>
-      {etiket && (
-        <p className="mb-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-brand">{etiket}</p>
-      )}
-      <h2 className="text-[28px] font-bold leading-tight text-ink sm:text-4xl">{baslik}</h2>
-      {aciklama && <p className="mt-4 text-base leading-relaxed text-ink-soft sm:text-lg">{aciklama}</p>}
+    <div
+      data-belir
+      className={cn("max-w-3xl space-y-3", hizala === "orta" && "mx-auto text-center", className)}
+    >
+      {etiket && <span className="text-xs font-bold uppercase tracking-widest text-primary">{etiket}</span>}
+      <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{baslik}</h2>
+      {aciklama && <p className="text-base text-slate-600 sm:text-lg">{aciklama}</p>}
     </div>
   );
 }
 
-/** Kart: beyaz zemin, ince çizgi, fısıltı gibi gölge. */
-export function Kart({ className, ...props }: ComponentProps<"div">) {
-  return (
-    <div className={cn("rounded-card border border-line bg-surface shadow-card", className)} {...props} />
-  );
-}
-
-/** Küçük rozet (pill). */
+/** Stitch "announcement chip": gül zemin, bordo yazı, yanıp sönen nokta. */
 export function Rozet({
   className,
   ton = "marka",
+  nokta = false,
   ...props
-}: ComponentProps<"span"> & { ton?: "marka" | "ok" | "notr" | "uyari" }) {
+}: ComponentProps<"span"> & { ton?: "marka" | "ok" | "notr" | "uyari" | "mavi" | "amber" | "cyan" | "mor"; nokta?: boolean }) {
   const tonlar = {
-    marka: "bg-brand-soft text-brand",
-    ok: "bg-ok-soft text-emerald-700",
-    notr: "bg-canvas text-ink-muted border border-line",
-    uyari: "bg-warn-soft text-amber-700",
+    marka: "bg-primary-50 border border-primary/20 text-primary",
+    ok: "bg-emerald-50 border border-emerald-200 text-emerald-700",
+    notr: "bg-slate-100 border border-slate-200 text-slate-600",
+    uyari: "bg-amber-50 border border-amber-200 text-amber-600",
+    mavi: "bg-blue-50 border border-blue-100 text-blue-600",
+    amber: "bg-amber-50 border border-amber-100 text-amber-600",
+    cyan: "bg-cyan-50 border border-cyan-100 text-cyan-600",
+    mor: "bg-violet-50 border border-violet-100 text-violet-600",
   };
+  const noktaRengi = { marka: "bg-primary", ok: "bg-emerald-500", notr: "bg-slate-400", uyari: "bg-amber-500", mavi: "bg-blue-500", amber: "bg-amber-500", cyan: "bg-cyan-500", mor: "bg-violet-500" };
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold",
+        "inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold",
         tonlar[ton],
         className,
       )}
       {...props}
-    />
+    >
+      {nokta && <span className={cn("h-2 w-2 rounded-full animate-ping", noktaRengi[ton])} />}
+      {props.children}
+    </span>
   );
 }
 
-/** İkon karesi: gül zemin, bordo ikon. */
-export function IkonKaresi({ className, children }: { className?: string; children: ReactNode }) {
+/** İkon karesi, Stitch özellik kartlarındaki renkli kareler. */
+export function IkonKaresi({
+  className,
+  ton = "marka",
+  children,
+}: {
+  className?: string;
+  ton?: "marka" | "ok" | "amber" | "rose" | "mavi" | "cyan" | "mor";
+  children: ReactNode;
+}) {
+  const tonlar = {
+    marka: "bg-primary-50 text-primary",
+    ok: "bg-emerald-50 text-emerald-600",
+    amber: "bg-amber-50 text-amber-600",
+    rose: "bg-rose-50 text-primary",
+    mavi: "bg-blue-50 text-blue-600",
+    cyan: "bg-cyan-50 text-cyan-600",
+    mor: "bg-violet-50 text-violet-600",
+  };
   return (
     <span
       className={cn(
-        "inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand",
+        "inline-flex size-14 shrink-0 items-center justify-center rounded-2xl shadow-sm transition-transform group-hover:scale-110",
+        tonlar[ton],
         className,
       )}
     >
       {children}
     </span>
+  );
+}
+
+export function Kart({ className, ...props }: ComponentProps<"div">) {
+  return (
+    <div className={cn("rounded-2xl border border-slate-200/80 bg-white shadow-card-soft", className)} {...props} />
   );
 }

@@ -1,109 +1,108 @@
-import {
-  BarChart3,
-  BellRing,
-  Eye,
-  FileDown,
-  History,
-  MessageCircle,
-  PenLine,
-  Smartphone,
-  Sparkles,
-  Upload,
-} from "lucide-react";
+import Image from "next/image";
+import { BadgeCheck, BarChart3, BellRing, Clock, History, MessageCircle, PenLine, Smartphone, Sparkles, Upload } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { Bolum, BolumBasligi, IkonKaresi, Kapsayici } from "@/components/ui/parcalar";
+import { IkonKaresi, Kapsayici } from "@/components/ui/parcalar";
 
-type Ozellik = { ikon: LucideIcon; baslik: string; aciklama: string };
+type Ozellik = { ikon: LucideIcon; ton: "marka" | "ok" | "amber" | "rose" | "mavi" | "cyan" | "mor"; baslik: string; aciklama: string };
 
 /** SITE_BAGLAMI.md bölüm 4'te canlıda çalışan özellikler; başkası yazılmaz. */
-const OZELLIKLER: Ozellik[] = [
-  {
-    ikon: Eye,
-    baslik: "Görüntülenme takibi",
-    aciklama:
-      "Müşteri linki açınca teklif \"Görüntülendi\" olur. Kaç kez, ne zaman açıldığı görünür. WhatsApp önizlemesi ve kendi açışınız sayılmaz.",
-  },
-  {
-    ikon: MessageCircle,
-    baslik: "WhatsApp, e-posta, PDF",
-    aciklama:
-      "Tek tıkla WhatsApp'ınız açılır, link hazır mesajla gider. İsterseniz e-posta ya da PDF indirme.",
-  },
-  {
-    ikon: BellRing,
-    baslik: "Takip hatırlatması",
-    aciklama:
-      "Gönderilen teklif için takip zamanı gelince hatırlatılır. \"Takip ettim\", \"3 gün ertele\", \"kazanıldı\", \"kaybedildi\" tek tıkla.",
-  },
-  {
-    ikon: Sparkles,
-    baslik: "Müşteri ve ürün hafızası",
-    aciklama:
-      "Ürün adını yazmaya başlayın, fiyatı ve birimiyle önerilsin. Müşteriyi listeden arayıp seçin, yenisini o an ekleyin.",
-  },
-  {
-    ikon: PenLine,
-    baslik: "Logo, kaşe ve imza",
-    aciklama:
-      "Teklif belgesinde logonuz, kaşeniz ve imzanız. İmzayı telefon ekranına parmağınızla atabilirsiniz.",
-  },
-  {
-    ikon: History,
-    baslik: "Revizyon ve geçmiş",
-    aciklama:
-      "Gönderilen teklif revize edilince Rev. 1, Rev. 2 olur. Eski haller saklanır, müşterinin linki hep son hali gösterir. Müşteri sayfadan revize isteyebilir.",
-  },
-  {
-    ikon: Upload,
-    baslik: "Excel'den toplu yükleme",
-    aciklama: "Müşteri ve ürün/hizmet listenizi hazır Excel şablonuyla bir kerede içeri alın.",
-  },
-  {
-    ikon: BarChart3,
-    baslik: "Raporlar",
-    aciklama:
-      "Kaç teklif onaylandı, reddedildi, bekliyor; dönüşüm oranı; en çok satış yapılan müşteriler.",
-  },
-  {
-    ikon: Smartphone,
-    baslik: "Telefonda tam çalışır",
-    aciklama:
-      "İndirilecek uygulama yok. Tarayıcıdan girin; teklif hazırlama, gönderme, imza ve takip telefonda da aynı.",
-  },
-  {
-    ikon: FileDown,
-    baslik: "Otomatik taslak ve numara",
-    aciklama:
-      "Yarım kalan teklif kendiliğinden taslağa kaydedilir. Teklif numarası işletmenize özel önekle otomatik verilir.",
-  },
+const ONE_CIKANLAR: Ozellik[] = [
+  { ikon: Clock, ton: "marka", baslik: "Zaman damgalı görüntülenme takibi", aciklama: "Müşteriniz teklif linkine tıkladığı an teklif \"Görüntülendi\" olur. Ne zaman açtığını, kaç kez incelediğini ve en son ne zaman baktığını uygulamada görün." },
+  { ikon: MessageCircle, ton: "ok", baslik: "Tek tıkla WhatsApp paylaşımı", aciklama: "Ayrı ayrı dosya kaydetme derdi olmadan, hazır mesaj ve müşteriye özel linkle tek dokunuşla WhatsApp'tan paylaşın. E-posta ve PDF de bir tık." },
+  { ikon: Sparkles, ton: "amber", baslik: "Müşteri ve ürün hafızası", aciklama: "Kalem adını yazmaya başlar başlamaz fiyatı ve birimi önerilir. Müşteriyi listeden arayıp seçin, yenisini o an ekleyin." },
+  { ikon: PenLine, ton: "rose", baslik: "Dijital kaşe & parmakla imza", aciklama: "Logonuzu ve kaşenizi yükleyin, telefon ekranına parmağınızla imza atın; saniyeler içinde resmi görünümlü, güven veren teklif belgesi." },
+  { ikon: History, ton: "mavi", baslik: "Kusursuz revizyon ve sürüm takibi", aciklama: "Rev. 1, Rev. 2 geçmişi korunur. Müşterideki link her zaman en son hali gösterir; müşteri sayfadan revize isteyebilir." },
+];
+
+const DIGERLERI: Ozellik[] = [
+  { ikon: BellRing, ton: "marka", baslik: "Takip hatırlatması", aciklama: "Takip zamanı gelince hatırlatılır; \"takip ettim\", \"3 gün ertele\", \"kazanıldı\" tek tıkla." },
+  { ikon: Upload, ton: "cyan", baslik: "Excel'den toplu yükleme", aciklama: "Müşteri ve ürün/hizmet listenizi hazır şablonla bir kerede içeri alın." },
+  { ikon: BarChart3, ton: "mor", baslik: "Raporlar", aciklama: "Onaylanan, reddedilen, bekleyen teklifler; dönüşüm oranı; en çok satış yapılan müşteriler." },
+  { ikon: Smartphone, ton: "ok", baslik: "Telefonda tam çalışır", aciklama: "İndirilecek uygulama yok. Tarayıcıdan girin; hazırlama, gönderme, imza ve takip telefonda aynı." },
 ];
 
 export function Ozellikler() {
   return (
-    <Bolum id="ozellikler" zemin="surface">
+    <section id="ozellikler" className="border-y border-slate-200/80 bg-white py-20">
       <Kapsayici>
-        <BolumBasligi
-          etiket="Özellikler"
-          baslik="Sade, WhatsApp dostu, telefonda kolay"
-          aciklama="CRM değil, muhasebe değil, ERP değil. Sadece teklif ve takip; olması gereken kadar."
-        />
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {OZELLIKLER.map((o) => (
-            <li
+        <div data-belir className="mx-auto mb-16 max-w-3xl space-y-3 text-center">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary">Neden Proformium?</span>
+          <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            KOBİ&apos;lerin Proformium&apos;u <span className="text-gradient">tercih etme nedenleri</span>
+          </h2>
+          <p className="text-base text-slate-600 sm:text-lg">
+            Masa başında saatler kaybetmeyin; sahadayken cep telefonunuzdan teklifi hazırlayın, gönderin, takip edin.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
+          <div className="relative flex items-center justify-center lg:col-span-6" data-belir>
+            <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary/10 via-rose-100/50 to-transparent blur-2xl" />
+            <div className="group relative w-full overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl transition-all duration-500 hover:shadow-glow">
+              <Image
+                src="/gorseller/uygulama-genel-bakis.webp"
+                alt="Proformium uygulaması: teklifler, müşteriler ve takip edilmesi gerekenler tek ekranda"
+                width={1600}
+                height={756}
+                sizes="(min-width: 1024px) 600px, 100vw"
+                className="block h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-slate-200/80 bg-white/90 p-4 shadow-lg backdrop-blur-md sm:bottom-6 sm:left-6 sm:right-6">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <BadgeCheck className="size-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900">Resmi &amp; kurumsal görünüm</h4>
+                    <p className="text-xs text-slate-500">Logo, kaşe ve imzalı teklif belgesi</p>
+                  </div>
+                </div>
+                <span className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-600 sm:inline-block">
+                  Anında hazır
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6 lg:col-span-6">
+            {ONE_CIKANLAR.map((o, i) => (
+              <div
+                key={o.baslik}
+                data-belir
+                data-gecikme={String(Math.min(i, 4))}
+                className="group flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-background-light p-5 transition-all hover:border-primary/40 hover:bg-white sm:gap-5 sm:p-6"
+              >
+                <IkonKaresi ton={o.ton}>
+                  <o.ikon className="size-6" />
+                </IkonKaresi>
+                <div className="space-y-1.5">
+                  <h3 className="text-base font-bold text-slate-900 sm:text-lg">{o.baslik}</h3>
+                  <p className="text-xs leading-relaxed text-slate-600 sm:text-sm">{o.aciklama}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {DIGERLERI.map((o, i) => (
+            <div
               key={o.baslik}
-              className="flex gap-4 rounded-card border border-line bg-canvas p-5 transition-colors hover:border-line-brand hover:bg-surface"
+              data-belir
+              data-gecikme={String(i + 1)}
+              className="group flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-background-light p-5 transition-all hover:border-primary/40 hover:bg-white"
             >
-              <IkonKaresi>
+              <IkonKaresi ton={o.ton} className="size-11 rounded-xl">
                 <o.ikon className="size-5" />
               </IkonKaresi>
-              <div>
-                <h3 className="text-base font-semibold text-ink">{o.baslik}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">{o.aciklama}</p>
+              <div className="space-y-1">
+                <h3 className="text-sm font-bold text-slate-900">{o.baslik}</h3>
+                <p className="text-xs leading-relaxed text-slate-600">{o.aciklama}</p>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </Kapsayici>
-    </Bolum>
+    </section>
   );
 }

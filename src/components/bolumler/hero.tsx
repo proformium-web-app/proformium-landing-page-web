@@ -1,94 +1,174 @@
-import Image from "next/image";
-import { ArrowRight, Eye, MessageCircle } from "lucide-react";
-import { ButonLink } from "@/components/ui/buton";
+import Link from "next/link";
+import { ArrowRight, Check, PenLine, PlayCircle, Send } from "lucide-react";
 import { Kapsayici } from "@/components/ui/parcalar";
 import { SITE, UYGULAMA } from "@/content/site";
 import { FIYAT } from "@/content/fiyatlar";
 
+/**
+ * Stitch hero: solda slogan + butonlar, sağda üst üste iki mockup kartı (genel bakış + teklif belgesi),
+ * yüzen "Müşteri teklifi açtı" ve "WhatsApp ile iletildi" rozetleri. Rakamlar temsilidir; özellikler gerçek.
+ */
 export function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Yumuşak gül ışık: DESIGN.md "ambient gradient", abartısız */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_70%_20%,#fbeaef_0%,rgba(251,234,239,0)_70%)]"
-      />
-      <Kapsayici className="grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-12 lg:gap-10 lg:py-24">
-        <div className="lg:col-span-6">
-          <p className="text-[13px] font-semibold uppercase tracking-[0.12em] text-brand">
-            KOBİ&apos;ler için teklif ve takip uygulaması
-          </p>
-          <h1 className="mt-4 text-[38px] font-extrabold leading-[1.08] tracking-[-0.02em] text-ink sm:text-5xl lg:text-[56px]">
-            Teklif oluştur.
-            <br />
-            Gönder. Takip et.
-            <br />
-            <span className="text-brand">Satışı kapat.</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-            Teklifi dakikada hazırlayın, WhatsApp&apos;tan gönderin, müşteri açınca görün, takip
-            zamanı gelince hatırlatılsın. Tedarikçilerinizden de fiyat toplayıp yan yana
-            karşılaştırın.
-          </p>
+    <section className="relative overflow-hidden pb-24 pt-12 lg:pb-32 lg:pt-20">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-1/2 top-1/4 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-primary/10 blur-[130px]" />
+        <div className="absolute -left-20 -top-10 h-72 w-72 rounded-full bg-rose-200/40 blur-3xl" />
+      </div>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <ButonLink href={UYGULAMA.kayit} boyut="lg">
-              {FIYAT.denemeGun} gün ücretsiz dene
-              <ArrowRight className="size-4" />
-            </ButonLink>
-            <ButonLink href="#nasil-calisir" gorunum="ikincil" boyut="lg">
-              Nasıl çalışır?
-            </ButonLink>
+      <Kapsayici className="relative">
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
+          <div className="space-y-8 text-left lg:col-span-6" data-belir>
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-primary/20 bg-primary-50 px-4 py-2 text-xs font-semibold tracking-wide text-primary sm:text-sm">
+              <span className="flex h-2 w-2 rounded-full bg-primary animate-ping" />
+              <span>✨ KOBİ&apos;ler için akıllı teklif ve takip uygulaması</span>
+            </div>
+            <h1 className="font-display text-4xl font-extrabold leading-[1.15] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+              Teklif Oluştur. <br />
+              Gönder. Takip Et. <br />
+              <span className="text-gradient">Satışı Kapat.</span>
+            </h1>
+            <p className="max-w-xl text-lg leading-relaxed text-slate-600">
+              Müşterilerinize WhatsApp&apos;tan profesyonel teklifler gönderin, açtıklarında uygulamada anında
+              görün. Tedarikçilerden zahmetsizce fiyat toplayın. Takipsizlikten kaçan satışlara son verin.
+            </p>
+            <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
+              <Link
+                href={UYGULAMA.kayit}
+                className="inline-flex items-center justify-center gap-3 rounded-xl bg-primary px-8 py-4 text-base font-bold text-white shadow-glow transition-all hover:scale-[1.02] hover:bg-primary-dark active:scale-[0.98]"
+              >
+                {FIYAT.denemeGun} Gün Ücretsiz Dene
+                <ArrowRight className="size-5" />
+              </Link>
+              <Link
+                href="#nasil-calisir"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-4 text-base font-semibold text-slate-700 transition-all hover:bg-slate-50"
+              >
+                <PlayCircle className="size-6 text-primary" />
+                Nasıl Çalıştığını Gör
+              </Link>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-xs font-medium text-slate-500 sm:text-sm">
+              {["Kredi kartı gerekmez", "Kurulum yok, tarayıcıda çalışır", "AB Frankfurt sunucularında güvenli"].map((m) => (
+                <span key={m} className="flex items-center gap-1.5">
+                  <Check className="size-4 text-primary" strokeWidth={3} />
+                  {m}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted">
-            <li>Kredi kartı gerekmez</li>
-            <li>İndirme yok, tarayıcıda çalışır</li>
-            <li>Veriler AB&apos;de (Frankfurt)</li>
-          </ul>
-        </div>
-
-        <div className="relative lg:col-span-6">
-          <figure className="relative">
-            <div className="overflow-hidden rounded-panel border border-line bg-surface shadow-raised">
-              <div className="flex items-center gap-2 border-b border-line bg-canvas px-4 py-2.5">
-                <span className="size-2.5 rounded-full bg-line" />
-                <span className="size-2.5 rounded-full bg-line" />
-                <span className="size-2.5 rounded-full bg-line" />
-                <span className="ml-2 text-xs text-ink-muted">app.proformium.com</span>
+          <div className="relative lg:col-span-6" data-belir data-gecikme="2">
+            <div className="relative mx-auto w-full max-w-xl">
+              {/* Genel bakış kartı */}
+              <div className="relative rounded-2xl border border-slate-200/80 bg-white/90 p-4 shadow-2xl backdrop-blur-md transition-all duration-500 hover:rotate-0 sm:p-5 lg:-rotate-2">
+                <div className="mb-4 flex items-center justify-between border-b border-slate-100 pb-3">
+                  <div className="flex items-center gap-2">
+                    <div className="h-3 w-3 rounded-full bg-rose-400" />
+                    <div className="h-3 w-3 rounded-full bg-amber-400" />
+                    <div className="h-3 w-3 rounded-full bg-emerald-400" />
+                    <span className="ml-2 font-mono text-xs text-slate-400">app.proformium.com</span>
+                  </div>
+                  <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[11px] font-bold text-emerald-600">
+                    Genel Bakış
+                  </span>
+                </div>
+                <div className="mb-4 grid grid-cols-3 gap-3">
+                  <div className="rounded-xl border border-slate-100 bg-slate-50 p-3">
+                    <p className="text-[11px] text-slate-500">Bekleyen teklif</p>
+                    <p className="text-lg font-bold text-slate-900">6</p>
+                    <span className="text-[10px] font-semibold text-slate-500">₺142.000 potansiyel</span>
+                  </div>
+                  <div className="rounded-xl border border-slate-100 bg-slate-50 p-3">
+                    <p className="text-[11px] text-slate-500">Görüntülendi</p>
+                    <p className="text-lg font-bold text-primary">4</p>
+                    <span className="text-[10px] text-slate-500">müşteri linki açtı</span>
+                  </div>
+                  <div className="rounded-xl border border-slate-100 bg-slate-50 p-3">
+                    <p className="text-[11px] text-slate-500">Kazanılan</p>
+                    <p className="text-lg font-bold text-emerald-600">₺54.234</p>
+                    <span className="text-[10px] font-semibold text-emerald-600">bu ay</span>
+                  </div>
+                </div>
+                <div className="space-y-2 text-xs">
+                  <div className="flex items-center justify-between rounded-lg border border-slate-100 bg-slate-50/70 p-2.5">
+                    <div className="flex items-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                      <span className="font-medium text-slate-700">Arslan Mimarlık · Villa mutfak</span>
+                    </div>
+                    <span className="font-semibold text-slate-900">₺125.000</span>
+                  </div>
+                  <div className="flex items-center justify-between rounded-lg border border-slate-100 bg-slate-50/70 p-2.5">
+                    <div className="flex items-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-amber-500" />
+                      <span className="font-medium text-slate-700">Periyodik bakım (34 ABC 123)</span>
+                    </div>
+                    <span className="font-semibold text-slate-900">₺6.540</span>
+                  </div>
+                </div>
               </div>
-              <Image
-                src="/gorseller/uygulama-genel-bakis.webp"
-                alt="Proformium genel bakış ekranı: taslaklar, revize talep edilenler, gönderilen teklifler ve kazanılan tutar"
-                width={1600}
-                height={756}
-                priority
-                sizes="(min-width: 1024px) 600px, 100vw"
-                className="block h-auto w-full"
-              />
-            </div>
 
-            {/* Gerçek özellik: müşteri linki açınca "Görüntülendi" */}
-            <figcaption className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3 shadow-raised sm:left-8">
-              <span className="inline-flex size-9 items-center justify-center rounded-lg bg-ok-soft text-emerald-600">
-                <Eye className="size-4" />
-              </span>
-              <span>
-                <span className="block text-sm font-semibold text-ink">Müşteri teklifi açtı</span>
-                <span className="block text-xs text-ink-muted">ATS-005 · 2 kez · son açılış bugün</span>
-              </span>
-            </figcaption>
-            <div className="absolute -top-4 right-4 hidden items-center gap-2 rounded-xl bg-brand px-3.5 py-2 text-xs font-semibold text-white shadow-brand sm:flex">
-              <MessageCircle className="size-4" />
-              WhatsApp&apos;tan gönderildi
+              {/* Teklif belgesi kartı */}
+              <div className="relative z-20 -mt-16 ml-auto w-[90%] rounded-2xl border-2 border-slate-200 bg-white p-5 shadow-2xl transition-all duration-300 hover:-translate-y-1 sm:-mt-24 sm:w-[85%] sm:p-6">
+                <div className="mb-4 flex items-start justify-between border-b border-slate-100 pb-3">
+                  <div>
+                    <span className="inline-block rounded bg-primary/10 px-2.5 py-1 text-xs font-bold tracking-wider text-primary">
+                      TEKLİF
+                    </span>
+                    <p className="mt-1 font-mono text-xs font-semibold text-slate-700">ATS-017 · Rev. 1</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100/70 px-2 py-0.5 text-[11px] font-bold text-emerald-700">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> Görüntülendi
+                    </span>
+                    <p className="mt-0.5 text-[10px] text-slate-400">Geçerlilik: 7 gün</p>
+                  </div>
+                </div>
+                <div className="mb-4 space-y-2 text-xs">
+                  <div className="flex justify-between border-b border-slate-100 py-1 font-medium text-slate-600">
+                    <span>Açıklama</span>
+                    <span>Tutar</span>
+                  </div>
+                  <div className="flex justify-between py-1 text-slate-800">
+                    <span>Isı yalıtımlı alüminyum doğrama &amp; montaj</span>
+                    <span className="font-semibold">₺48.000</span>
+                  </div>
+                  <div className="flex justify-between py-1 text-slate-800">
+                    <span>Temperli konfor cam paketi (12 takım)</span>
+                    <span className="font-semibold">₺20.450</span>
+                  </div>
+                </div>
+                <div className="flex items-end justify-between border-t border-dashed border-slate-200 pt-3">
+                  <div className="inline-flex items-center gap-1.5 rounded border border-primary/30 bg-primary-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary">
+                    <PenLine className="size-3" /> Kaşe &amp; imzalı
+                  </div>
+                  <div className="text-right">
+                    <p className="text-[11px] font-medium text-slate-400">Genel toplam (KDV dahil)</p>
+                    <p className="font-display text-xl font-black text-primary sm:text-2xl">₺68.450</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Yüzen rozetler */}
+              <div className="absolute -left-4 -top-4 z-30 flex animate-bounce items-center gap-2.5 rounded-2xl border border-slate-200 bg-white px-4 py-2.5 shadow-xl [animation-duration:2s] sm:-left-8">
+                <span className="flex h-3 w-3 rounded-full bg-emerald-500" />
+                <div>
+                  <p className="text-xs font-bold text-slate-900">Müşteri teklifi açtı</p>
+                  <p className="text-[10px] text-slate-400">2 dakika önce · 2. açılış</p>
+                </div>
+              </div>
+              <div className="absolute -bottom-5 left-6 z-30 flex items-center gap-2 rounded-xl bg-emerald-600 px-3.5 py-2 text-white shadow-lg sm:left-12">
+                <Send className="size-4" />
+                <span className="text-xs font-bold">⚡ WhatsApp ile iletildi</span>
+              </div>
             </div>
-          </figure>
+          </div>
         </div>
       </Kapsayici>
 
       {/* GEO: yapay zekâ asistanlarının alıntılayacağı net tanım */}
-      <Kapsayici className="pb-4">
-        <p className="mx-auto max-w-3xl text-center text-sm leading-relaxed text-ink-muted">{SITE.tanim}</p>
+      <Kapsayici className="relative pt-16">
+        <p className="mx-auto max-w-3xl text-center text-sm leading-relaxed text-slate-500">{SITE.tanim}</p>
       </Kapsayici>
     </section>
   );
