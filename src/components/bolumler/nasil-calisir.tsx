@@ -48,6 +48,15 @@ export function NasilCalisir() {
         </div>
 
         {/* Teklif Ver: solda dikey adım listesi, sağda büyük uygulama ekranı (Adem, 16.09.2026) */}
+        <div data-belir className="mb-8 flex items-center justify-center gap-4">
+          <span className="h-px w-12 bg-slate-200 sm:w-24" aria-hidden="true" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white px-4 py-1.5 text-sm font-bold text-primary shadow-sm">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary font-display text-xs text-white">1</span>
+            Birinci güç · Teklif Ver
+          </span>
+          <span className="h-px w-12 bg-slate-200 sm:w-24" aria-hidden="true" />
+        </div>
+
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
           <ol className="order-2 space-y-8 lg:order-1 lg:col-span-5">
             {TEKLIF_VER.map((a, i) => (
@@ -73,7 +82,14 @@ export function NasilCalisir() {
 
         {/* Teklif İste */}
         <div data-belir className="mx-auto mb-14 mt-24 max-w-3xl space-y-3 text-center">
-          <BolumEtiketi isaret>İkinci güç · Teklif İste</BolumEtiketi>
+          <div className="flex items-center justify-center gap-4">
+            <span className="h-px w-12 bg-slate-200 sm:w-24" aria-hidden="true" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white px-4 py-1.5 text-sm font-bold text-primary shadow-sm">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary font-display text-xs text-white">2</span>
+              İkinci güç · Teklif İste
+            </span>
+            <span className="h-px w-12 bg-slate-200 sm:w-24" aria-hidden="true" />
+          </div>
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             Tedarikçilerden fiyat toplayın, <span className="text-gradient">yan yana karşılaştırın</span>
           </h2>
