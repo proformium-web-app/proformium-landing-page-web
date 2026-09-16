@@ -36,9 +36,8 @@ export function Ozellikler() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-14">
-          <div className="flex flex-col gap-6 lg:col-span-6">
-          <div className="relative flex items-center justify-center" data-belir>
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
+          <div className="relative flex items-center justify-center lg:col-span-6" data-belir>
             <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary/10 via-rose-100/50 to-transparent blur-2xl" />
             <div className="group relative w-full overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl transition-all duration-500 hover:shadow-glow">
               <Image
@@ -66,26 +65,6 @@ export function Ozellikler() {
             </div>
           </div>
 
-          {/* Diğer özellikler: görselin altında 2x2 mini kart (Adem seçimi C, 16.09.2026) */}
-          <div className="grid gap-4 sm:grid-cols-2">
-            {DIGERLERI.map((o, i) => (
-              <div
-                key={o.baslik}
-                data-belir
-                data-gecikme={String(i + 1)}
-                className="group flex items-start gap-3.5 rounded-2xl border border-slate-200/80 bg-background-light p-4 transition-all hover:border-primary/40 hover:bg-white"
-              >
-                <IkonKaresi ton={o.ton} className="size-10 rounded-xl">
-                  <o.ikon className="size-5" />
-                </IkonKaresi>
-                <div className="space-y-0.5">
-                  <h3 className="text-[15px] font-bold text-slate-900">{o.baslik}</h3>
-                  <p className="text-sm leading-relaxed text-slate-600">{o.aciklama}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          </div>
 
           <div className="flex flex-col gap-6 lg:col-span-6">
             {ONE_CIKANLAR.map((o, i) => (
@@ -107,6 +86,28 @@ export function Ozellikler() {
           </div>
         </div>
 
+
+        {/* Diğer özellikler: tek satır şerit (Adem seçimi B, 16.09.2026) */}
+        <div
+          data-belir
+          className="mt-10 flex flex-col items-center gap-4 rounded-2xl border border-slate-200/80 bg-background-light px-5 py-5 sm:flex-row sm:justify-center sm:gap-3 sm:px-8"
+        >
+          <span className="text-sm font-bold text-slate-900">Ayrıca</span>
+          <div className="flex flex-wrap justify-center gap-2.5">
+            {DIGERLERI.map((o) => (
+              <span
+                key={o.baslik}
+                title={o.aciklama}
+                className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
+              >
+                <IkonKaresi ton={o.ton} className="size-7 rounded-lg shadow-none group-hover:scale-100">
+                  <o.ikon className="size-4" />
+                </IkonKaresi>
+                {o.baslik}
+              </span>
+            ))}
+          </div>
+        </div>
       </Kapsayici>
     </section>
   );
