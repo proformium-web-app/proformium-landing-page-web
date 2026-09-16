@@ -84,7 +84,7 @@ export function Sorun() {
           <div className="flex flex-col gap-10">
             <div className="flex flex-col items-center gap-6 border-b border-slate-200/80 pb-8 text-center">
               <div className="max-w-3xl space-y-3">
-                <BolumEtiketi isaret>Karşılaştırma</BolumEtiketi>
+                <BolumEtiketi isaret>Neden Proformium?</BolumEtiketi>
                 <h2 className="font-display text-2xl font-extrabold leading-snug tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
                   Sorun PDF hazırlayamamak değil;{" "}
                   <span className="text-primary">&quot;Düşüneyim&quot; diyen müşteriyi unutmak</span> ve satışı
