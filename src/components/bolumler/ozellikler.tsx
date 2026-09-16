@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { BadgeCheck, BarChart3, BellRing, Clock, History, MessageCircle, PenLine, Smartphone, Sparkles, Upload } from "lucide-react";
+import { BadgeCheck, Clock, History, MessageCircle, PenLine, Sparkles } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
 import { IkonKaresi, Kapsayici } from "@/components/ui/parcalar";
+import { OzellikSeridi } from "@/components/bolumler/ozellik-seridi";
 
 type Ozellik = { ikon: LucideIcon; ton: "marka" | "ok" | "amber" | "rose" | "mavi" | "cyan" | "mor"; baslik: string; aciklama: string };
 
@@ -15,12 +16,6 @@ const ONE_CIKANLAR: Ozellik[] = [
   { ikon: History, ton: "mavi", baslik: "Kusursuz revizyon ve sürüm takibi", aciklama: "Rev. 1, Rev. 2 geçmişi korunur. Müşterideki link her zaman en son hali gösterir; müşteri sayfadan revize isteyebilir." },
 ];
 
-const DIGERLERI: Ozellik[] = [
-  { ikon: BellRing, ton: "marka", baslik: "Takip hatırlatması", aciklama: "Takip zamanı gelince hatırlatılır; \"takip ettim\", \"3 gün ertele\", \"kazanıldı\" tek tıkla." },
-  { ikon: Upload, ton: "cyan", baslik: "Excel'den toplu yükleme", aciklama: "Müşteri ve ürün/hizmet listenizi hazır şablonla bir kerede içeri alın." },
-  { ikon: BarChart3, ton: "mor", baslik: "Raporlar", aciklama: "Onaylanan, reddedilen, bekleyen teklifler; dönüşüm oranı; en çok satış yapılan müşteriler." },
-  { ikon: Smartphone, ton: "ok", baslik: "Telefonda tam çalışır", aciklama: "İndirilecek uygulama yok. Tarayıcıdan girin; hazırlama, gönderme, imza ve takip telefonda aynı." },
-];
 
 export function Ozellikler() {
   return (
@@ -87,27 +82,8 @@ export function Ozellikler() {
         </div>
 
 
-        {/* Diğer özellikler: tek satır şerit (Adem seçimi B, 16.09.2026) */}
-        <div
-          data-belir
-          className="mt-10 flex flex-col items-center gap-4 rounded-2xl border border-slate-200/80 bg-background-light px-5 py-5 sm:flex-row sm:justify-center sm:gap-3 sm:px-8"
-        >
-          <span className="text-sm font-bold text-slate-900">Ayrıca</span>
-          <div className="flex flex-wrap justify-center gap-2.5">
-            {DIGERLERI.map((o) => (
-              <span
-                key={o.baslik}
-                title={o.aciklama}
-                className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
-              >
-                <IkonKaresi ton={o.ton} className="size-7 rounded-lg shadow-none group-hover:scale-100">
-                  <o.ikon className="size-4" />
-                </IkonKaresi>
-                {o.baslik}
-              </span>
-            ))}
-          </div>
-        </div>
+        {/* Diğer özellikler: solda ayrıntı paneli, sağda çipler (Adem, 16.09.2026) */}
+        <OzellikSeridi />
       </Kapsayici>
     </section>
   );
