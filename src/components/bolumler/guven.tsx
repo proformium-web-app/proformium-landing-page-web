@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Building2, Link2, MapPin, ShieldCheck, Trash2 } from "lucide-react";
+import { Building2, Check, Link2, Lock, MapPin, ShieldCheck, Trash2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { IkonKaresi, Kapsayici } from "@/components/ui/parcalar";
 
@@ -28,6 +28,43 @@ export function Guven() {
               </Link>
               .
             </p>
+
+            {/* Veri güvenliği kartı: sadece doğrulanabilir bilgiler */}
+            <div className="relative mt-8 overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 shadow-card-soft sm:p-8">
+              <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-emerald-100/60 blur-3xl" />
+              <div className="relative flex items-center gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600 shadow-sm">
+                  <ShieldCheck className="size-7" />
+                </div>
+                <div>
+                  <p className="text-base font-bold text-slate-900 sm:text-lg">Veri güvenliği</p>
+                  <p className="text-sm text-slate-500">Avrupa Birliği sunucuları · KVKK</p>
+                </div>
+              </div>
+              <ul className="relative mt-6 space-y-3 text-sm text-slate-700 sm:text-[15px]">
+                {[
+                  "Sunucu ve veritabanı Frankfurt, Almanya",
+                  "Her işletmenin verisi veritabanı düzeyinde ayrı",
+                  "Müşteri linkleri rastgele, arama motorlarına kapalı",
+                  "Hesabınızı ve verinizi istediğiniz an silersiniz",
+                ].map((m) => (
+                  <li key={m} className="flex items-start gap-2.5">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                      <Check className="size-3" strokeWidth={3} />
+                    </span>
+                    {m}
+                  </li>
+                ))}
+              </ul>
+              <div className="relative mt-6 flex flex-wrap items-center gap-2 border-t border-slate-100 pt-5">
+                <Link href="/kvkk" className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 transition-colors hover:bg-emerald-100">
+                  <Lock className="size-3.5" /> KVKK aydınlatma metni
+                </Link>
+                <Link href="/gizlilik" className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-bold text-slate-600 transition-colors hover:bg-slate-100">
+                  Gizlilik politikası
+                </Link>
+              </div>
+            </div>
           </div>
           <ul className="grid gap-4 sm:grid-cols-2">
             {MADDELER.map((m, i) => (
