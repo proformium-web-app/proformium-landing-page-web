@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Check, X } from "lucide-react";
+import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
 import { Kapsayici } from "@/components/ui/parcalar";
 
 const SATIRLAR = [
@@ -38,12 +39,9 @@ export function Sorun() {
           className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-tr from-primary-50/70 via-white to-rose-50/50 p-8 shadow-sm sm:p-12 lg:p-16"
         >
           <div className="flex flex-col gap-10">
-            <div className="flex flex-col justify-between gap-6 border-b border-slate-200/80 pb-6 md:flex-row md:items-end">
+            <div className="flex flex-col items-center gap-6 border-b border-slate-200/80 pb-8 text-center">
               <div className="max-w-3xl space-y-3">
-                <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-50 px-3 py-1 font-mono text-xs font-bold uppercase tracking-widest text-primary">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  Karşılaştırma
-                </div>
+                <BolumEtiketi isaret>Karşılaştırma</BolumEtiketi>
                 <h2 className="font-display text-2xl font-extrabold leading-snug tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
                   Sorun PDF hazırlayamamak değil;{" "}
                   <span className="text-primary">&quot;Düşüneyim&quot; diyen müşteriyi unutmak</span> ve satışı

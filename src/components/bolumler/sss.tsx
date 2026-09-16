@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
 import { Kapsayici } from "@/components/ui/parcalar";
 import { SSS } from "@/content/sss";
 
@@ -8,9 +9,9 @@ export function Sss() {
     <section id="sss" className="py-24">
       <Kapsayici className="max-w-4xl">
         <div data-belir className="mb-16 space-y-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary">Aklınıza takılanlar</span>
+          <BolumEtiketi>Sıkça sorulan sorular</BolumEtiketi>
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Sıkça sorulan sorular
+            Aklınıza takılanlar
           </h2>
           <p className="text-base text-slate-600 sm:text-lg">Proformium hakkında en çok merak edilen soruların yanıtları.</p>
         </div>

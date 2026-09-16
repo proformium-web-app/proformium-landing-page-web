@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BadgeCheck, BarChart3, BellRing, Clock, History, MessageCircle, PenLine, Smartphone, Sparkles, Upload } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
 import { IkonKaresi, Kapsayici } from "@/components/ui/parcalar";
 
 type Ozellik = { ikon: LucideIcon; ton: "marka" | "ok" | "amber" | "rose" | "mavi" | "cyan" | "mor"; baslik: string; aciklama: string };
@@ -26,7 +27,7 @@ export function Ozellikler() {
     <section id="ozellikler" className="border-y border-slate-200/80 bg-white py-20">
       <Kapsayici>
         <div data-belir className="mx-auto mb-16 max-w-3xl space-y-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary">Neden Proformium?</span>
+          <BolumEtiketi isaret>Neden Proformium?</BolumEtiketi>
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             KOBİ&apos;lerin Proformium&apos;u <span className="text-gradient">tercih etme nedenleri</span>
           </h2>

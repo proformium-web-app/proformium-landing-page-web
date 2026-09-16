@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useId, useState } from "react";
 import { ArrowRight, BadgeCheck, Car, Check, Cog, Ellipsis, Fan, HardHat, LayoutPanelTop, Megaphone, PlugZap, Scissors, Send, Sofa, Truck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { Kapsayici, Rozet } from "@/components/ui/parcalar";
+import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
+import { Kapsayici } from "@/components/ui/parcalar";
 import { SEKTORLER, type Sektor } from "@/content/sektorler";
 import { UYGULAMA } from "@/content/site";
 import { cn } from "@/lib/cn";
@@ -46,9 +47,7 @@ export function Sektorler() {
     <section id="sektorler" className="py-24">
       <Kapsayici>
         <div data-belir className="mx-auto mb-12 max-w-3xl space-y-3 text-center">
-          <Rozet nokta className="font-mono uppercase tracking-widest">
-            Sektörel dinamiklere uyumlu
-          </Rozet>
+          <BolumEtiketi>Sektörler</BolumEtiketi>
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             Hangi sektördesiniz? <span className="text-primary">Proformium size hazır.</span>
           </h2>

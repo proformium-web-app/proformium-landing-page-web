@@ -1,5 +1,6 @@
 import type { ComponentProps, ReactNode } from "react";
 import { cn } from "@/lib/cn";
+import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
 
 /** Sayfa genişliği: Stitch max-w-7xl. */
 export function Kapsayici({ className, ...props }: ComponentProps<"div">) {
@@ -52,7 +53,7 @@ export function BolumBasligi({
       data-belir
       className={cn("max-w-3xl space-y-3", hizala === "orta" && "mx-auto text-center", className)}
     >
-      {etiket && <span className="text-xs font-bold uppercase tracking-widest text-primary">{etiket}</span>}
+      {etiket && <BolumEtiketi hizala={hizala}>{etiket}</BolumEtiketi>}
       <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{baslik}</h2>
       {aciklama && <p className="text-base text-slate-600 sm:text-lg">{aciklama}</p>}
     </div>

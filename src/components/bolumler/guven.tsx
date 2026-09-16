@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Building2, Link2, Lock, MapPin, ShieldCheck, Trash2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
 import { Kapsayici } from "@/components/ui/parcalar";
 import { cn } from "@/lib/cn";
 
@@ -19,7 +20,7 @@ export function Guven() {
       <Kapsayici>
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
           <div data-belir className="space-y-4 lg:col-span-4">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">Güven</span>
+            <BolumEtiketi isaret hizala="sol">Güven</BolumEtiketi>
             <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
               Müşteri listeniz <span className="text-gradient">sizindir</span>
             </h2>

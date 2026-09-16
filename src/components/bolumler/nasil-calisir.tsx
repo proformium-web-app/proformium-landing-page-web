@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Eye, Trophy } from "lucide-react";
+import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
 import { Kapsayici } from "@/components/ui/parcalar";
 
 type Adim = { no: string; baslik: string; aciklama: string };
@@ -37,7 +38,7 @@ export function NasilCalisir() {
     <section id="nasil-calisir" className="py-24">
       <Kapsayici>
         <div data-belir className="mx-auto mb-16 max-w-3xl space-y-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary">Nasıl çalışır?</span>
+          <BolumEtiketi isaret>Nasıl çalışır?</BolumEtiketi>
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             Teklifi hazırla, gönder, takip et ve <span className="text-primary">satışı kapat</span>
           </h2>
@@ -87,9 +88,7 @@ export function NasilCalisir() {
 
         {/* Teklif İste */}
         <div data-belir className="mx-auto mb-14 mt-24 max-w-3xl space-y-3 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-50 px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary">
-            İkinci güç · Teklif İste
-          </span>
+          <BolumEtiketi isaret>İkinci güç · Teklif İste</BolumEtiketi>
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             Tedarikçilerden fiyat toplayın, <span className="text-gradient">yan yana karşılaştırın</span>
           </h2>

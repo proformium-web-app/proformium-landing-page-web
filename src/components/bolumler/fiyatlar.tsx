@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Check, CheckCircle2 } from "lucide-react";
+import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
 import { Kapsayici } from "@/components/ui/parcalar";
 import { FIYAT, FIYAT_GOSTER, PAKETLER, tlBicimle } from "@/content/fiyatlar";
 import { UYGULAMA } from "@/content/site";
@@ -15,7 +16,7 @@ export function Fiyatlar() {
     <section id="fiyatlar" className="border-y border-slate-200/80 bg-slate-50 py-24">
       <Kapsayici>
         <div data-belir className="mx-auto mb-12 max-w-3xl space-y-3 text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary">Şeffaf ve esnek planlar</span>
+          <BolumEtiketi isaret>Fiyatlandırma</BolumEtiketi>
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             KOBİ bütçesine uygun fiyatlandırma
           </h2>
