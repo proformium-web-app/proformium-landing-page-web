@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Building2, Link2, MapPin, ShieldCheck, Trash2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -28,6 +29,19 @@ export function Guven() {
               </Link>
               .
             </p>
+            <div className="relative mt-6 overflow-hidden rounded-2xl border border-slate-200/80 shadow-xl">
+              <Image
+                src="/gorseller/foto-isletme-sahibi.webp"
+                alt="Dosyasını tutan, gülümseyen işletme sahibi"
+                width={1600}
+                height={1067}
+                sizes="(min-width: 1024px) 460px, 100vw"
+                className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+              <div className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-xl bg-white/90 px-3 py-1.5 text-xs font-bold text-slate-900 shadow-lg backdrop-blur-md">
+                <ShieldCheck className="size-4 text-emerald-600" /> Verileriniz AB&apos;de, size ait
+              </div>
+            </div>
           </div>
           <ul className="grid gap-4 sm:grid-cols-2">
             {MADDELER.map((m, i) => (

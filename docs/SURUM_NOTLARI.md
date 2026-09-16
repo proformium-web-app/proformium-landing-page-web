@@ -2,6 +2,11 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.2.2 — 16.09.2026 · Fotoğraflar
+
+- Pexels fotoğrafları yerleştirildi (deneme, Adem beğenmezse geri alınır): Neden Proformium? sağında telefona bakan
+  işletme sahibi, Nasıl çalışır 02 adımı altında telefondan mesaj, Güven bölümünde işletme sahibi. Mockup'lar korundu.
+
 ## 0.2.1 — 16.09.2026 · Logo, görseller, yazı boyutu
 
 - Yatay logo (marka/logo-yatay-proformium.svg) üst menü, alt bilgi ve paylaşım görselinde.

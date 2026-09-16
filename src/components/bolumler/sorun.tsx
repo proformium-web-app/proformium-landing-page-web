@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, X } from "lucide-react";
 import { Kapsayici } from "@/components/ui/parcalar";
@@ -37,7 +38,8 @@ export function Sorun() {
           data-belir
           className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-tr from-primary-50/70 via-white to-rose-50/50 p-8 shadow-sm sm:p-12 lg:p-16"
         >
-          <div className="flex flex-col gap-10">
+          <div className="grid gap-10 lg:grid-cols-12">
+          <div className="flex flex-col gap-10 lg:col-span-8">
             <div className="flex flex-col justify-between gap-6 border-b border-slate-200/80 pb-6 md:flex-row md:items-end">
               <div className="max-w-3xl space-y-3">
                 <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-50 px-3 py-1 font-mono text-xs font-bold uppercase tracking-widest text-primary">
@@ -102,6 +104,23 @@ export function Sorun() {
                 </tbody>
               </table>
             </div>
+          </div>
+
+          {/* Fotoğraf: teklifi gönderip cevap bekleyen işletme sahibi (Pexels, telifsiz) */}
+          <div className="relative hidden overflow-hidden rounded-2xl border border-slate-200/80 shadow-xl lg:col-span-4 lg:block">
+            <Image
+              src="/gorseller/foto-telefon-bekleyen.webp"
+              alt="Telefonuna bakıp mesaj bekleyen takım elbiseli işletme sahibi"
+              width={1200}
+              height={1800}
+              sizes="(min-width: 1024px) 360px, 0px"
+              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+            <div className="absolute inset-x-4 bottom-4 rounded-xl border border-white/60 bg-white/90 p-4 shadow-lg backdrop-blur-md">
+              <p className="text-sm font-bold text-slate-900">&quot;Fiyatınıza bakıp döneceğim.&quot;</p>
+              <p className="mt-1 text-xs text-slate-500">Üç gün geçti, dönen olmadı. Proformium takip zamanını hatırlatır.</p>
+            </div>
+          </div>
           </div>
         </div>
       </Kapsayici>

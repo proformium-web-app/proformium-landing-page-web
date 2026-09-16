@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Eye, Trophy } from "lucide-react";
+import { Eye, MessageCircle, Trophy } from "lucide-react";
 import { Kapsayici } from "@/components/ui/parcalar";
 
 type Adim = { no: string; baslik: string; aciklama: string };
@@ -18,7 +18,7 @@ const TEKLIF_ISTE: Adim[] = [
   { no: "04", baslik: "Kazananı seçin", aciklama: "Tek kazanan seçin, onaylı mesajla bilgilendirin; isterseniz diğerlerine teşekkür edin." },
 ];
 
-function AdimSutunu({ adimlar, saga }: { adimlar: Adim[]; saga?: boolean }) {
+function AdimSutunu({ adimlar, saga, foto }: { adimlar: Adim[]; saga?: boolean; foto?: boolean }) {
   return (
     <div className={`flex flex-col gap-10 text-left lg:col-span-4 lg:gap-14 ${saga ? "lg:text-right" : ""}`}>
       {adimlar.map((a, i) => (
@@ -28,6 +28,21 @@ function AdimSutunu({ adimlar, saga }: { adimlar: Adim[]; saga?: boolean }) {
           <p className="text-base leading-relaxed text-slate-600">{a.aciklama}</p>
         </div>
       ))}
+      {foto && (
+        <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 shadow-xl" data-belir data-gecikme="3">
+          <Image
+            src="/gorseller/foto-telefonda-mesaj.webp"
+            alt="Telefondan WhatsApp mesajı gönderen kişi"
+            width={1600}
+            height={1067}
+            sizes="(min-width: 1024px) 380px, 100vw"
+            className="aspect-[16/10] w-full object-cover transition-transform duration-700 hover:scale-105"
+          />
+          <div className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white shadow-lg">
+            <MessageCircle className="size-4" /> Teklif linki WhatsApp&apos;tan gitti
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -48,7 +63,7 @@ export function NasilCalisir() {
 
         {/* Teklif Ver: 01-02 solda, ekran ortada, 03-04 sağda */}
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
-          <AdimSutunu adimlar={TEKLIF_VER.slice(0, 2)} saga />
+          <AdimSutunu adimlar={TEKLIF_VER.slice(0, 2)} saga foto />
 
           <div className="relative flex items-center justify-center lg:col-span-4" data-belir data-gecikme="2">
             <div className="relative w-full max-w-lg">
