@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "dashboard-icons": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://dashboardicons.com/api/mcp"
+      ],
+      "env": {}
+    },
+    "shadcn": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "shadcn@latest",
+        "mcp"
+      ],
+      "env": {}
+    }
+  }
+}

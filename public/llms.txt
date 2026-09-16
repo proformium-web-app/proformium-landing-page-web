@@ -1,0 +1,46 @@
+# Proformium
+
+> Proformium, müşterilerine teklif veren ve tedarikçilerinden teklif alan küçük işletmeler (KOBİ) için web tabanlı, telefonda da çalışan, çok basit bir teklif uygulamasıdır. Teklifi hazırlar, WhatsApp'tan gönderir, müşteri açınca haber verir, takip zamanını hatırlatır; tedarikçilerden fiyat toplayıp karşılaştırır. Dil: Türkçe. Uygulama: https://app.proformium.com
+
+## Ne yapar
+
+- Teklif Ver: müşteri seç, ürün/hizmet satırları (miktar, birim, fiyat, KDV, iskonto), otomatik toplam ve teklif numarası; logo, kaşe ve imza (telefonda parmakla); tek tıkla WhatsApp, e-posta ya da PDF.
+- Müşteri linki: müşteri üye olmadan telefonda açar, PDF indirir, revize isteyebilir. Link tahmin edilemez, arama motorlarına kapalı.
+- Görüntülenme takibi: müşteri linki açınca teklif "Görüntülendi" olur; kaç kez ve ne zaman açıldığı görünür (WhatsApp önizlemesi ve işletmenin kendi açışı sayılmaz).
+- Takip hatırlatması: takip zamanı gelince hatırlatılır; "takip ettim", "3 gün ertele", "kazanıldı", "kaybedildi".
+- Revizyon: Rev. 1, Rev. 2 geçmişi saklanır; müşterinin linki hep son hali gösterir.
+- Teklif İste: kalemleri yaz, sektöre göre tedarikçileri seç (bir talepte en fazla 10), her tedarikçiye kendi linki gider, tedarikçi üye olmadan fiyat yazar; fiyatlar yan yana karşılaştırılır, tek kazanan seçilir ve bilgilendirilir.
+- Müşteri ve ürün hafızası, Excel şablonuyla toplu yükleme, raporlar (onaylanan/reddedilen/bekleyen, dönüşüm oranı, en çok satış yapılan müşteriler).
+- Telefonda tam çalışır; indirilecek mobil uygulama yoktur (App Store / Google Play'de değildir).
+
+## Ne değildir
+
+- CRM, muhasebe, ERP, stok veya e-Fatura programı değildir; bunlar bilinçli olarak kapsam dışıdır.
+- Telefona anlık (push) bildirim ve otomatik WhatsApp mesajı göndermez; bildirimler uygulama içinde görünür. WhatsApp bildirimi planlanıyor.
+- Müşteri teklif sayfasından onay veremez; onayı işletme işaretler.
+- Ekip daveti, Google ile giriş, İngilizce arayüz yoktur.
+
+## Paketler
+
+- Free: ücretsiz, ayda 3 teklif ve 3 teklif talebi, 20 müşteri ve 40 ürün/hizmet kaydı, PDF ve müşteri sayfasında "Proformium ile hazırlandı" ibaresi, raporlar yok.
+- Pro: sınırsız teklif ve talep, ibaresiz belge, raporlar; 14 gün ücretsiz deneme, kredi kartı gerekmez. Fiyat henüz açıklanmadı (aylık ve yıllık seçenek olacak; fiyatlar KDV dahil).
+- Deneme bitince mevcut teklifler ve müşteriye giden linkler çalışmaya devam eder.
+
+## Güven
+
+- Sunucu ve veritabanı Frankfurt (Almanya), Avrupa Birliği. Her işletmenin verisi veritabanı düzeyinde ayrı.
+- KVKK aydınlatma metni ve gizlilik politikası mevcut. Kullanıcı hesabını ve tüm verisini kendisi silebilir.
+
+## Sektörler
+
+Otomotiv / oto servis (teklifte plaka alanı), klima / kombi servisi, mobilya / mutfak / dekorasyon, cam balkon / PVC, reklam / tabela, inşaat / yapı, elektrik / tesisat, makine, nakliye / lojistik, güzellik / bakım ve teklif veren diğer işletmeler.
+
+## Sayfalar
+
+- Ana sayfa: https://www.proformium.com
+- Blog: https://www.proformium.com/blog
+- KVKK: https://www.proformium.com/kvkk
+- Gizlilik: https://www.proformium.com/gizlilik
+- Kayıt (14 gün ücretsiz): https://app.proformium.com/kayit
+- Giriş: https://app.proformium.com/giris
+- Destek: destek@proformium.com
