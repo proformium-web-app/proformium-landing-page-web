@@ -54,8 +54,8 @@ function TasarimTablo() {
     <div className="w-full overflow-x-auto">
       <table className="w-full border-collapse text-left">
         <thead className="border-b border-slate-200">
-          <tr className="text-base font-bold text-slate-900 sm:text-lg">
-            <th className="pb-5 text-base font-semibold text-slate-500 sm:text-lg">Özellik / Senaryo</th>
+          <tr className="text-sm font-bold text-slate-900 sm:text-base">
+            <th className="pb-4 text-sm font-semibold text-slate-500 sm:text-base">Özellik / Senaryo</th>
             <th className="whitespace-nowrap px-3 pb-5 text-center sm:px-5">Klasik yöntem</th>
             <th className="whitespace-nowrap px-3 pb-5 text-center text-primary sm:px-5">Proformium</th>
           </tr>
@@ -63,24 +63,24 @@ function TasarimTablo() {
         <tbody className="divide-y divide-slate-200/70">
           {SATIRLAR.map((s) => (
             <tr key={s.baslik} className="group">
-              <td className="py-6 pr-6">
-                <div className="mb-1.5 text-lg font-bold text-slate-900 sm:text-xl">{s.baslik}</div>
-                <p className="text-[15px] leading-relaxed text-slate-500 sm:text-base">{s.aciklama}</p>
+              <td className="py-5 pr-6">
+                <div className="mb-1 text-base font-bold text-slate-900 sm:text-lg">{s.baslik}</div>
+                <p className="text-sm leading-relaxed text-slate-500 sm:text-[15px]">{s.aciklama}</p>
               </td>
-              <td className="whitespace-nowrap px-3 py-6 text-center align-middle sm:px-5">
+              <td className="whitespace-nowrap px-3 py-5 text-center align-middle sm:px-5">
                 <div className="inline-flex flex-col items-center gap-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-rose-200/80 bg-rose-50 text-rose-500">
-                    <X className="size-5" strokeWidth={3} />
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full border border-rose-200/80 bg-rose-50 text-rose-500">
+                    <X className="size-4" strokeWidth={3} />
                   </div>
-                  <span className="hidden text-sm text-slate-500 sm:inline-block">{s.eski}</span>
+                  <span className="hidden text-xs text-slate-500 sm:inline-block">{s.eski}</span>
                 </div>
               </td>
-              <td className="whitespace-nowrap px-3 py-6 text-center align-middle sm:px-5">
+              <td className="whitespace-nowrap px-3 py-5 text-center align-middle sm:px-5">
                 <div className="inline-flex flex-col items-center gap-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-600">
-                    <Check className="size-5" strokeWidth={3} />
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-600">
+                    <Check className="size-4" strokeWidth={3} />
                   </div>
-                  <span className="hidden text-sm font-semibold text-emerald-700 sm:inline-block">{s.yeni}</span>
+                  <span className="hidden text-xs font-semibold text-emerald-700 sm:inline-block">{s.yeni}</span>
                 </div>
               </td>
             </tr>
@@ -92,71 +92,50 @@ function TasarimTablo() {
 }
 
 /**
- * Tasarım B (deneme): "Bugün" ve "Proformium ile" iki panel yan yana, ortada ok.
- * Sol panel soluk, sağ panel bordo çerçeveli ve canlı. Her satır ikonlu kart.
+ * Tasarım C (deneme): dört sorun, dört kart. Her kartta üstte "Bugün" (kırmızı), altta "Proformium ile" (yeşil),
+ * arada aşağı ok. Telefonda tek sütun, tablette iki, masaüstünde dört.
  */
-function TasarimPaneller() {
+function TasarimKartlar() {
   return (
-    <div className="relative grid gap-6 lg:grid-cols-[1fr_auto_1fr] lg:items-stretch">
-      {/* Bugün */}
-      <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 sm:p-8">
-        <div className="mb-6 flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-200 text-slate-500">
-            <X className="size-5" strokeWidth={3} />
-          </span>
-          <div>
-            <p className="font-display text-lg font-bold text-slate-700">Bugün</p>
-            <p className="text-sm text-slate-500">Word, Excel, WhatsApp, kâğıt</p>
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {SATIRLAR.map((s, i) => (
+        <div
+          key={s.baslik}
+          data-belir
+          data-gecikme={String(i)}
+          className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-card-soft transition-all hover:-translate-y-1 hover:shadow-glow"
+        >
+          <div className="flex items-center gap-3 border-b border-slate-100 p-5">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary transition-transform group-hover:scale-110">
+              <s.yeniIkon className="size-5" />
+            </span>
+            <h3 className="text-base font-bold leading-snug text-slate-900">{s.baslik}</h3>
+          </div>
+
+          <div className="flex flex-1 flex-col gap-3 p-5">
+            <div className="rounded-xl border border-rose-100 bg-rose-50/70 p-3.5">
+              <p className="mb-1 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-rose-500">
+                <X className="size-3.5" strokeWidth={3} /> Bugün
+              </p>
+              <p className="text-sm font-semibold text-slate-700">{s.eski}</p>
+              <p className="mt-1 text-xs leading-relaxed text-slate-500">{s.aciklama}</p>
+            </div>
+
+            <div className="flex justify-center">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white shadow-md shadow-primary/25">
+                <ArrowRight className="size-4 rotate-90" />
+              </span>
+            </div>
+
+            <div className="rounded-xl border border-emerald-100 bg-emerald-50/80 p-3.5">
+              <p className="mb-1 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald-600">
+                <Check className="size-3.5" strokeWidth={3} /> Proformium ile
+              </p>
+              <p className="text-sm font-semibold text-slate-900">{s.yeni}</p>
+            </div>
           </div>
         </div>
-        <ul className="space-y-3">
-          {SATIRLAR.map((s) => (
-            <li key={s.baslik} className="flex items-start gap-3 rounded-xl border border-slate-200/80 bg-white/70 p-4">
-              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-rose-50 text-rose-400">
-                <s.eskiIkon className="size-4" />
-              </span>
-              <div>
-                <p className="text-base font-semibold text-slate-700">{s.baslik}</p>
-                <p className="mt-0.5 text-sm text-slate-500">{s.eski}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Ok */}
-      <div className="flex items-center justify-center lg:flex-col">
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-glow">
-          <ArrowRight className="size-6 rotate-90 lg:rotate-0" />
-        </span>
-      </div>
-
-      {/* Proformium ile */}
-      <div className="relative overflow-hidden rounded-2xl border-2 border-primary bg-white p-6 shadow-2xl sm:p-8">
-        <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
-        <div className="relative mb-6 flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white shadow-md shadow-primary/25">
-            <Check className="size-5" strokeWidth={3} />
-          </span>
-          <div>
-            <p className="font-display text-lg font-bold text-slate-900">Proformium ile</p>
-            <p className="text-sm text-slate-500">Tek uygulama, telefondan</p>
-          </div>
-        </div>
-        <ul className="relative space-y-3">
-          {SATIRLAR.map((s) => (
-            <li key={s.baslik} className="group flex items-start gap-3 rounded-xl border border-primary/15 bg-primary-50/60 p-4 transition-colors hover:bg-primary-50">
-              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 transition-transform group-hover:scale-110">
-                <s.yeniIkon className="size-4" />
-              </span>
-              <div>
-                <p className="text-base font-semibold text-slate-900">{s.yeni}</p>
-                <p className="mt-0.5 text-sm text-slate-600">{s.aciklama}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+      ))}
     </div>
   );
 }
@@ -197,8 +176,8 @@ export function Sorun() {
             {/* DENEME: iki tasarım alt alta; Adem seçince diğeri kaldırılacak */}
             <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400">Tasarım A · tablo</p>
             <TasarimTablo />
-            <p className="mt-6 text-center text-xs font-bold uppercase tracking-widest text-slate-400">Tasarım B · iki panel</p>
-            <TasarimPaneller />
+            <p className="mt-6 text-center text-xs font-bold uppercase tracking-widest text-slate-400">Tasarım C · dört kart</p>
+            <TasarimKartlar />
           </div>
         </div>
       </Kapsayici>
