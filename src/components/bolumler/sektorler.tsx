@@ -163,35 +163,7 @@ export function Sektorler() {
           </div>
         </div>
 
-        {/* Hızlı bakış kartları */}
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {SEKTORLER.map((s, i) => {
-            const I = IKONLAR[s.ikon];
-            return (
-              <button
-                key={s.anahtar}
-                type="button"
-                data-belir
-                data-gecikme={String(Math.min(i, 4))}
-                onClick={() => setAktif(s.anahtar)}
-                className={cn(
-                  "flex items-center gap-3.5 rounded-2xl border bg-white p-4 text-left shadow-sm transition-all hover:border-primary/40",
-                  s.anahtar === aktif ? "border-primary/40" : "border-slate-200/80",
-                )}
-              >
-                <div className={cn("flex h-10 w-10 shrink-0 items-center justify-center rounded-xl", IKON_ZEMIN[s.ton])}>
-                  <I className="size-5" />
-                </div>
-                <div className="min-w-0">
-                  <h4 className="truncate text-sm font-bold text-slate-900">{s.kisaAd}</h4>
-                  <p className="truncate text-xs text-slate-500">{s.kisaNot}</p>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-
-        <p className="mt-8 text-center text-base text-slate-500">Ayrıca: {DIGER_SEKTORLER.join(" · ")}</p>
+        <p className="mt-10 text-center text-base text-slate-500">Ayrıca: {DIGER_SEKTORLER.join(" · ")}</p>
       </Kapsayici>
     </section>
   );
