@@ -47,17 +47,28 @@ export function NasilCalisir() {
           </p>
         </div>
 
-        {/* Teklif Ver: 01-02 solda, ekran ortada, 03-04 sağda */}
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
-          <AdimSutunu adimlar={TEKLIF_VER.slice(0, 2)} saga />
+        {/* Teklif Ver: solda dikey adım listesi, sağda büyük uygulama ekranı (Adem, 16.09.2026) */}
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
+          <ol className="order-2 space-y-8 lg:order-1 lg:col-span-5">
+            {TEKLIF_VER.map((a, i) => (
+              <li key={a.no} data-belir data-gecikme={String(i + 1)} className="group relative flex gap-5">
+                {i < TEKLIF_VER.length - 1 && (
+                  <span className="absolute left-6 top-14 h-[calc(100%-1.5rem)] w-px bg-slate-200" aria-hidden="true" />
+                )}
+                <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary font-display text-lg font-bold text-white shadow-md shadow-primary/25 transition-transform group-hover:scale-110">
+                  {a.no}
+                </span>
+                <div className="pt-1">
+                  <h3 className="text-xl font-bold text-slate-900">{a.baslik}</h3>
+                  <p className="mt-1.5 text-base leading-relaxed text-slate-600">{a.aciklama}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
 
-          <div className="relative flex items-center justify-center lg:col-span-4" data-belir data-gecikme="2">
-            <div className="relative w-full max-w-lg">
-              <MockupTarayiciTelefon />
-            </div>
+          <div className="order-1 lg:order-2 lg:col-span-7" data-belir data-gecikme="2">
+            <MockupTarayiciTelefon />
           </div>
-
-          <AdimSutunu adimlar={TEKLIF_VER.slice(2)} />
         </div>
 
         {/* Teklif İste */}
