@@ -11,14 +11,9 @@ import { FIYAT } from "@/content/fiyatlar";
  * yüzen "Müşteri teklifi açtı" ve "WhatsApp ile iletildi" rozetleri. Rakamlar temsilidir; özellikler gerçek.
  */
 /**
- * Hero üst satırı: kod yazı tipinde, büyük harf, daktilo gibi sürekli yazılıp silinen üç cümle (Adem, 16.09.2026).
- * Cümleler yalnızca uygulamada var olan özellikleri söyler.
+ * Hero üst satırı: kod yazı tipinde, büyük harf, daktilo gibi sürekli yazılıp silinen tek cümle (Adem, 16.09.2026).
  */
-const ROZET_METNI = [
-  "KOBİ'ler için akıllı teklif ve takip uygulaması",
-  "Teklifi WhatsApp'tan gönderin, açılınca görün",
-  "Tedarikçilerden fiyat toplayın, yan yana karşılaştırın",
-];
+const ROZET_METNI = "KOBİ'ler için akıllı teklif ve takip uygulaması";
 
 export function Hero() {
   return (
@@ -31,12 +26,12 @@ export function Hero() {
       <Kapsayici className="relative">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="space-y-8 text-left lg:col-span-6" data-belir>
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
+            <p className="font-mono text-sm font-bold uppercase tracking-[0.18em] text-primary sm:text-base">
               <Daktilo
                 metin={ROZET_METNI}
-                hiz={45}
-                silmeHizi={25}
-                bekleme={2200}
+                hiz={70}
+                silmeHizi={40}
+                bekleme={2600}
                 baslangicGecikmesi={400}
                 dongu
                 imlec="_"
