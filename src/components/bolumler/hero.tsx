@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check, PenLine, PlayCircle, Send, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, Check, PenLine, PlayCircle, Send, Zap } from "lucide-react";
 import { AltiCizgili } from "@/components/ui/alti-cizgili";
 import { Daktilo } from "@/components/ui/daktilo";
 import { Kapsayici } from "@/components/ui/parcalar";
@@ -11,11 +11,14 @@ import { FIYAT } from "@/content/fiyatlar";
  * yüzen "Müşteri teklifi açtı" ve "WhatsApp ile iletildi" rozetleri. Rakamlar temsilidir; özellikler gerçek.
  */
 /**
- * Rozet metni daktilo gibi yazılır. Tek cümle: bir kez yazılır, durur (Adem kararı).
- * Dönüşümlü istenirse diziye çevrilir, ör.:
- * const ROZET_METNI = ["KOBİ'ler için akıllı teklif ve takip uygulaması", "Teklifi WhatsApp'tan gönderin, açılınca görün", "Tedarikçilerden fiyat toplayın, yan yana karşılaştırın"];
+ * Hero üst satırı: kod yazı tipinde, büyük harf, daktilo gibi sürekli yazılıp silinen üç cümle (Adem, 16.09.2026).
+ * Cümleler yalnızca uygulamada var olan özellikleri söyler.
  */
-const ROZET_METNI = "KOBİ'ler için akıllı teklif ve takip uygulaması";
+const ROZET_METNI = [
+  "KOBİ'ler için akıllı teklif ve takip uygulaması",
+  "Teklifi WhatsApp'tan gönderin, açılınca görün",
+  "Tedarikçilerden fiyat toplayın, yan yana karşılaştırın",
+];
 
 export function Hero() {
   return (
@@ -28,18 +31,18 @@ export function Hero() {
       <Kapsayici className="relative">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="space-y-8 text-left lg:col-span-6" data-belir>
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-primary/20 bg-primary-50 px-4 py-2 text-xs font-semibold tracking-wide text-primary sm:text-sm">
-              <span className="flex h-2 w-2 rounded-full bg-primary animate-ping" />
-              <Sparkles className="size-4" />
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-primary sm:text-sm">
               <Daktilo
                 metin={ROZET_METNI}
                 hiz={45}
+                silmeHizi={25}
+                bekleme={2200}
                 baslangicGecikmesi={400}
-                dongu={false}
+                dongu
                 imlec="_"
-                imlecClassName="ml-0.5 font-bold"
+                imlecClassName="ml-0.5"
               />
-            </div>
+            </p>
             <h1 className="font-display text-4xl font-extrabold leading-[1.15] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
               Teklif Oluştur. <br />
               Gönder. Takip Et. <br />
