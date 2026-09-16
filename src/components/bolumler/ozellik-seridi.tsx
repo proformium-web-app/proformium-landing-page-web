@@ -41,20 +41,19 @@ export function OzellikSeridi({ ozellikler = OZELLIKLER }: { ozellikler?: SeritO
   return (
     <div
       data-belir
-      className="mt-10 grid gap-6 rounded-3xl border border-slate-200/80 bg-background-light p-5 sm:p-6 lg:grid-cols-[1fr_1.35fr] lg:items-start lg:gap-8"
+      className="mt-8 grid gap-5 rounded-3xl border border-slate-200/80 bg-background-light p-4 sm:p-5 lg:grid-cols-[1fr_1.35fr] lg:items-center lg:gap-6"
     >
       {/* Ayrıntı paneli */}
       <div
         key={o.baslik}
-        className="animate-belir flex min-h-[212px] items-center gap-5 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-card-soft sm:p-7"
+        className="animate-belir flex min-h-[132px] items-start gap-4 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-card-soft sm:gap-5 sm:p-6"
       >
-        <span className={cn("flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl shadow-sm", TONLAR[o.ton])}>
-          <o.ikon className="size-8" />
+        <span className={cn("flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl shadow-sm", TONLAR[o.ton])}>
+          <o.ikon className="size-6" />
         </span>
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400">Ayrıca</p>
-          <h3 className="mt-1 font-display text-xl font-bold text-slate-900 sm:text-2xl">{o.baslik}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-slate-600 sm:text-[15px]">{o.aciklama}</p>
+          <h3 className="text-base font-bold text-slate-900 sm:text-lg">{o.baslik}</h3>
+          <p className="mt-1.5 text-sm leading-relaxed text-slate-600 sm:text-[15px]">{o.aciklama}</p>
         </div>
       </div>
 
