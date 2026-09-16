@@ -40,21 +40,9 @@ export function NasilCalisir() {
         <div data-belir className="mx-auto mb-16 max-w-3xl space-y-3 text-center">
           <BolumEtiketi isaret>İki Ana Güç</BolumEtiketi>
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Müşteriye <span className="text-primary">teklif verin</span>, tedarikçiden{" "}
-            <span className="text-primary">teklif isteyin</span>
+            Teklifi hazırla, gönder, takip et ve <span className="text-primary">satışı kapat</span>
           </h2>
           <p className="text-base text-slate-600 sm:text-lg">
-            Uygulamanın menüsü de bu ikisinden oluşur. Nasıl çalıştığını adım adım görün.
-          </p>
-        </div>
-
-        {/* Birinci güç · Teklif Ver */}
-        <div data-belir className="mx-auto mb-12 max-w-3xl space-y-3 text-center">
-          <BolumEtiketi>Birinci güç · Teklif Ver</BolumEtiketi>
-          <h3 className="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-            Teklifi hazırla, gönder, takip et ve <span className="text-primary">satışı kapat</span>
-          </h3>
-          <p className="text-base text-slate-600">
             Karmaşık süreçlere boğulmadan dakikalar içinde profesyonel teklif akışınızı yönetin.
           </p>
         </div>
@@ -85,11 +73,11 @@ export function NasilCalisir() {
 
         {/* Teklif İste */}
         <div data-belir className="mx-auto mb-14 mt-24 max-w-3xl space-y-3 text-center">
-          <BolumEtiketi>İkinci güç · Teklif İste</BolumEtiketi>
-          <h3 className="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
+          <BolumEtiketi isaret>İkinci güç · Teklif İste</BolumEtiketi>
+          <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             Tedarikçilerden fiyat toplayın, <span className="text-gradient">yan yana karşılaştırın</span>
-          </h3>
-          <p className="text-base text-slate-600">
+          </h2>
+          <p className="text-base text-slate-600 sm:text-lg">
             Beş tedarikçiyi tek tek aramak yerine bir liste yazın, linkler gitsin, fiyatlar tek ekranda toplansın.
           </p>
         </div>
