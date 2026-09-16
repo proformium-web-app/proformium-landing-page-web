@@ -32,12 +32,12 @@ export function AltiCizgili({
         viewBox="0 0 300 20"
         preserveAspectRatio="none"
         aria-hidden="true"
-        className={cn("pointer-events-none absolute -bottom-2 left-0 text-primary sm:-bottom-3", cizgiClassName)}
+        className={cn("pointer-events-none absolute -bottom-4 left-0 text-primary sm:-bottom-5", cizgiClassName)}
       >
         <motion.path
           d={yol}
           stroke="currentColor"
-          strokeWidth="2.5"
+          strokeWidth="3.5"
           strokeLinecap="round"
           fill="none"
           variants={{
