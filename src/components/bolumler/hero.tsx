@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Check, PenLine, PlayCircle, Send, Sparkles, Zap } from "lucide-react";
+import { AltiCizgili } from "@/components/ui/alti-cizgili";
 import { Kapsayici } from "@/components/ui/parcalar";
 import { SITE, UYGULAMA } from "@/content/site";
 import { FIYAT } from "@/content/fiyatlar";
@@ -27,7 +28,9 @@ export function Hero() {
             <h1 className="font-display text-4xl font-extrabold leading-[1.15] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
               Teklif Oluştur. <br />
               Gönder. Takip Et. <br />
-              <span className="text-gradient">Satışı Kapat.</span>
+              <AltiCizgili>
+                <span className="text-gradient">Satışı Kapat.</span>
+              </AltiCizgili>
             </h1>
             <p className="max-w-xl text-lg leading-relaxed text-slate-600">
               Müşterilerinize WhatsApp&apos;tan profesyonel teklifler gönderin, açtıklarında uygulamada anında
