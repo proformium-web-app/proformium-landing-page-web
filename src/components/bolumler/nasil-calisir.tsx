@@ -1,8 +1,7 @@
-import Image from "next/image";
-import { Eye, Trophy } from "lucide-react";
+import { Trophy } from "lucide-react";
 import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
 import { Kapsayici } from "@/components/ui/parcalar";
-import { MockupAkis, MockupTarayiciTelefon, MockupTelefon } from "@/components/bolumler/mockuplar";
+import { MockupTarayiciTelefon } from "@/components/bolumler/mockuplar";
 
 type Adim = { no: string; baslik: string; aciklama: string };
 
@@ -54,56 +53,11 @@ export function NasilCalisir() {
 
           <div className="relative flex items-center justify-center lg:col-span-4" data-belir data-gecikme="2">
             <div className="relative w-full max-w-lg">
-              <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl transition-transform duration-300 hover:scale-[1.01]">
-                <div className="flex items-center justify-between border-b border-slate-200/80 bg-slate-50 px-4 py-2.5">
-                  <div className="flex items-center gap-1.5">
-                    <div className="h-2.5 w-2.5 rounded-full bg-rose-400" />
-                    <div className="h-2.5 w-2.5 rounded-full bg-amber-400" />
-                    <div className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
-                  </div>
-                  <span className="font-mono text-[11px] text-slate-400">app.proformium.com</span>
-                  <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-700">Canlı</span>
-                </div>
-                <Image
-                  src="/gorseller/uygulama-genel-bakis.webp"
-                  alt="Proformium genel bakış ekranı: taslaklar, revize talepleri, gönderilen teklifler"
-                  width={1600}
-                  height={756}
-                  sizes="(min-width: 1024px) 420px, 100vw"
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="absolute -right-3 -top-3 z-10 hidden items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-800 shadow-lg sm:flex">
-                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
-                Bildirim düştü
-              </div>
-              <div className="absolute -bottom-3 -left-3 z-10 hidden items-center gap-1.5 rounded-xl bg-primary px-3 py-1.5 text-xs font-semibold text-white shadow-lg sm:flex">
-                <Eye className="size-4" />
-                Müşteri görüntüledi
-              </div>
+              <MockupTarayiciTelefon />
             </div>
           </div>
 
           <AdimSutunu adimlar={TEKLIF_VER.slice(2)} />
-        </div>
-
-        {/* DENEME: ortadaki görsel için üç öneri; Adem seçince biri ortaya alınacak, diğerleri silinecek */}
-        <div className="mt-16 rounded-3xl border border-dashed border-slate-300 bg-white/60 p-6 sm:p-8">
-          <p className="mb-8 text-center text-xs font-bold uppercase tracking-widest text-slate-400">Deneme · ortadaki görsel için öneriler</p>
-          <div className="grid gap-10 lg:grid-cols-3 lg:items-start">
-            <div>
-              <p className="mb-6 text-center text-sm font-bold text-slate-500">A · Müşterinin telefonu</p>
-              <MockupTelefon />
-            </div>
-            <div>
-              <p className="mb-6 text-center text-sm font-bold text-slate-500">B · Uygulama + WhatsApp</p>
-              <MockupTarayiciTelefon />
-            </div>
-            <div>
-              <p className="mb-6 text-center text-sm font-bold text-slate-500">C · Teklifin yaşam akışı</p>
-              <MockupAkis />
-            </div>
-          </div>
         </div>
 
         {/* Teklif İste */}
