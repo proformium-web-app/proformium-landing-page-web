@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import { UstMenu } from "@/components/layout/ust-menu";
 import { AltBilgi } from "@/components/layout/alt-bilgi";
 import { Belirici } from "@/components/ui/belirici";
@@ -53,7 +52,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <AltBilgi />
         <Belirici />
         <YukariOk />
-        <Analytics />
       </body>
     </html>
   );

@@ -21,7 +21,8 @@ Kısa kurallar:
 - Fiyat ve paket bilgileri **sadece** `src/content/fiyatlar.ts`'te; `FIYAT_GOSTER` false iken "Yakında" görünür.
 - Blog: Adem yazıyı `Blog/` klasörüne koyar, siteye `content/blog/` altına bilgi bloğuyla taşınır (README'de adımlar).
 - Her yayında `docs/SURUM_NOTLARI.md`'ye not düşülür.
-- Git: `main` dalı → GitHub `proformium-web-app/proformium-landing-page-web` → Vercel `proformium/proformium-landing-page-web`.
+- Git: `main` dalı → GitHub `proformium-web-app/proformium-landing-page-web` → **Cloudflare Pages** (02.10.2026'dan itibaren; derleme `npx next build`, çıktı `out`).
+  Ölçüm: Cloudflare Web Analytics (panelden açılır, kodda bir şey yok). Eski Vercel projesi kullanılmıyor.
 
 ## Kurulu araçlar (Adem, 15.09.2026)
 

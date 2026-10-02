@@ -2,6 +2,14 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.2.2 — 02.10.2026 · Cloudflare Pages'e geçiş
+
+- Barındırma Vercel'den **Cloudflare Pages**'e alındı (Vercel'in ücretsiz paketi ticari kullanıma izin vermiyor;
+  Cloudflare Pages ücretsiz pakette izin veriyor, alan adı da zaten Cloudflare'de).
+- `@vercel/analytics` kaldırıldı; ölçüm Cloudflare Web Analytics ile (çerezsiz, panelden açılır).
+- KVKK metni: hizmet sağlayıcı tablosuna Cloudflare eklendi, çerez bölümünde ölçüm adı güncellendi.
+- `public/_headers`: güvenlik başlıkları ve değişmeyen dosyalar için uzun önbellek.
+
 ## 0.2.1 — 16.09.2026 · Logo, görseller, yazı boyutu
 
 - Yatay logo (marka/logo-yatay-proformium.svg) üst menü, alt bilgi ve paylaşım görselinde.

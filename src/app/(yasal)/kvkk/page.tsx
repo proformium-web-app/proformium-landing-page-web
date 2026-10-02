@@ -91,7 +91,11 @@ export default function KvkkPage() {
           </tr>
           <tr>
             <th>Vercel</th>
-            <td>Uygulamanın ve bu sitenin çalıştığı sunucu (Frankfurt, Almanya)</td>
+            <td>Uygulamanın çalıştığı sunucu (Frankfurt, Almanya)</td>
+          </tr>
+          <tr>
+            <th>Cloudflare</th>
+            <td>Bu tanıtım sitesinin barındırılması, alan adı yönlendirmesi ve çerezsiz ziyaret ölçümü</td>
           </tr>
           <tr>
             <th>Resend</th>
@@ -128,7 +132,7 @@ export default function KvkkPage() {
       <h2>8. Çerezler</h2>
       <p>
         Uygulamada yalnızca oturumun açık kalması için gerekli çerezler kullanılır. Bu tanıtım sitesinde çerez
-        kullanılmaz; ziyaret sayıları çerezsiz ve kimlik bilgisi toplamayan bir ölçümle (Vercel Web Analytics) alınır.
+        kullanılmaz; ziyaret sayıları çerezsiz ve kimlik bilgisi toplamayan bir ölçümle (Cloudflare Web Analytics) alınır.
         Reklam, izleme veya profilleme amaçlı çerez kullanılmaz.
       </p>
     </>
