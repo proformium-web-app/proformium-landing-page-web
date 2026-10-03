@@ -233,9 +233,9 @@ Adem'e sorulmalı.
 | Uygulamadaki yasal sayfalar | `app.proformium.com/kvkk`, `/gizlilik`, `/mesafeli-satis`, `/iptal-iade` |
 | Müşteri teklif linkleri (sitede kullanılmaz) | `app.proformium.com/t/<kod>` — arama motorlarına kapalı |
 
-- Alan adı **Cloudflare**'de; DNS kayıtları Vercel'e yönleniyor. Bugün `app.` alt alanı uygulamaya bakıyor,
-  kök alan (`proformium.com` / `www`) boş ve **bu site için ayrıldı**. Site Vercel'e bağlanırken
-  `app.` kaydına dokunulmamalı.
+- Alan adı **Cloudflare**'de. `app.` alt alanı uygulamaya (Vercel) bakıyor; `www.proformium.com` bu siteye
+  (**Cloudflare Pages**, proje `proformium-web`, 02.10.2026'dan itibaren) bakıyor, kök alan 301 ile www'ya
+  yönleniyor. DNS'te `app.` kaydına dokunulmamalı.
 - Uygulama tarafında robots dosyası sadece giriş/kayıt ve yasal sayfalara izin veriyor; site ile
   aynı alan adında olmadığı için çakışma yok.
 - Uygulamada 3 adımlı kayıt var: kayıt → e-posta doğrulama → kurulum (işletme bilgisi, sektör).
@@ -263,7 +263,7 @@ Uygulamada yasal metinlerin taslakları hazır (`../proformium-app/src/lib/legal
   hangi tarafın asıl kaynak olacağı konuşulmalı (öneri: tek metin, diğer taraf ona bağlantı verir ya da
   metin iki projede aynı kaynaktan üretilir).
 - Sitede ölçüm/analitik ya da çerez kullanılırsa **KVKK çerez aydınlatması ve onay** gerekir.
-  Çerezsiz ölçüm (ör. Vercel Web Analytics) bu yükü azaltır.
+  Çerezsiz ölçüm bu yükü azaltır; sitede **Cloudflare Web Analytics** (çerezsiz) kullanılıyor.
 - Kurucular: Adem (ürün/teknoloji) ve Rahmi (müşteri keşfi/satış). Sitede kurucu isimleri kullanılacak mı
   Adem'e sorulmalı.
 
@@ -371,17 +371,21 @@ Kaynak ve eksikler bölüm 7'de. Çerez kullanılırsa çerez politikası da ekl
   Tailwind kullanılıp kullanılmayacağı tasarımla birlikte Adem'le netleşir.
 - **Sayfalar statik üretilmeli** (derleme anında HTML). Tanıtım sitesi ve blog için sunucuda çalışan koda
   gerek yok; hem hızlı hem ucuz hem SEO dostu.
-- **Barındırma, ilk etap ücretsiz: Vercel.** Uygulama da Vercel'de (ekip/proje adı "proformium",
-  bölge Frankfurt). Site **ayrı bir Vercel projesi** olmalı.
-  - Dikkat: Vercel'in ücretsiz (Hobby) planı kurallarında ticari kullanım kısıtı var. Para alınmaya başlayınca
-    uygulama için Pro'ya (20 $/ay) geçilecek; site aynı ekipteyse o plan kapsar. Adem'e hatırlatın.
+- **Barındırma: Cloudflare Pages** (ücretsiz paket, 02.10.2026'dan itibaren). Proje `proformium-web`, Adem'in
+  Cloudflare hesabında; GitHub `main` dalına push edilince kendiliğinden yayınlanır (derleme `npx next build`,
+  çıktı `out`). İlk kurulum Vercel'deydi; Vercel'in ücretsiz (Hobby) planı ticari kullanıma izin vermediği için
+  taşındı, eski Vercel projesi kullanılmıyor.
+  - Uygulama Vercel'de kalıyor (ekip/proje adı "proformium", bölge Frankfurt). Para alınmaya başlayınca
+    uygulama için Vercel Pro'ya (20 $/ay) geçilecek. Adem'e hatırlatın.
+  - `proformium-web.pages.dev` adresi Adem'in internet sağlayıcısında açılmıyor; kontroller hep
+    `www.proformium.com` üzerinden yapılır.
 - **İleride Hostinger'a taşınabilirlik:** Next.js `output: "export"` ile tamamen statik dosya çıkarır;
   bu dosyalar Hostinger gibi sıradan bir sunucuya yüklenebilir. Bunun için baştan:
   - sunucu gerektiren özellikler (API route, sunucu eylemi, ISR/yeniden doğrulama, çerezle çalışan sayfa,
     `next/image` otomatik optimizasyonu) **kullanılmamalı** ya da statik karşılığı seçilmeli,
   - form (iletişim/bülten) gerekiyorsa üçüncü taraf bir form servisi ya da uygulamanın API'si düşünülmeli.
 - **Kaynak kod:** uygulama kendi git reposunda (GitHub, Vercel'e bağlı; her push canlıya gidiyor).
-  Site için ayrı repo mu açılacak, GitHub hesabı/organizasyonu hangisi — Adem'e sorulmalı.
+  Site ayrı depoda: GitHub `proformium-web-app/proformium-landing-page-web`, Cloudflare Pages'e bağlı.
 - Gizli anahtar gerekmemeli. Uygulamanın Supabase veritabanına **siteden bağlanılmaz**.
 
 ---
@@ -450,7 +454,7 @@ Bunlar **site sohbetinde yapılmaz**; Adem uygulama sohbetine taşır:
 Adem kod yazılmadan önce soruların sorulmasını istedi. Bu dosya hazırlanırken şunlar zaten cevaplandı:
 
 - ✅ Klasör: `proformium-web` · ✅ Adresler: site `www.proformium.com`, uygulama `app.proformium.com`
-- ✅ Altyapı: Next.js · ✅ Barındırma: ilk etap ücretsiz Vercel, ileride Hostinger olabilir
+- ✅ Altyapı: Next.js · ✅ Barındırma: Cloudflare Pages (ücretsiz; ilk kurulum Vercel'deydi), ileride Hostinger olabilir
 - ✅ Kapsam: tek sayfa landing + fiyatlar, blog, yasal sayfalar · ✅ Dil: sadece Türkçe
 - ✅ Paketler: Free (ayda 3 teklif + 3 talep, PDF'te ibare, rapor yok, müşteri/ürün sınırı) ve
   Pro (100 TL/ay, 1.000 TL/yıl, 14 gün deneme) · ✅ Hedef: tüm KOBİ'ler, örnekler sektörlü
@@ -465,10 +469,10 @@ Hâlâ açık olanlar:
 5. Site **yayına ne zaman** alınacak: uygulamada Free/Pro hazır olmadan fiyat bölümü nasıl gösterilecek?
 6. **Şirket bilgileri** (unvan, adres, vergi, MERSİS, telefon) hazır mı? Yasal metnin asıl kaynağı site mi uygulama mı?
 7. **İletişim:** WhatsApp numarası, telefon, iletişim formu olacak mı?
-8. **Ölçüm/analitik** kullanılacak mı (Vercel Analytics çerezsiz, Google Analytics çerez onayı ister)?
+8. **Ölçüm/analitik** kullanılacak mı (çerezsiz ölçüm ya da çerez onayı isteyen Google Analytics)? → ✅ Cloudflare Web Analytics (çerezsiz).
 9. Yapay zekâ tarayıcılarına izin verilsin mi (GEO)?
 10. **Blog:** ilk yazılar kimden, kaç tane, nasıl eklenecek?
 11. **Ekran görüntüleri / demo video:** var mı, demo hesap açılsın mı?
 12. Sitede **kurucu isimleri**, "hakkımızda" bölümü olacak mı?
-13. **Kaynak kod:** ayrı GitHub reposu mu, hangi hesap? Vercel'de aynı ekip ("proformium") mi?
-14. Kök alan adı tercihi: `www.proformium.com` mu `proformium.com` mu asıl adres olacak?
+13. **Kaynak kod:** ayrı GitHub reposu mu, hangi hesap? → ✅ `proformium-web-app/proformium-landing-page-web`, Cloudflare Pages projesi `proformium-web`.
+14. Kök alan adı tercihi: `www.proformium.com` mu `proformium.com` mu asıl adres olacak? → ✅ `www.proformium.com`.

@@ -16,14 +16,14 @@ Hazırlandı: 16.09.2026 · Kararlar: `Soru Cevapları.md` ve `Soru Cevapları- 
 | Pro butonu | `#iletisim` bölümüne (destek@proformium.com); form yok, ileride n8n |
 | İletişim | Sadece e-posta. WhatsApp ve canlı destek/chatbot ileride |
 | Bildirim ifadesi | "Müşteri açınca uygulamada anında görürsünüz; WhatsApp bildirimleri yakında" (push yok, vaat edilmez) |
-| Analitik | Vercel Web Analytics (çerezsiz, çerez banner'ı gerekmez) |
+| Analitik | Cloudflare Web Analytics (çerezsiz, çerez banner'ı gerekmez; Cloudflare panelinden açılır, kodda bir şey yok) |
 | GEO | robots.txt'te yapay zekâ tarayıcılarına izin, `llms.txt` |
 | Blog | `Blog/` klasöründeki `.md` + görsel → `content/blog/` altında MDX'e dönüştürülür; ilk yazı hazır |
 | Görseller | Hero ve nasıl çalışır bölümünde `Uygulama ekran dashboard görüntüsü.png` (WebP'ye çevrilir); Stitch'teki geçici Google görselleri kaldırılır |
 | Logo | `marka/logo-sembol.svg` + Plus Jakarta Sans "PROFORMIUM" yazısı; favicon `marka/uygulama-ikonu-favicon.svg` |
 | Kurucular | Sitede yok |
 | Yasal | KVKK, gizlilik, mesafeli satış, iptal/iade sayfaları sitede; şirket bilgileri `[DOLDURULACAK]` olarak kalır |
-| Kod | GitHub `proformium-web-app/proformium-landing-page-web` (boş), Vercel `proformium/proformium-landing-page-web` |
+| Kod | GitHub `proformium-web-app/proformium-landing-page-web` (`main`) → Cloudflare Pages projesi `proformium-web` (derleme `npx next build`, çıktı `out`). Eski Vercel projesi kullanılmıyor |
 | Adres | Asıl `https://www.proformium.com`; `proformium.com` ona yönlenir |
 
 ## 2. Teknik yapı
@@ -39,7 +39,8 @@ Hazırlandı: 16.09.2026 · Kararlar: `Soru Cevapları.md` ve `Soru Cevapları- 
   - `sitemap.xml`, `robots.txt`, `llms.txt`, `opengraph-image`
 - JSON-LD: Organization, SoftwareApplication (Offer'lar fiyat gizliyken de eklenir mi → hayır, "Yakında" döneminde Offer yazılmaz), FAQPage, BlogPosting, BreadcrumbList.
 - İkonlar: lucide-react; WhatsApp için lucide `MessageCircle` ya da dashboard-icons'tan marka ikonu (kullanım kurallarına uygun); PDF için `FileText`.
-- Vercel Web Analytics paketi (`@vercel/analytics`), statik export ile uyumlu.
+- Ölçüm için paket yok: Cloudflare Web Analytics panelden açılır (02.10.2026'da `@vercel/analytics` kaldırıldı).
+- `public/_headers`: Cloudflare Pages için güvenlik başlıkları ve statik dosyalara uzun önbellek.
 
 ## 3. Adımlar
 
@@ -53,7 +54,7 @@ Hazırlandı: 16.09.2026 · Kararlar: `Soru Cevapları.md` ve `Soru Cevapları- 
 8. **Yasal sayfalar** — uygulamadaki taslak metinler (`../proformium-app/src/lib/legal.ts`, sadece okunur) siteye kopyalanır, şirket alanları `[DOLDURULACAK]`.
 9. **SEO/GEO** — metadata, canonical, OG görseli, sitemap, robots (GPTBot, ClaudeBot, PerplexityBot, Google-Extended izinli), llms.txt, JSON-LD.
 10. **Doğrulama** — `next build` (statik export), tarayıcıda masaüstü ve telefon görünümü (webapp-testing), Lighthouse hız/erişilebilirlik kontrolü, tüm bağlantılar.
-11. **Yayın** — GitHub'a push, Vercel derlemesi, Cloudflare'de `www` ve kök kaydın Vercel'e yönlendirilmesi (Adem yapar, adımlar yazılır; `app` kaydına dokunulmaz), Search Console ve Bing kaydı.
+11. **Yayın** — GitHub'a push → Cloudflare Pages derlemesi. ✅ 02.10.2026: `www.proformium.com` yayında, `proformium.com` 301 ile www'ya yönleniyor (`app` kaydına dokunulmadı). Kalan: Search Console ve Bing kaydı (aşağıda bölüm 6).
 
 ## 4. Kapsam dışı (şimdilik)
 
@@ -69,3 +70,16 @@ Koyu tema, iletişim formu, WhatsApp butonu, canlı destek/chatbot, online ödem
 - Push/WhatsApp bildirimi (n8n).
 - `app.proformium.com/kayit?paket=pro` gibi paket parametresi.
 - Yasal metinlerin tek kaynaktan yönetimi.
+
+## 6. Arama motoru kaydı (03.10.2026)
+
+Durum: adımlar Adem'e yazıldı; hesap işlemleri Adem'in Google / Microsoft / Cloudflare hesaplarında yapılır.
+
+- [ ] Google Search Console: **Domain** türü mülk `proformium.com` (DNS TXT doğrulaması; kayıt Cloudflare DNS'e eklenir).
+      Domain mülkü www, kök ve `app` alt alanını birlikte kapsar.
+- [ ] Site haritası gönderildi: `https://www.proformium.com/sitemap.xml` (7 adres: ana sayfa, blog, 4 yasal sayfa, 1 yazı).
+- [ ] Ana sayfa ve ilk blog yazısı için "URL denetimi → Dizine eklenmesini iste".
+- [ ] Bing Webmaster Tools: "Import from Google Search Console" ile içe aktarıldı; site haritası Bing'de de görünüyor.
+
+Site tarafı hazır (03.10.2026'da canlıda doğrulandı): robots.txt site haritasını gösteriyor, canonical adresler
+`https://www.proformium.com`, kök alan ve http 301 ile www/https'e yönleniyor, olmayan sayfa 404 dönüyor.
