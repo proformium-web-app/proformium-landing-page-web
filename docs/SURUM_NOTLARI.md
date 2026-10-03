@@ -8,7 +8,8 @@ Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 - Canlı kontrol: `www.proformium.com` 200; kök alan ve http 301 ile www/https'e gidiyor; robots.txt ve
   sitemap.xml (7 adres) doğru; canonical `https://www.proformium.com`; olmayan sayfa 404.
 - Google Search Console (Domain mülkü, DNS TXT) ve Bing Webmaster Tools adımları Adem'e yazıldı;
-  durum `PLAN.md` bölüm 6'daki listede işaretlenecek. **Henüz tamamlanmadı.**
+  durum `PLAN.md` bölüm 6'daki listede. Search Console mülkü 03.10.2026'da doğrulandı (TXT kaydı DNS'te, SPF kaydı yerinde);
+  site haritası gönderimi, dizin isteği ve Bing içe aktarma bekliyor.
 
 ## 0.2.2 — 02.10.2026 · Cloudflare Pages'e geçiş
 

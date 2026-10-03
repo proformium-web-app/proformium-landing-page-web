@@ -75,7 +75,7 @@ Koyu tema, iletişim formu, WhatsApp butonu, canlı destek/chatbot, online ödem
 
 Durum: adımlar Adem'e yazıldı; hesap işlemleri Adem'in Google / Microsoft / Cloudflare hesaplarında yapılır.
 
-- [ ] Google Search Console: **Domain** türü mülk `proformium.com` (DNS TXT doğrulaması; kayıt Cloudflare DNS'e eklenir).
+- [x] Google Search Console (03.10.2026 doğrulandı): **Domain** türü mülk `proformium.com` (DNS TXT doğrulaması; kayıt Cloudflare DNS'e eklenir).
       Domain mülkü www, kök ve `app` alt alanını birlikte kapsar.
 - [ ] Site haritası gönderildi: `https://www.proformium.com/sitemap.xml` (7 adres: ana sayfa, blog, 4 yasal sayfa, 1 yazı).
 - [ ] Ana sayfa ve ilk blog yazısı için "URL denetimi → Dizine eklenmesini iste".
