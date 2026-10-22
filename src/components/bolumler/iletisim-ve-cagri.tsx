@@ -61,7 +61,7 @@ export function SonCagri() {
                 Hemen başla
                 <ArrowRight className="size-5" />
               </Link>
-              <span className="text-sm text-rose-200">Deneme bitince tekliflerinizin linki çalışmaya devam eder</span>
+              <span className="max-w-xs text-sm text-rose-200">Beğenmezseniz tüm verilerinizi tek tıkla Excel olarak indirebilirsiniz</span>
             </div>
           </div>
         </div>

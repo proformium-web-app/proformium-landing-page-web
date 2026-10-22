@@ -49,7 +49,7 @@ export default function KvkkPage() {
       <h2>2. İşlenen kişisel veriler</h2>
       <h3>a) Uygulamayı kullanan işletme yetkilisi</h3>
       <ul>
-        <li>Ad soyad, e-posta adresi, telefon</li>
+        <li>Ad soyad, e-posta adresi, telefon (Google ile giriş yapılırsa Google hesabındaki ad ve e-posta)</li>
         <li>İşletme bilgileri: firma adı, adres, vergi dairesi ve numarası, sektör</li>
         <li>Yüklenen görseller: logo, kaşe, imza</li>
         <li>Hesap güvenliği için giriş kayıtları ve oturum bilgileri</li>
@@ -95,15 +95,15 @@ export default function KvkkPage() {
           </tr>
           <tr>
             <th>Cloudflare</th>
-            <td>Bu tanıtım sitesinin barındırılması, alan adı yönlendirmesi ve çerezsiz ziyaret ölçümü</td>
+            <td>Bu tanıtım sitesinin barındırılması, alan adı yönetimi, gelen e-posta yönlendirmesi ve çerezsiz ziyaret ölçümü</td>
           </tr>
           <tr>
             <th>Resend</th>
-            <td>E-posta gönderimi: doğrulama ve şifre yenileme (İrlanda)</td>
+            <td>E-posta gönderimi: doğrulama, şifre yenileme ve kullanıcının e-postayla gönderdiği teklifler (İrlanda)</td>
           </tr>
           <tr>
-            <th>Cloudflare</th>
-            <td>Alan adı yönetimi ve gelen e-posta yönlendirmesi</td>
+            <th>Google</th>
+            <td>Yalnızca kullanıcı &quot;Google ile devam et&quot; ile giriş yaparsa: ad ve e-posta bilgisi</td>
           </tr>
         </tbody>
       </table>

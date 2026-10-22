@@ -11,7 +11,7 @@ type Ozellik = { ikon: LucideIcon; ton: "marka" | "ok" | "amber" | "rose" | "mav
 const ONE_CIKANLAR: Ozellik[] = [
   { ikon: Clock, ton: "marka", baslik: "Zaman damgalı görüntülenme takibi", aciklama: "Müşteriniz teklif linkine tıkladığı an teklif \"Görüntülendi\" olur. Ne zaman açtığını, kaç kez incelediğini ve en son ne zaman baktığını uygulamada görün." },
   { ikon: MessageCircle, ton: "ok", baslik: "Tek tıkla WhatsApp paylaşımı", aciklama: "Ayrı ayrı dosya kaydetme derdi olmadan, hazır mesaj ve müşteriye özel linkle tek dokunuşla WhatsApp'tan paylaşın. E-posta ve PDF de bir tık." },
-  { ikon: Sparkles, ton: "amber", baslik: "Müşteri ve ürün hafızası", aciklama: "Kalem adını yazmaya başlar başlamaz fiyatı ve birimi önerilir. Müşteriyi listeden arayıp seçin, yenisini o an ekleyin." },
+  { ikon: Sparkles, ton: "amber", baslik: "Müşteri ve ürün hafızası", aciklama: "Kalem adını yazmaya başlar başlamaz fiyatı ve birimi önerilir; bu müşteriye en son verdiğiniz fiyat da hatırlatılır. Müşteriyi listeden arayıp seçin, yenisini o an ekleyin." },
   { ikon: PenLine, ton: "rose", baslik: "Dijital kaşe & parmakla imza", aciklama: "Logonuzu ve kaşenizi yükleyin, telefon ekranına parmağınızla imza atın; saniyeler içinde resmi görünümlü, güven veren teklif belgesi." },
   { ikon: History, ton: "mavi", baslik: "Kusursuz revizyon ve sürüm takibi", aciklama: "Rev. 1, Rev. 2 geçmişi korunur. Müşterideki link her zaman en son hali gösterir; müşteri sayfadan revize isteyebilir." },
 ];

@@ -1,14 +1,23 @@
 /** Sıkça sorulan sorular. FAQPage JSON-LD de buradan üretilir. */
 
+import { FIYAT, FREE_SINIRLARI, PRO_AYLIK_KARSILIK, tlBicimle } from "@/content/fiyatlar";
+
 export type Soru = { soru: string; cevap: string };
 
 export const SSS: Soru[] = [
   {
+    soru: "Proformium nedir?",
+    cevap:
+      "Proformium, küçük işletmeler için web tabanlı bir teklif ve proforma hazırlama programıdır. Fiyat teklifini " +
+      "dakikalar içinde hazırlar, WhatsApp'tan ya da e-postayla gönderir, müşteri açınca size gösterir ve takip " +
+      "zamanını hatırlatır. Tedarikçilerinizden de fiyat toplayıp yan yana karşılaştırabilirsiniz.",
+  },
+  {
     soru: "Kurulum ya da uygulama indirmek gerekir mi?",
     cevap:
       "Hayır. Proformium tarayıcıda çalışan bir web uygulamasıdır. Bilgisayardan ya da telefonunuzun " +
-      "tarayıcısından app.proformium.com adresine girip kullanmaya başlarsınız. App Store veya Google Play'den " +
-      "indirilecek bir şey yoktur.",
+      "tarayıcısından app.proformium.com adresine girip kullanmaya başlarsınız. E-postanızla ya da Google " +
+      "hesabınızla kayıt olabilirsiniz; App Store veya Google Play'den indirilecek bir şey yoktur.",
   },
   {
     soru: "Telefonda çalışır mı?",
@@ -29,16 +38,26 @@ export const SSS: Soru[] = [
       "PDF indirebilir. Gelen fiyatlar sizin ekranınızda yan yana görünür. Bir talebe en fazla 10 tedarikçi eklenebilir.",
   },
   {
-    soru: "14 günlük deneme bitince tekliflerim silinir mi?",
+    soru: "Ücretsiz paket ne kadar, Pro ne kadar?",
     cevap:
-      "Hayır. Deneme bitince yeni teklif ve talep oluşturma kapanır; mevcut teklifleriniz, müşteri kayıtlarınız ve " +
-      "müşterilerinize giden linkler çalışmaya devam eder.",
+      `Free paket süresiz ücretsizdir: ayda ${FREE_SINIRLARI.teklifAyda} teklif, ${FREE_SINIRLARI.talepAyda} teklif talebi, ` +
+      `${FREE_SINIRLARI.musteri} müşteri ve ${FREE_SINIRLARI.urun} ürün/hizmet kaydı. Pro sınırsızdır ve yıllık ` +
+      `${tlBicimle(FIYAT.pro.yillik)}'dir (KDV dahil); aylık ${tlBicimle(PRO_AYLIK_KARSILIK)}'ye denk gelir. ` +
+      `Pro'yu ${FIYAT.denemeGun} gün ücretsiz deneyebilirsiniz, kredi kartı gerekmez.`,
+  },
+  {
+    soru: "14 günlük deneme bitince ne olur, tekliflerim silinir mi?",
+    cevap:
+      "Hayır, hiçbir şey silinmez. Deneme bitince hesabınız Free pakete geçer; mevcut teklifleriniz, müşteri " +
+      "kayıtlarınız ve müşterilerinize giden linkler çalışmaya devam eder. Beğenmezseniz Ayarlar'dan tüm " +
+      "verilerinizi tek tıkla Excel olarak indirebilirsiniz.",
   },
   {
     soru: "Proformium e-Fatura keser mi, muhasebe programı mı?",
     cevap:
-      "Hayır. Proformium yalnızca teklif hazırlama, gönderme, takip etme ve tedarikçilerden fiyat toplama işini yapar. " +
-      "e-Fatura, muhasebe, stok ve cari takibi kapsam dışındadır.",
+      "Hayır. Proformium yalnızca teklif ve proforma hazırlama, gönderme, takip etme ve tedarikçilerden fiyat " +
+      "toplama işini yapar. Proforma ve teklif resmi fatura değildir; e-Fatura, e-Arşiv, muhasebe, stok ve cari " +
+      "takibi kapsam dışındadır.",
   },
   {
     soru: "Verilerim nerede saklanıyor?",
@@ -50,6 +69,12 @@ export const SSS: Soru[] = [
     soru: "İstediğim zaman iptal edebilir miyim?",
     cevap:
       "Evet. Aboneliği dilediğiniz zaman iptal edebilirsiniz; ödenmiş dönemin sonuna kadar kullanmaya devam edersiniz. " +
-      "Hesabınızı ve tüm verinizi de uygulamadan kendiniz silebilirsiniz.",
+      "Verilerinizi Excel olarak indirebilir, hesabınızı ve tüm verinizi uygulamadan kendiniz silebilirsiniz.",
+  },
+  {
+    soru: "Bir sorun yaşarsam kime ulaşırım?",
+    cevap:
+      "destek@proformium.com adresine yazabilir ya da uygulamada sol menüdeki Destek'ten talep açabilirsiniz. " +
+      "Talebinizin durumunu Destek → Taleplerim'den takip edersiniz.",
   },
 ];

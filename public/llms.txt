@@ -1,35 +1,38 @@
 # Proformium
 
-> Proformium, müşterilerine teklif veren ve tedarikçilerinden teklif alan küçük işletmeler (KOBİ) için web tabanlı, telefonda da çalışan, çok basit bir teklif uygulamasıdır. Teklifi hazırlar, WhatsApp'tan gönderir, müşteri açınca haber verir, takip zamanını hatırlatır; tedarikçilerden fiyat toplayıp karşılaştırır. Dil: Türkçe. Uygulama: https://app.proformium.com
+> Proformium, müşterilerine teklif veren ve tedarikçilerinden teklif alan küçük işletmeler (KOBİ) için web tabanlı, telefonda da çalışan, çok basit bir teklif ve proforma (e-teklif, e-proforma) uygulamasıdır. Teklifi hazırlar, WhatsApp'tan ya da e-postayla gönderir, müşteri açınca haber verir, takip zamanını hatırlatır; tedarikçilerden fiyat toplayıp karşılaştırır. Dil: Türkçe. Uygulama: https://app.proformium.com
 
 ## Ne yapar
 
-- Teklif Ver: müşteri seç, ürün/hizmet satırları (miktar, birim, fiyat, KDV, iskonto), otomatik toplam ve teklif numarası; logo, kaşe ve imza (telefonda parmakla); tek tıkla WhatsApp, e-posta ya da PDF.
+- Teklif Ver: müşteri seç, ürün/hizmet satırları (miktar, birim, fiyat, KDV, iskonto), otomatik toplam ve teklif numarası; logo, kaşe ve imza (telefonda parmakla).
+- Paylaşım: tek tıkla WhatsApp (işletmenin kendi WhatsApp'ı hazır mesaj ve linkle açılır), Proformium'dan PDF ekli e-posta, kendi e-posta programıyla gönderme ya da PDF indirme.
 - Müşteri linki: müşteri üye olmadan telefonda açar, PDF indirir, revize isteyebilir. Link tahmin edilemez, arama motorlarına kapalı.
 - Görüntülenme takibi: müşteri linki açınca teklif "Görüntülendi" olur; kaç kez ve ne zaman açıldığı görünür (WhatsApp önizlemesi ve işletmenin kendi açışı sayılmaz).
 - Takip hatırlatması: takip zamanı gelince hatırlatılır; "takip ettim", "3 gün ertele", "kazanıldı", "kaybedildi".
 - Revizyon: Rev. 1, Rev. 2 geçmişi saklanır; müşterinin linki hep son hali gösterir.
+- Hafıza: ürün/hizmet adı yazılınca fiyat ve birim önerilir; seçili müşteriye (otomotivde aynı plakaya) en son verilen fiyat hatırlatılır.
 - Teklif İste: kalemleri yaz, sektöre göre tedarikçileri seç (bir talepte en fazla 10), her tedarikçiye kendi linki gider, tedarikçi üye olmadan fiyat yazar; fiyatlar yan yana karşılaştırılır, tek kazanan seçilir ve bilgilendirilir.
-- Müşteri ve ürün hafızası, Excel şablonuyla toplu yükleme, raporlar (onaylanan/reddedilen/bekleyen, dönüşüm oranı, en çok satış yapılan müşteriler).
-- Telefonda tam çalışır; indirilecek mobil uygulama yoktur (App Store / Google Play'de değildir).
+- Excel şablonuyla toplu müşteri ve ürün yükleme; raporlar (onaylanan/reddedilen/bekleyen, dönüşüm oranı, en çok satış yapılan müşteriler).
+- Ayarlar'dan tüm verileri tek tıkla Excel olarak indirme (her pakette); hesabı ve tüm veriyi kendin silme.
+- Kayıt e-posta ve şifreyle ya da Google hesabıyla. Telefonda tam çalışır; indirilecek mobil uygulama yoktur.
 
 ## Ne değildir
 
-- CRM, muhasebe, ERP, stok veya e-Fatura programı değildir; bunlar bilinçli olarak kapsam dışıdır.
-- Telefona anlık (push) bildirim ve otomatik WhatsApp mesajı göndermez; bildirimler uygulama içinde görünür. WhatsApp bildirimi planlanıyor.
+- CRM, muhasebe, ERP, stok, e-Fatura veya e-Arşiv programı değildir. Proforma ve teklif resmi fatura değildir; "e-proforma" ve "e-teklif" GİB'in tanımladığı e-belge türleri değildir.
+- Telefona anlık (push) bildirim ve otomatik WhatsApp mesajı göndermez; bildirimler uygulama içinde görünür.
 - Müşteri teklif sayfasından onay veremez; onayı işletme işaretler.
-- Ekip daveti, Google ile giriş, İngilizce arayüz yoktur.
+- Ekip daveti ve İngilizce arayüz yoktur.
 
-## Paketler
+## Paketler (fiyatlar KDV dahil)
 
-- Free: ücretsiz, ayda 3 teklif ve 3 teklif talebi, 20 müşteri ve 40 ürün/hizmet kaydı, PDF ve müşteri sayfasında "Proformium ile hazırlandı" ibaresi, raporlar yok.
-- Pro: sınırsız teklif ve talep, ibaresiz belge, raporlar; 14 gün ücretsiz deneme, kredi kartı gerekmez. Fiyat henüz açıklanmadı (aylık ve yıllık seçenek olacak; fiyatlar KDV dahil).
-- Deneme bitince mevcut teklifler ve müşteriye giden linkler çalışmaya devam eder.
+- Free: süresiz ücretsiz; her takvim ayında 3 teklif ve 3 teklif talebi, en fazla 5 müşteri ve 10 ürün/hizmet, PDF ve müşteri sayfasında "Proformium ile hazırlandı" ibaresi, raporlar yok.
+- Pro: yıllık 1.600 TL (aylık yaklaşık 133 TL'ye denk); sınırsız teklif ve talep, ibaresiz belge, raporlar.
+- Deneme: Pro 14 gün ücretsiz denenir (işletme başına bir kez), kredi kartı gerekmez. Deneme ya da Pro bitince hesap kapanmaz, Free'ye geçer; teklifler ve müşteriye giden linkler çalışmaya devam eder.
 
 ## Güven
 
 - Sunucu ve veritabanı Frankfurt (Almanya), Avrupa Birliği. Her işletmenin verisi veritabanı düzeyinde ayrı.
-- KVKK aydınlatma metni ve gizlilik politikası mevcut. Kullanıcı hesabını ve tüm verisini kendisi silebilir.
+- KVKK aydınlatma metni, gizlilik politikası, İngilizce Terms of Service ve Privacy Policy mevcut.
 
 ## Sektörler
 
@@ -38,9 +41,16 @@ Otomotiv / oto servis (teklifte plaka alanı), klima / kombi servisi, mobilya / 
 ## Sayfalar
 
 - Ana sayfa: https://www.proformium.com
+- e-Proforma: https://www.proformium.com/e-proforma
+- e-Teklif: https://www.proformium.com/e-teklif
+- Proforma fatura nedir: https://www.proformium.com/proforma-fatura
+- Fiyat teklifi programı: https://www.proformium.com/fiyat-teklifi-programi
+- Teklif takip programı: https://www.proformium.com/teklif-takip-programi
+- Fiyat teklif formu: https://www.proformium.com/teklif-formu
+- WhatsApp'tan teklif gönderme: https://www.proformium.com/whatsapp-teklif-gonderme
+- Tedarikçiden teklif toplama: https://www.proformium.com/tedarikci-teklif-toplama
 - Blog: https://www.proformium.com/blog
-- KVKK: https://www.proformium.com/kvkk
-- Gizlilik: https://www.proformium.com/gizlilik
-- Kayıt (14 gün ücretsiz): https://app.proformium.com/kayit
-- Giriş: https://app.proformium.com/giris
-- Destek: destek@proformium.com
+- Destek: https://www.proformium.com/destek (destek@proformium.com)
+- KVKK: https://www.proformium.com/kvkk · Gizlilik: https://www.proformium.com/gizlilik
+- Terms of Service: https://www.proformium.com/terms · Privacy Policy: https://www.proformium.com/privacy
+- Kayıt: https://app.proformium.com/kayit · Giriş: https://app.proformium.com/giris

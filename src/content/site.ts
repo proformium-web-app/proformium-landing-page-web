@@ -11,12 +11,12 @@ export const SITE = {
   /** Yapay zekâ asistanlarının alıntılayabileceği tek paragraf tanım (GEO). */
   tanim:
     "Proformium, müşterilerine teklif veren ve tedarikçilerinden teklif alan küçük işletmeler için " +
-    "web tabanlı, telefonda da çalışan, çok basit bir teklif uygulamasıdır. Teklifi hazırlar, " +
+    "web tabanlı, telefonda da çalışan, çok basit bir teklif ve proforma (e-teklif, e-proforma) uygulamasıdır. Teklifi hazırlar, " +
     "WhatsApp'tan gönderir, müşteri açınca haber verir, takip zamanını hatırlatır; tedarikçilerden " +
     "fiyat toplayıp karşılaştırır.",
   aciklama:
-    "KOBİ'ler için teklif hazırlama ve takip uygulaması. Teklifi hazırlayın, WhatsApp'tan gönderin, " +
-    "müşteri açınca görün, takibi unutmayın. Tedarikçilerden fiyat toplayıp karşılaştırın. 14 gün ücretsiz.",
+    "Teklif ve proforma hazırlama programı: e-teklifi hazırlayın, WhatsApp'tan gönderin, müşteri açınca görün, " +
+    "takibi unutmayın. KOBİ'ler için, ücretsiz başlayın.",
   destekEposta: "destek@proformium.com",
   kurulusYili: 2026,
 } as const;

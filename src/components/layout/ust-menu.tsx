@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   CircleHelp,
+  LifeBuoy,
   LayoutGrid,
   Lightbulb,
   Menu,
@@ -93,12 +94,12 @@ export function UstMenu() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
-      <Kapsayici className="flex h-20 items-center justify-between gap-4">
+      <Kapsayici className="flex h-20 max-w-[1440px] items-center justify-between gap-4">
         <Link href="/" aria-label="Proformium ana sayfa" className="shrink-0">
           <LogoYatay />
         </Link>
 
-        <nav aria-label="Ana menü" className="hidden items-center gap-5 lg:flex xl:gap-7">
+        <nav aria-label="Ana menü" className="hidden items-center gap-5 xl:flex min-[1440px]:gap-7">
           {MENU.map((m) => {
             const Ikon = IKONLAR[m.href];
             return (
@@ -109,14 +110,14 @@ export function UstMenu() {
                 aria-current={aktifMi(m.href) ? "true" : undefined}
                 className={cn(baglantiSinifi, "whitespace-nowrap")}
               >
-                {Ikon && <Ikon className="hidden size-4 shrink-0 text-slate-400 transition-colors group-hover:text-primary group-data-[aktif=true]:text-primary xl:inline" />}
+                {Ikon && <Ikon className="hidden size-4 shrink-0 text-slate-400 transition-colors group-hover:text-primary group-data-[aktif=true]:text-primary min-[1440px]:inline" />}
                 {m.etiket}
               </Link>
             );
           })}
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-3 lg:flex">
+        <div className="hidden shrink-0 items-center gap-3 xl:flex">
           <Link
             href={UYGULAMA.giris}
             className="whitespace-nowrap px-3 py-2 text-sm font-bold text-slate-700 transition-colors hover:text-primary"
@@ -133,7 +134,7 @@ export function UstMenu() {
 
         <button
           type="button"
-          className="inline-flex size-10 items-center justify-center rounded-xl text-slate-600 transition-colors hover:bg-slate-100 lg:hidden"
+          className="inline-flex size-10 items-center justify-center rounded-xl text-slate-600 transition-colors hover:bg-slate-100 xl:hidden"
           aria-expanded={acik}
           aria-controls="mobil-menu"
           aria-label={acik ? "Menüyü kapat" : "Menüyü aç"}
@@ -146,7 +147,7 @@ export function UstMenu() {
       <div
         id="mobil-menu"
         className={cn(
-          "absolute inset-x-0 top-full h-[calc(100dvh-5rem)] overflow-y-auto border-t border-slate-200 bg-white lg:hidden",
+          "absolute inset-x-0 top-full h-[calc(100dvh-5rem)] overflow-y-auto border-t border-slate-200 bg-white xl:hidden",
           acik ? "block" : "hidden",
         )}
       >
@@ -168,6 +169,14 @@ export function UstMenu() {
               </Link>
             );
           })}
+          <Link
+            href="/destek"
+            onClick={() => setAcik(false)}
+            className="flex items-center gap-3 rounded-xl px-3 py-3 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-primary"
+          >
+            <LifeBuoy className="size-5 text-slate-400" />
+            Destek
+          </Link>
           <div className="mt-3 flex flex-col gap-2 border-t border-slate-200 pt-4">
             <Link
               href={UYGULAMA.kayit}

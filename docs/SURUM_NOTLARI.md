@@ -2,6 +2,34 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.3.0 — 22.10.2026 · Fiyatlar açıldı, İngilizce yasal sayfalar, destek, anahtar kelime sayfaları
+
+Adem'in "Düzeltilmesi Gereken Şeyler" listesi (docs/Adem - Düzeltilmesi Gereken Şeyler.docx):
+- Fiyatlandırma: "Yakında" kalktı. Pro **yıllık 1.600 TL** ("Avantajlı fiyat" rozeti, "aylık sadece 133 TL'ye denk
+  gelir · KDV dahil"); aylık/yıllık anahtarı kaldırıldı. JSON-LD Offer'ları buna göre.
+- İngilizce **/terms** (Terms of Service) ve **/privacy** (Privacy Policy); girişte işletmeci bilgisi (Zeynep TAŞIN,
+  adres, telefon, destek e-postası). Alt bilgide her sayfada bağlantı.
+- Deneme yazan yerlere not: "Beğenmezseniz tüm verilerinizi tek tıkla Excel olarak indirebilirsiniz" (uygulama 0.13.6).
+- **/destek** sayfası; alt bilgide büyük, tıklanabilir destek e-postası kutusu; telefon menüsünde Destek.
+
+Uygulamayla eşitleme (uygulama 0.13.x):
+- Free sınırları 5 müşteri / 10 ürün (önceden sitede 20 / 40 yazıyordu).
+- Deneme/Pro bitince hesap Free'ye geçer (SSS, fiyat notu). Google ile giriş, PDF ekli e-posta, müşteriye son verilen
+  fiyat SSS / özellik / llms.txt metinlerine eklendi. KVKK sağlayıcı tablosu: tekrar eden Cloudflare satırı birleşti,
+  Google ve Resend (teklif e-postaları) eklendi.
+
+SEO / GEO:
+- 8 anahtar kelime sayfası (`src/content/cozumler.ts`, `src/app/[cozum]/page.tsx`): /e-proforma, /e-teklif,
+  /proforma-fatura, /fiyat-teklifi-programi, /teklif-takip-programi, /teklif-formu, /whatsapp-teklif-gonderme,
+  /tedarikci-teklif-toplama. Her birinde tanım paragrafı, SSS (FAQPage), breadcrumb, ilgili sayfalar.
+- Alt bilgide "Çözümler" sütunu (iç bağlantı). Ana sayfa başlığı ve açıklaması "teklif ve proforma hazırlama programı,
+  e-teklif" kelimeleriyle. SSS'ye "Proformium nedir?" ve fiyat sorusu. Site haritası 18 adres. llms.txt yenilendi.
+- Düzeltme: 1280–1440 px ekranlarda üst menü sığmıyor, "Ücretsiz dene" taşıyordu. Tam menü 1280 px'ten,
+  menü ikonları 1440 px'ten itibaren; altında menü düğmesi.
+
+Uygulama tarafında yapılacak (Adem, uygulama sohbeti): `PRO_PRICE` hâlâ aylık 100 / yıllık 1.000 TL; sitedeki
+yıllık 1.600 TL ile eşitlenmeli.
+
 ## 03.10.2026 · Belgeler ve arama motoru kaydı (site kodu değişmedi)
 
 - `SITE_BAGLAMI.md` ve `PLAN.md` Cloudflare Pages'e göre güncellendi (barındırma, ölçüm, yayın adımı, kaynak kod).

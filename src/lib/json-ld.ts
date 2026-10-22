@@ -1,4 +1,4 @@
-import { FIYAT, FIYAT_GOSTER } from "@/content/fiyatlar";
+import { FIYAT } from "@/content/fiyatlar";
 import { SITE, UYGULAMA } from "@/content/site";
 import { SSS } from "@/content/sss";
 
@@ -22,29 +22,21 @@ export function organizationJsonLd() {
 }
 
 function offers() {
-  const free = {
-    "@type": "Offer",
-    name: "Free",
-    price: 0,
-    priceCurrency: FIYAT.paraBirimi,
-    url: UYGULAMA.kayit,
-  };
-  if (!FIYAT_GOSTER) return [free];
   return [
-    free,
-    {
-      "@type": "Offer",
-      name: "Pro (aylık)",
-      price: FIYAT.pro.aylik,
-      priceCurrency: FIYAT.paraBirimi,
-      url: UYGULAMA.kayit,
-    },
+    { "@type": "Offer", name: "Free", price: 0, priceCurrency: FIYAT.paraBirimi, url: UYGULAMA.kayit },
     {
       "@type": "Offer",
       name: "Pro (yıllık)",
       price: FIYAT.pro.yillik,
       priceCurrency: FIYAT.paraBirimi,
       url: UYGULAMA.kayit,
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: FIYAT.pro.yillik,
+        priceCurrency: FIYAT.paraBirimi,
+        unitText: "yıl",
+        valueAddedTaxIncluded: FIYAT.kdvDahil,
+      },
     },
   ];
 }
@@ -65,6 +57,7 @@ export function anaSayfaJsonLd() {
       {
         "@type": "SoftwareApplication",
         name: SITE.ad,
+        alternateName: ["Proformium teklif programı", "Proformium e-teklif"],
         description: SITE.tanim,
         url: UYGULAMA.url,
         applicationCategory: "BusinessApplication",
@@ -80,6 +73,10 @@ export function anaSayfaJsonLd() {
           "Logo, kaşe ve imza",
           "Excel'den toplu müşteri ve ürün yükleme",
           "Raporlar",
+          "E-posta ile PDF ekli teklif gönderme",
+          "Müşteriye son verilen fiyatı hatırlama",
+          "Tüm verileri Excel olarak indirme",
+          "Google ile giriş",
         ],
         publisher: { "@id": ORG_ID },
       },

@@ -25,7 +25,7 @@ const grotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Proformium | KOBİ'ler için akıllı teklif ve takip uygulaması",
+    default: "Proformium | Teklif ve proforma hazırlama programı, e-teklif",
     template: "%s | Proformium",
   },
   description: SITE.aciklama,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     siteName: SITE.ad,
     url: SITE.url,
-    title: "Proformium | KOBİ'ler için akıllı teklif ve takip uygulaması",
+    title: "Proformium | Teklif ve proforma hazırlama programı, e-teklif",
     description: SITE.aciklama,
   },
   twitter: { card: "summary_large_image" },

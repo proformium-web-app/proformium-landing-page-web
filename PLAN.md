@@ -83,3 +83,20 @@ Durum: adımlar Adem'e yazıldı; hesap işlemleri Adem'in Google / Microsoft / 
 
 Site tarafı hazır (03.10.2026'da canlıda doğrulandı): robots.txt site haritasını gösteriyor, canonical adresler
 `https://www.proformium.com`, kök alan ve http 301 ile www/https'e yönleniyor, olmayan sayfa 404 dönüyor.
+
+## 7. Anahtar kelime ve marka görünürlüğü (22.10.2026)
+
+Adem: "proformium yazınca çıkmıyoruz; e-proforma, e-teklif vb. geniş kelime yelpazesinde üst sıralarda olmalıyız."
+
+Durum (22.10.2026): site Google dizininde görünmüyor (`site:proformium.com` boş). Marka aramasında çıkmamanın asıl
+sebebi bu; çözüm Search Console'dan dizine ekleme istemek ve beklemek (kod tarafında engel yok, Googlebot 200 alıyor).
+
+Yapılanlar: 8 anahtar kelime sayfası (`src/content/cozumler.ts`), alt bilgide iç bağlantı sütunu, ana sayfa başlık ve
+açıklaması, SSS'de "Proformium nedir?", güncel llms.txt, 18 adreslik site haritası.
+
+Sıradaki (öneri, Adem onayıyla):
+- [ ] Search Console: site haritasını yeniden gönder, ana sayfa ve 8 sayfa için "Dizine eklenmesini iste".
+- [ ] Bing Webmaster Tools içe aktarma (Bing, ChatGPT aramasının da kaynağı).
+- [ ] Sosyal profiller (LinkedIn şirket sayfası, Instagram) açılınca Organization JSON-LD'ye `sameAs` eklenir.
+- [ ] Ayda 2–4 blog yazısı: proforma fatura örneği, fiyat teklifi nasıl yazılır, sektörel teklif örnekleri.
+- [ ] Sektör sayfaları: oto servis teklif formu, klima montaj teklifi, cam balkon fiyat teklifi, tabela teklif formu.
