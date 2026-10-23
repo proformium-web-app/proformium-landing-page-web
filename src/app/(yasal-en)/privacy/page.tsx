@@ -83,6 +83,13 @@ export default function PrivacyPage() {
             <td>Sending emails: verification, password reset, quotes you choose to send by email (Ireland)</td>
           </tr>
           <tr>
+            <th>Polar / Dodo Payments</th>
+            <td>
+              Merchant of Record for paid plans: payment processing, receipts, taxes and refunds. They receive your name,
+              email, billing details and payment information; we do not see or store your full card number.
+            </td>
+          </tr>
+          <tr>
             <th>Google</th>
             <td>Only if you choose &quot;Continue with Google&quot; to sign in</td>
           </tr>

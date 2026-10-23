@@ -57,3 +57,22 @@ export const OPERATOR = {
 
 /** İngilizce yasal sayfaların son güncelleme tarihi. */
 export const LEGAL_EN_UPDATED_AT = "October 22, 2026";
+
+/**
+ * İade politikası (Adem, 23.10.2026): ödemeyi Merchant of Record (MoR) alır.
+ * Ana tercih Polar (polar.sh), yedek Dodo Payments. Hangisi canlıdaysa AKTIF_MOR onu gösterir.
+ */
+export const IADE = {
+  /** İlk yıllık ödemeden sonra koşulsuz iade süresi (gün) */
+  gun: 14,
+  /** MoR iadeyi onayladıktan sonra bankaya yansıma süresi (iş günü, tahmini) */
+  yansimaIsGunu: "5–10",
+} as const;
+
+export const MOR = {
+  polar: { ad: "Polar", site: "https://polar.sh" },
+  dodo: { ad: "Dodo Payments", site: "https://dodopayments.com" },
+} as const;
+
+/** Şu an ödemeyi alan MoR. Dodo'ya geçilirse "dodo" yapılır; sayfalar kendiliğinden güncellenir. */
+export const AKTIF_MOR: keyof typeof MOR = "polar";

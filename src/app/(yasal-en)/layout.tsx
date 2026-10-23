@@ -6,6 +6,7 @@ import { LEGAL_EN_UPDATED_AT, OPERATOR } from "@/lib/legal";
 const SAYFALAR = [
   { href: "/terms", etiket: "Terms of Service" },
   { href: "/privacy", etiket: "Privacy Policy" },
+  { href: "/refund", etiket: "Refund Policy" },
   { href: "/destek", etiket: "Support (Destek)" },
 ];
 

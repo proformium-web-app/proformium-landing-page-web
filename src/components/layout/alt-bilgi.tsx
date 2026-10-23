@@ -107,6 +107,7 @@ export function AltBilgi() {
           <nav aria-label="English legal pages" lang="en" className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <Link href="/terms" className={baglanti}>Terms of Service</Link>
             <Link href="/privacy" className={baglanti}>Privacy Policy</Link>
+            <Link href="/refund" className={baglanti}>Refund Policy</Link>
             <a href={`mailto:${SITE.destekEposta}`} className={baglanti}>Support: {SITE.destekEposta}</a>
           </nav>
         </div>

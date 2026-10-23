@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LEGAL_COMPANY, LEGAL_PLACEHOLDER } from "@/lib/legal";
+import { IADE, LEGAL_COMPANY, LEGAL_PLACEHOLDER } from "@/lib/legal";
 
 export const metadata: Metadata = {
   title: "İptal ve iade",
@@ -35,12 +35,14 @@ export default function IptalIadePage() {
       <h2>İade</h2>
       <p>
         Dijital hizmetlerde yasal cayma hakkı bulunmamakla birlikte, ödeme yaptıktan sonraki{" "}
-        <strong>{LEGAL_PLACEHOLDER} gün</strong> içinde memnun kalmazsanız ödediğiniz tutarı iade ediyoruz. Gerekçe
+        <strong>{IADE.gun} gün</strong> içinde memnun kalmazsanız ödediğiniz tutarı iade ediyoruz. Gerekçe
         belirtmeniz gerekmez.
       </p>
       <p>
-        İade tutarı, ödemenin yapıldığı kart veya hesaba aktarılır. İşlem {LEGAL_PLACEHOLDER} iş günü içinde
-        başlatılır; bankanızın hesabınıza yansıtma süresi ayrıca değişebilir.
+        Ödemeler, satıcı sıfatıyla ödeme hizmet sağlayıcımız (Merchant of Record: Polar; alternatif olarak Dodo Payments)
+        üzerinden alınır; makbuz ve iade de bu sağlayıcı tarafından düzenlenir. İade talebi en geç 2 iş günü içinde
+        incelenir ve ödemenin yapıldığı kart veya hesaba iade başlatılır; bankanızın hesabınıza yansıtma süresi
+        genellikle {IADE.yansimaIsGunu} iş günüdür. İade yapılınca hesabınız Free pakete geçer, verileriniz silinmez.
       </p>
 
       <h2>Hizmet verilemezse</h2>

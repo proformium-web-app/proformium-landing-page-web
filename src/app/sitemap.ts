@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.url}/iptal-iade`, lastModified: simdi, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE.url}/terms`, lastModified: simdi, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE.url}/privacy`, lastModified: simdi, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${SITE.url}/refund`, lastModified: simdi, changeFrequency: "yearly", priority: 0.2 },
   ];
   // Anahtar kelime sayfaları (e-proforma, e-teklif, …): ana sayfadan sonra en önemlileri.
   const cozumler: MetadataRoute.Sitemap = COZUMLER.map((c) => ({

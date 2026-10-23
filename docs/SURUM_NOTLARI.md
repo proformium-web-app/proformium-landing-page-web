@@ -2,6 +2,14 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.3.2 — 23.10.2026 · Refund Policy (Merchant of Record)
+
+- İngilizce **/refund** (Refund Policy): ödemeyi Merchant of Record alır (ana Polar, yedek Dodo Payments; src/lib/legal.ts içindeki AKTIF_MOR). İlk yıllık ödemeden sonra **14 gün** koşulsuz tam iade; yenilemede kullanılmadıysa 14 gün; iade
+  talebi destek e-postasıyla, 2 iş gününde incelenir; iade sonrası hesap Free'ye geçer, veri silinmez.
+- Terms bölüm 4 ve Privacy sağlayıcı tablosu MoR'a göre güncellendi; Türkçe iptal-iade sayfasında iade süresi 14 gün ve
+  ödeme sağlayıcısı yazıldı. Alt bilgi, site haritası ve llms.txt'e eklendi.
+- Not: İade süresi (14 gün) Claude'un önerisi; Adem değiştirmek isterse src/lib/legal.ts içindeki IADE.gun tek yer.
+
 ## 0.3.1 — 23.10.2026 · Yasal sayfalar, yeni blog yazısı
 
 - Türkçe yasal sayfalarda (KVKK, mesafeli satış, iptal/iade) unvan/ad-soyad ve adres satırları kaldırıldı; veri

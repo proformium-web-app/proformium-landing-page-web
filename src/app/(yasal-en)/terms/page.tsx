@@ -62,12 +62,13 @@ export default function TermsPage() {
         <li>Prices may change; changes never apply to a period you have already paid for.</li>
       </ul>
 
-      <h2>4. Cancellation and refunds</h2>
+      <h2>4. Payments, cancellation and refunds</h2>
       <p>
         You may cancel a paid plan at any time by writing to{" "}
         <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a>. Cancellation takes effect at the end of the period you
-        have paid for and you are not charged for the next period. Refund requests are handled in accordance with our{" "}
-        <Link href="/iptal-iade">Cancellation and Refund Policy</Link> (in Turkish) and applicable consumer law.
+        have paid for and you are not charged for the next period. Payments are processed by our Merchant of Record (Polar;
+        alternatively Dodo Payments), which issues receipts and refunds. You can get a full refund within 14 days of your
+        first annual payment; details are in our <Link href="/refund">Refund Policy</Link>.
       </p>
 
       <h2>5. Your data</h2>

@@ -27,6 +27,7 @@
 
 - Free: süresiz ücretsiz; her takvim ayında 3 teklif ve 3 teklif talebi, en fazla 5 müşteri ve 10 ürün/hizmet, PDF ve müşteri sayfasında "Proformium ile hazırlandı" ibaresi, raporlar yok.
 - Pro: yıllık 1.600 TL (aylık yaklaşık 133 TL'ye denk); sınırsız teklif ve talep, ibaresiz belge, raporlar.
+- Ödeme ve iade: ödemeyi Merchant of Record (Polar; yedek Dodo Payments) alır; ilk yıllık ödemeden sonra 14 gün içinde koşulsuz tam iade.
 - Deneme: Pro 14 gün ücretsiz denenir (işletme başına bir kez), kredi kartı gerekmez. Deneme ya da Pro bitince hesap kapanmaz, Free'ye geçer; teklifler ve müşteriye giden linkler çalışmaya devam eder.
 
 ## Güven
@@ -53,5 +54,5 @@ Otomotiv / oto servis (teklifte plaka alanı), klima / kombi servisi, mobilya / 
 - Fiyat teklifi nasıl hazırlanır: https://www.proformium.com/blog/fiyat-teklifi-nasil-hazirlanir
 - Destek: https://www.proformium.com/destek (destek@proformium.com)
 - KVKK: https://www.proformium.com/kvkk · Gizlilik: https://www.proformium.com/gizlilik
-- Terms of Service: https://www.proformium.com/terms · Privacy Policy: https://www.proformium.com/privacy
+- Terms of Service: https://www.proformium.com/terms · Privacy Policy: https://www.proformium.com/privacy · Refund Policy: https://www.proformium.com/refund
 - Kayıt: https://app.proformium.com/kayit · Giriş: https://app.proformium.com/giris
