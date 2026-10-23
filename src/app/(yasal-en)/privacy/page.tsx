@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EpostaKopyala } from "@/components/ui/eposta-kopyala";
 import Link from "next/link";
 import { OPERATOR } from "@/lib/legal";
 
@@ -121,9 +122,9 @@ export default function PrivacyPage() {
       </p>
       <p>
         Send requests to{" "}
-        <a href={`mailto:${OPERATOR.email}`}>
+        <EpostaKopyala dil="en" className="inline font-semibold text-primary underline underline-offset-4 hover:text-primary-dark">
           <strong>{OPERATOR.email}</strong>
-        </a>
+        </EpostaKopyala>
         . We respond within 30 days at the latest.
       </p>
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EpostaKopyala } from "@/components/ui/eposta-kopyala";
 import { Mail, MapPin, Phone, User } from "lucide-react";
 import { Kapsayici } from "@/components/ui/parcalar";
 import { LEGAL_EN_UPDATED_AT, OPERATOR } from "@/lib/legal";
@@ -49,9 +50,9 @@ export default function EnglishLegalLayout({ children }: LayoutProps<"/">) {
               <Mail className="mt-0.5 size-4 shrink-0 text-primary" />
               <span>
                 <span className="font-semibold text-slate-900">Contact email:</span>{" "}
-                <a href={`mailto:${OPERATOR.email}`} className="font-semibold text-primary underline underline-offset-4">
+                <EpostaKopyala dil="en" className="font-semibold text-primary underline underline-offset-4">
                   {OPERATOR.email}
-                </a>
+                </EpostaKopyala>
               </span>
             </li>
           </ul>

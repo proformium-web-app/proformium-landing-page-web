@@ -2,6 +2,13 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.3.3 — 23.10.2026 · Destek e-postası kopyalanır
+
+- destek@proformium.com bağlantıları (alt bilgi, iletişim bölümü, /destek, İngilizce yasal sayfalar; 11 yer) artık e-posta
+  programını açmıyor: basınca adres panoya kopyalanır ve ekranın altında "destek@proformium.com kopyalandı" bildirimi
+  çıkar (İngilizce sayfalarda "copied"). Kopyalama mümkün değilse e-posta programı açılır.
+  Bileşen: src/components/ui/eposta-kopyala.tsx.
+
 ## 0.3.2 — 23.10.2026 · Refund Policy (Merchant of Record)
 
 - İngilizce **/refund** (Refund Policy): ödemeyi Merchant of Record alır (ana Polar, yedek Dodo Payments; src/lib/legal.ts içindeki AKTIF_MOR). İlk yıllık ödemeden sonra **14 gün** koşulsuz tam iade; yenilemede kullanılmadıysa 14 gün; iade

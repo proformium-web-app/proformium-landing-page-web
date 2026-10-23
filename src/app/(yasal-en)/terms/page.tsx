@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EpostaKopyala } from "@/components/ui/eposta-kopyala";
 import Link from "next/link";
 import { FIYAT, FREE_SINIRLARI } from "@/content/fiyatlar";
 import { OPERATOR } from "@/lib/legal";
@@ -65,7 +66,7 @@ export default function TermsPage() {
       <h2>4. Payments, cancellation and refunds</h2>
       <p>
         You may cancel a paid plan at any time by writing to{" "}
-        <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a>. Cancellation takes effect at the end of the period you
+        <EpostaKopyala dil="en" className="inline font-semibold text-primary underline underline-offset-4 hover:text-primary-dark">{OPERATOR.email}</EpostaKopyala>. Cancellation takes effect at the end of the period you
         have paid for and you are not charged for the next period. Payments are processed by our Merchant of Record (Polar;
         alternatively Dodo Payments), which issues receipts and refunds. You can get a full refund within 14 days of your
         first annual payment; details are in our <Link href="/refund">Refund Policy</Link>.
@@ -117,9 +118,9 @@ export default function TermsPage() {
       <h2>10. Contact</h2>
       <p>
         Questions about these Terms or the Service:{" "}
-        <a href={`mailto:${OPERATOR.email}`}>
+        <EpostaKopyala dil="en" className="inline font-semibold text-primary underline underline-offset-4 hover:text-primary-dark">
           <strong>{OPERATOR.email}</strong>
-        </a>
+        </EpostaKopyala>
         . You can also open a support request from the Support menu inside the app. See our{" "}
         <Link href="/destek">support page</Link>.
       </p>

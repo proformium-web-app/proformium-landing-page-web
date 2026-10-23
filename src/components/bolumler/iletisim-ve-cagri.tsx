@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EpostaKopyala } from "@/components/ui/eposta-kopyala";
 import { ArrowRight, Mail } from "lucide-react";
 import { Kapsayici } from "@/components/ui/parcalar";
 import { FIYAT } from "@/content/fiyatlar";
@@ -19,13 +20,12 @@ export function Iletisim() {
             </h2>
             <p className="mt-2 text-base text-slate-600">Bize yazın, aynı gün dönelim. Kurulum, paket ve fatura soruları için:</p>
           </div>
-          <a
-            href={`mailto:${SITE.destekEposta}`}
+          <EpostaKopyala
             className="inline-flex items-center gap-2.5 rounded-xl bg-primary-50 px-5 py-3.5 text-base font-bold text-primary transition-all hover:scale-[1.02] hover:bg-primary hover:text-white"
           >
             <Mail className="size-5" />
             {SITE.destekEposta}
-          </a>
+          </EpostaKopyala>
         </div>
       </Kapsayici>
     </section>

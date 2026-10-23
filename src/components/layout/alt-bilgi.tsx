@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EpostaKopyala } from "@/components/ui/eposta-kopyala";
 import { LifeBuoy, Mail, MapPin } from "lucide-react";
 import { LogoYatay } from "@/components/brand/logo";
 import { Kapsayici } from "@/components/ui/parcalar";
@@ -27,8 +28,7 @@ export function AltBilgi() {
             </p>
 
             {/* Destek e-postası: açık, tıklanabilir, her sayfada (Adem, 22.10.2026) */}
-            <a
-              href={`mailto:${SITE.destekEposta}`}
+            <EpostaKopyala
               className="mt-6 flex items-center gap-3 rounded-2xl border border-primary/20 bg-primary-50 px-4 py-3 transition-colors hover:border-primary/40"
             >
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary text-white">
@@ -38,7 +38,7 @@ export function AltBilgi() {
                 <span className="block text-xs font-semibold text-slate-500">Destek e-postası</span>
                 <span className="block font-bold text-primary">{SITE.destekEposta}</span>
               </span>
-            </a>
+            </EpostaKopyala>
             <p className="mt-4 flex items-center gap-2.5 text-[15px] text-slate-500">
               <MapPin className="size-4 text-primary" />
               Veriler Avrupa Birliği&apos;nde (Frankfurt)
@@ -108,7 +108,7 @@ export function AltBilgi() {
             <Link href="/terms" className={baglanti}>Terms of Service</Link>
             <Link href="/privacy" className={baglanti}>Privacy Policy</Link>
             <Link href="/refund" className={baglanti}>Refund Policy</Link>
-            <a href={`mailto:${SITE.destekEposta}`} className={baglanti}>Support: {SITE.destekEposta}</a>
+            <EpostaKopyala className={baglanti}>Support: {SITE.destekEposta}</EpostaKopyala>
           </nav>
         </div>
       </Kapsayici>

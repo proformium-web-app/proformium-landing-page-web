@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EpostaKopyala } from "@/components/ui/eposta-kopyala";
 import Link from "next/link";
 import { FIYAT } from "@/content/fiyatlar";
 import { AKTIF_MOR, IADE, MOR, OPERATOR } from "@/lib/legal";
@@ -84,7 +85,7 @@ export default function RefundPage() {
       <h2>5. How to request a refund</h2>
       <ol>
         <li>
-          Email <a href={`mailto:${OPERATOR.email}?subject=Refund%20request`}><strong>{OPERATOR.email}</strong></a> with
+          Email <EpostaKopyala dil="en" className="inline font-semibold text-primary underline underline-offset-4 hover:text-primary-dark"><strong>{OPERATOR.email}</strong></EpostaKopyala> with
           the subject &quot;Refund request&quot;, or reply to the receipt you received from {mor.ad}.
         </li>
         <li>Include the email address of your Proformium account and, if possible, your order or receipt number.</li>
@@ -104,7 +105,7 @@ export default function RefundPage() {
 
       <h2>6. Cancelling your subscription</h2>
       <p>
-        You can cancel at any time by emailing <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a> or through the
+        You can cancel at any time by emailing <EpostaKopyala dil="en" className="inline font-semibold text-primary underline underline-offset-4 hover:text-primary-dark">{OPERATOR.email}</EpostaKopyala> or through the
         customer portal link in your {mor.ad} receipt. Cancellation stops the next renewal; you keep Pro until the end of
         the period you have paid for and are not charged again.
       </p>
@@ -118,9 +119,9 @@ export default function RefundPage() {
       <h2>8. Contact</h2>
       <p>
         Questions about payments or refunds:{" "}
-        <a href={`mailto:${OPERATOR.email}`}>
+        <EpostaKopyala dil="en" className="inline font-semibold text-primary underline underline-offset-4 hover:text-primary-dark">
           <strong>{OPERATOR.email}</strong>
-        </a>
+        </EpostaKopyala>
         . See also our <Link href="/terms">Terms of Service</Link>, <Link href="/privacy">Privacy Policy</Link> and{" "}
         <Link href="/destek">support page</Link>.
       </p>

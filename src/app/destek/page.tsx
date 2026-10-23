@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EpostaKopyala } from "@/components/ui/eposta-kopyala";
 import Link from "next/link";
 import { ArrowRight, Download, LifeBuoy, Mail, MessageSquareText, Trash2 } from "lucide-react";
 import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
@@ -53,8 +54,7 @@ export default function DestekSayfasi() {
           </p>
         </div>
 
-        <a
-          href={`mailto:${SITE.destekEposta}?subject=${encodeURIComponent("Proformium destek")}`}
+        <EpostaKopyala
           className="group mx-auto mt-10 flex max-w-xl flex-col items-center gap-3 rounded-3xl border-2 border-primary bg-white px-6 py-8 text-center shadow-glow transition-transform hover:-translate-y-0.5 sm:flex-row sm:gap-5 sm:text-left"
         >
           <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-white">
@@ -67,7 +67,7 @@ export default function DestekSayfasi() {
             </span>
           </span>
           <ArrowRight className="hidden size-6 text-primary sm:block" />
-        </a>
+        </EpostaKopyala>
 
         <p className="mt-4 text-center text-sm text-slate-500">
           Yazarken işletme adınızı ve sorunu kısaca anlatın; ekran görüntüsü eklerseniz daha hızlı çözeriz.
