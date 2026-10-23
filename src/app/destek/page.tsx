@@ -11,7 +11,7 @@ import { breadcrumbJsonLd } from "@/lib/json-ld";
 export const metadata: Metadata = {
   title: "Destek ve iletişim",
   description:
-    "Proformium destek: sorun yaşarsanız destek@proformium.com adresine yazın ya da uygulamadaki Destek menüsünden talep açın.",
+    "Proformium destek: sorun yaşarsanız info@proformium.com adresine yazın ya da uygulamadaki Destek menüsünden talep açın.",
   alternates: { canonical: "/destek" },
 };
 

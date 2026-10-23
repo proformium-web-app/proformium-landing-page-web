@@ -2,6 +2,11 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.3.4 — 23.10.2026 · Sitenin iletişim adresi info@proformium.com
+
+- Sitedeki tüm destek@proformium.com geçişleri info@proformium.com oldu (Adem): alt bilgi, iletişim bölümü, /destek,
+  SSS, KVKK/yasal sayfalar, İngilizce Terms/Privacy/Refund, JSON-LD, llms.txt. Kopyala-bildirim davranışı aynı.
+
 ## 0.3.3 — 23.10.2026 · Destek e-postası kopyalanır
 
 - destek@proformium.com bağlantıları (alt bilgi, iletişim bölümü, /destek, İngilizce yasal sayfalar; 11 yer) artık e-posta

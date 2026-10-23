@@ -52,7 +52,7 @@ Otomotiv / oto servis (teklifte plaka alanı), klima / kombi servisi, mobilya / 
 - Tedarikçiden teklif toplama: https://www.proformium.com/tedarikci-teklif-toplama
 - Blog: https://www.proformium.com/blog
 - Fiyat teklifi nasıl hazırlanır: https://www.proformium.com/blog/fiyat-teklifi-nasil-hazirlanir
-- Destek: https://www.proformium.com/destek (destek@proformium.com)
+- Destek: https://www.proformium.com/destek (info@proformium.com)
 - KVKK: https://www.proformium.com/kvkk · Gizlilik: https://www.proformium.com/gizlilik
 - Terms of Service: https://www.proformium.com/terms · Privacy Policy: https://www.proformium.com/privacy · Refund Policy: https://www.proformium.com/refund
 - Kayıt: https://app.proformium.com/kayit · Giriş: https://app.proformium.com/giris

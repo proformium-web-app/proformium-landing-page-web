@@ -74,7 +74,7 @@ export const SSS: Soru[] = [
   {
     soru: "Bir sorun yaşarsam kime ulaşırım?",
     cevap:
-      "destek@proformium.com adresine yazabilir ya da uygulamada sol menüdeki Destek'ten talep açabilirsiniz. " +
+      "info@proformium.com adresine yazabilir ya da uygulamada sol menüdeki Destek'ten talep açabilirsiniz. " +
       "Talebinizin durumunu Destek → Taleplerim'den takip edersiniz.",
   },
 ];

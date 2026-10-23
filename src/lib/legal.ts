@@ -29,7 +29,7 @@ export const LEGAL_COMPANY: LegalCompany = {
   taxNumber: LEGAL_PLACEHOLDER,
   mersis: LEGAL_PLACEHOLDER,
   phone: LEGAL_PLACEHOLDER,
-  email: "destek@proformium.com",
+  email: "info@proformium.com",
   website: "https://www.proformium.com",
 };
 
@@ -52,7 +52,7 @@ export const OPERATOR = {
   address: "Tahtakale Mahallesi, Çuha Çiçeği Sokak No:8, 34488 Avcılar/İstanbul, Türkiye",
   phone: "+90 537 550 11 88",
   phoneHref: "tel:+905375501188",
-  email: "destek@proformium.com",
+  email: "info@proformium.com",
 } as const;
 
 /** İngilizce yasal sayfaların son güncelleme tarihi. */

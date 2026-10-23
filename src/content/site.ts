@@ -17,7 +17,7 @@ export const SITE = {
   aciklama:
     "Teklif ve proforma hazırlama programı: e-teklifi hazırlayın, WhatsApp'tan gönderin, müşteri açınca görün, " +
     "takibi unutmayın. KOBİ'ler için, ücretsiz başlayın.",
-  destekEposta: "destek@proformium.com",
+  destekEposta: "info@proformium.com",
   kurulusYili: 2026,
 } as const;
 
