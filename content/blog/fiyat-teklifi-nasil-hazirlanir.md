@@ -2,6 +2,8 @@
 baslik: "Fiyat Teklifi Nasıl Hazırlanır? Müşteriyi İkna Eden Teklifin 8 Adımı"
 aciklama: "Fiyat teklifi nasıl hazırlanır, teklif formunda neler olmalı, gönderdikten sonra ne yapılmalı? Küçük işletmeler için adım adım rehber ve örnek teklif yapısı."
 tarih: 2026-10-23
+gorsel: /blog/fiyat-teklifi-nasil-hazirlanir.webp
+gorselAlt: "Masada hesap makinesiyle fiyat hesaplayan ve not defterine kalemle not alan işletme sahibi; arkada dizüstü bilgisayar"
 yazar: Proformium
 ---
 

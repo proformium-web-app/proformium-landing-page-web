@@ -8,7 +8,8 @@ Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
   sorumlusu olarak "Proformium" yazıyor (Adem). Taslak uyarısı artık sadece vergi, MERSİS ve telefon için.
 - İngilizce Terms/Privacy işletmeci adresi: Tahtakale Mahallesi, Çuha Çiçeği Sokak No:8, 34488 Avcılar/İstanbul.
 - Mesafeli satış: hizmet Pro paketi, süre 1 yıl, bedel 1.600 TL (KDV dahil, yıllık peşin). Paket yalnızca yıllık (Adem).
-- Yeni blog yazısı: /blog/fiyat-teklifi-nasil-hazirlanir (görsel Adem'den gelecek). llms.txt'e eklendi.
+- Yeni blog yazısı: /blog/fiyat-teklifi-nasil-hazirlanir, görseli Adem'den (hesap makinesi ve not defteri, WebP 44 KB). llms.txt'e eklendi.
+- scripts/gorsel-donustur.mjs: kaynağı silinmiş görselleri atlıyor (eskiden hata verip duruyordu).
 
 ## 0.3.0 — 22.10.2026 · Fiyatlar açıldı, İngilizce yasal sayfalar, destek, anahtar kelime sayfaları
 

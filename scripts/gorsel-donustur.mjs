@@ -3,6 +3,7 @@
 // Kaynaklar proje kökündeki dosyalar; çıktı public/ altına yazılır.
 import sharp from "sharp";
 import { mkdir } from "node:fs/promises";
+import { existsSync } from "node:fs";
 
 const isler = [
   {
@@ -41,12 +42,22 @@ const isler = [
     hedef: "public/gorseller/foto-grafik-el.webp",
     genislik: 1600,
   },
+  {
+    kaynak: "content/blog/fiyat-teklifi-nasil-hazirlanir.jpg",
+    hedef: "public/blog/fiyat-teklifi-nasil-hazirlanir.webp",
+    genislik: 1400,
+  },
 ];
 
 await mkdir("public/gorseller", { recursive: true });
 await mkdir("public/blog", { recursive: true });
 
 for (const is of isler) {
+  // Kaynak taşınmış/silinmişse atla (public/ altındaki WebP zaten duruyor).
+  if (!existsSync(is.kaynak)) {
+    console.log(`atlandı (kaynak yok): ${is.kaynak}`);
+    continue;
+  }
   const bilgi = await sharp(is.kaynak)
     .resize({ width: is.genislik, withoutEnlargement: true })
     .webp({ quality: 82 })
