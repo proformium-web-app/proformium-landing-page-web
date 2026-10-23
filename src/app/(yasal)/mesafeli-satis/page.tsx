@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FIYAT, tlBicimle } from "@/content/fiyatlar";
 import { LEGAL_COMPANY, LEGAL_PLACEHOLDER } from "@/lib/legal";
 
 export const metadata: Metadata = {
@@ -23,14 +24,6 @@ export default function MesafeliSatisPage() {
       <h3>Satıcı</h3>
       <table>
         <tbody>
-          <tr>
-            <th>Unvan</th>
-            <td>{c.title}</td>
-          </tr>
-          <tr>
-            <th>Adres</th>
-            <td>{c.address}</td>
-          </tr>
           <tr>
             <th>Vergi dairesi / no</th>
             <td>
@@ -65,15 +58,15 @@ export default function MesafeliSatisPage() {
         <tbody>
           <tr>
             <th>Hizmet</th>
-            <td>{c.brand} abonelik ({LEGAL_PLACEHOLDER} paketi)</td>
+            <td>{c.brand} abonelik (Pro paketi)</td>
           </tr>
           <tr>
             <th>Abonelik süresi</th>
-            <td>{LEGAL_PLACEHOLDER} (aylık / yıllık)</td>
+            <td>1 yıl (yıllık abonelik)</td>
           </tr>
           <tr>
             <th>Bedel (KDV dahil)</th>
-            <td>{LEGAL_PLACEHOLDER}</td>
+            <td>{tlBicimle(FIYAT.pro.yillik)} (KDV dahil, yıllık peşin)</td>
           </tr>
           <tr>
             <th>Ödeme şekli</th>

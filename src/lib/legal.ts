@@ -37,18 +37,19 @@ export const LEGAL_COMPANY: LegalCompany = {
 export const LEGAL_UPDATED_AT = "16.09.2026";
 
 /** Firma bilgileri tamamlandı mı? Tamamlanmadıysa sayfalarda uyarı gösterilir. */
-export const legalCompanyReady = !Object.values(LEGAL_COMPANY).some(
+export const legalCompanyReady = ![LEGAL_COMPANY.taxOffice, LEGAL_COMPANY.taxNumber, LEGAL_COMPANY.mersis, LEGAL_COMPANY.phone].some(
   (value) => value === LEGAL_PLACEHOLDER,
-);
+); // Unvan ve adres Türkçe sayfalarda gösterilmiyor (Adem, 23.10.2026)
 
 /**
  * Hizmeti işleten kişi (Adem, 22.10.2026 — "Düzeltilmesi Gereken Şeyler"). İngilizce Terms of Service ve
- * Privacy Policy sayfalarının girişinde gösterilir. Adres Adem'in yazdığı haliyle; resmi yazımı kontrol edilmeli.
+ * Privacy Policy sayfalarının girişinde gösterilir. Adres 23.10.2026'da güncellendi (Adem).
+ * Türkçe yasal sayfalarda ad-soyad ve adres GÖSTERİLMEZ (Adem, 23.10.2026).
  */
 export const OPERATOR = {
   name: "Zeynep TAŞIN",
   role: "Individual Developer / Sole Proprietor",
-  address: "Camili Mah. 1616 Cad. No: 3C, İç Kapı No: 2, Adapazarı / Sakarya, Türkiye",
+  address: "Tahtakale Mahallesi, Çuha Çiçeği Sokak No:8, 34488 Avcılar/İstanbul, Türkiye",
   phone: "+90 537 550 11 88",
   phoneHref: "tel:+905375501188",
   email: "destek@proformium.com",

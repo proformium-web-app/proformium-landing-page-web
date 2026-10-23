@@ -18,21 +18,13 @@ export default function KvkkPage() {
     <>
       <h1 className="text-2xl font-bold text-ink sm:text-3xl">KVKK Aydınlatma Metni</h1>
       <p>
-        6698 sayılı Kişisel Verilerin Korunması Kanunu (&quot;KVKK&quot;) uyarınca, veri sorumlusu sıfatıyla {c.title}{" "}
+        6698 sayılı Kişisel Verilerin Korunması Kanunu (&quot;KVKK&quot;) uyarınca, veri sorumlusu sıfatıyla {c.brand}{" "}
         tarafından hangi kişisel verilerin, hangi amaçla işlendiğini aşağıda bulabilirsiniz.
       </p>
 
       <h2>1. Veri sorumlusu</h2>
       <table>
         <tbody>
-          <tr>
-            <th>Unvan</th>
-            <td>{c.title}</td>
-          </tr>
-          <tr>
-            <th>Adres</th>
-            <td>{c.address}</td>
-          </tr>
           <tr>
             <th>Vergi dairesi / no</th>
             <td>

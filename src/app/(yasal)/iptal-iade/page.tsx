@@ -63,10 +63,6 @@ export default function IptalIadePage() {
       <table>
         <tbody>
           <tr>
-            <th>Unvan</th>
-            <td>{c.title}</td>
-          </tr>
-          <tr>
             <th>E-posta</th>
             <td>{c.email}</td>
           </tr>
