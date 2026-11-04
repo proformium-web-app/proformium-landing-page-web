@@ -34,7 +34,7 @@ export const LEGAL_COMPANY: LegalCompany = {
 };
 
 /** Sayfalarda "son güncelleme" olarak gösterilir. */
-export const LEGAL_UPDATED_AT = "16.09.2026";
+export const LEGAL_UPDATED_AT = "04.11.2026";
 
 /** Firma bilgileri tamamlandı mı? Tamamlanmadıysa sayfalarda uyarı gösterilir. */
 export const legalCompanyReady = ![LEGAL_COMPANY.taxOffice, LEGAL_COMPANY.taxNumber, LEGAL_COMPANY.mersis, LEGAL_COMPANY.phone].some(
@@ -56,14 +56,14 @@ export const OPERATOR = {
 } as const;
 
 /** İngilizce yasal sayfaların son güncelleme tarihi. */
-export const LEGAL_EN_UPDATED_AT = "October 22, 2026";
+export const LEGAL_EN_UPDATED_AT = "November 4, 2026";
 
 /**
  * İade politikası (Adem, 23.10.2026): ödemeyi Merchant of Record (MoR) alır.
  * Ana tercih Polar (polar.sh), yedek Dodo Payments. Hangisi canlıdaysa AKTIF_MOR onu gösterir.
  */
 export const IADE = {
-  /** İlk yıllık ödemeden sonra koşulsuz iade süresi (gün) */
+  /** İade süresi (gün): ilk yıllık ödemeden sonra koşulsuz; yenilemede, yenilemeden sonra Pro kullanılmadıysa. */
   gun: 14,
   /** MoR iadeyi onayladıktan sonra bankaya yansıma süresi (iş günü, tahmini) */
   yansimaIsGunu: "5–10",

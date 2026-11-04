@@ -65,11 +65,13 @@ export default function TermsPage() {
 
       <h2>4. Payments, cancellation and refunds</h2>
       <p>
-        You may cancel a paid plan at any time by writing to{" "}
+        You may cancel a paid plan at any time in the app (Settings → Plan → Manage subscription), through the link in
+        your payment receipt, or by writing to{" "}
         <EpostaKopyala dil="en" className="inline font-semibold text-primary underline underline-offset-4 hover:text-primary-dark">{OPERATOR.email}</EpostaKopyala>. Cancellation takes effect at the end of the period you
         have paid for and you are not charged for the next period. Payments are processed by our Merchant of Record (Polar;
         alternatively Dodo Payments), which issues receipts and refunds. You can get a full refund within 14 days of your
-        first annual payment; details are in our <Link href="/refund">Refund Policy</Link>.
+        first annual payment; to request one, go to Settings → Plan → Manage subscription and click &quot;Request
+        refund&quot; next to your payment. Details are in our <Link href="/refund">Refund Policy</Link>.
       </p>
 
       <h2>5. Your data</h2>

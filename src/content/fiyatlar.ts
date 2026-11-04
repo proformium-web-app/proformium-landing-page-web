@@ -3,9 +3,7 @@
  * - 15–16.09.2026: Free / Pro, KDV dahil, aylık sayım takvim ayına göre.
  * - 22.10.2026 (Adem, "Düzeltilmesi Gereken Şeyler"): "Yakında" kalktı; Pro yıllık 1.600 TL, "aylık sadece 133 TL".
  * - Free sınırları uygulamayla aynı (proformium-app/src/lib/plan.ts FREE_LIMITS, 0.13.0).
- *
- * DİKKAT: Uygulamadaki PRO_PRICE hâlâ aylık 100 / yıllık 1.000 TL (22.10.2026). Adem uygulama sohbetinde
- * güncelleyene kadar uygulama ekranı ile site farklı fiyat gösterir.
+ * - 04.11.2026: Uygulama (0.15.8) da yıllık 1.600 TL; Pro'ya geçiş uygulamada kartla (Polar).
  */
 
 export const FIYAT_GOSTER = true;

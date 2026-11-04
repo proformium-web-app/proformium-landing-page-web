@@ -85,7 +85,10 @@ export default function RefundPage() {
       <h2>5. How to request a refund</h2>
       <ol>
         <li>
-          Email <EpostaKopyala dil="en" className="inline font-semibold text-primary underline underline-offset-4 hover:text-primary-dark"><strong>{OPERATOR.email}</strong></EpostaKopyala> with
+          In the app: Settings → Plan → Manage subscription → &quot;Request refund&quot; next to your payment.
+        </li>
+        <li>
+          Or email <EpostaKopyala dil="en" className="inline font-semibold text-primary underline underline-offset-4 hover:text-primary-dark"><strong>{OPERATOR.email}</strong></EpostaKopyala> with
           the subject &quot;Refund request&quot;, or reply to the receipt you received from {mor.ad}.
         </li>
         <li>Include the email address of your Proformium account and, if possible, your order or receipt number.</li>
@@ -98,6 +101,7 @@ export default function RefundPage() {
           your bank.
         </li>
       </ol>
+      <p>Requesting a refund stops the automatic renewal of your subscription.</p>
       <p>
         When a refund is issued, your account moves to the Free plan. Your quotes, customer records and the links you sent
         to customers keep working.
@@ -105,7 +109,7 @@ export default function RefundPage() {
 
       <h2>6. Cancelling your subscription</h2>
       <p>
-        You can cancel at any time by emailing <EpostaKopyala dil="en" className="inline font-semibold text-primary underline underline-offset-4 hover:text-primary-dark">{OPERATOR.email}</EpostaKopyala> or through the
+        You can cancel at any time in the app (Settings → Plan → Manage subscription), by emailing <EpostaKopyala dil="en" className="inline font-semibold text-primary underline underline-offset-4 hover:text-primary-dark">{OPERATOR.email}</EpostaKopyala>, or through the
         customer portal link in your {mor.ad} receipt. Cancellation stops the next renewal; you keep Pro until the end of
         the period you have paid for and are not charged again.
       </p>

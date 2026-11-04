@@ -68,8 +68,17 @@ export const SSS: Soru[] = [
   {
     soru: "İstediğim zaman iptal edebilir miyim?",
     cevap:
-      "Evet. Aboneliği dilediğiniz zaman iptal edebilirsiniz; ödenmiş dönemin sonuna kadar kullanmaya devam edersiniz. " +
+      "Evet. Aboneliği dilediğiniz zaman uygulamada Ayarlar → Paket → Aboneliği yönet'ten iptal edebilirsiniz; " +
+      "ödenmiş dönemin sonuna kadar Pro'yu kullanmaya devam edersiniz, dönem bitince hesabınız Free'ye geçer. " +
       "Verilerinizi Excel olarak indirebilir, hesabınızı ve tüm verinizi uygulamadan kendiniz silebilirsiniz.",
+  },
+  {
+    soru: "Nasıl ödeme yaparım, iade alabilir miyim?",
+    cevap:
+      "Pro'ya uygulamada Ayarlar → Paket → Pro'ya geç ile kredi kartı veya banka kartıyla geçersiniz; ödemeyi satıcı " +
+      "sıfatıyla Polar (Merchant of Record) alır, makbuzu da Polar düzenler. İlk yıllık ödemeden sonraki 14 gün içinde " +
+      "gerekçe göstermeden tam iade alabilirsiniz. Yenileme ödemesinde, yenilemeden sonra Pro'yu kullanmadıysanız 14 gün " +
+      "içinde tam iade yapılır. İadeyi Ayarlar → Paket → Aboneliği yönet → İade talep et'ten isteyebilirsiniz.",
   },
   {
     soru: "Bir sorun yaşarsam kime ulaşırım?",

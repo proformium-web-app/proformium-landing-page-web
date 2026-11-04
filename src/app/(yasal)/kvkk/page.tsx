@@ -94,6 +94,13 @@ export default function KvkkPage() {
             <td>E-posta gönderimi: doğrulama, şifre yenileme ve kullanıcının e-postayla gönderdiği teklifler (İrlanda)</td>
           </tr>
           <tr>
+            <th>Polar</th>
+            <td>
+              Ücretli paket ödemeleri (Merchant of Record): kartla tahsilat, makbuz/fatura, vergi ve iade. Kart bilgisi
+              Proformium&apos;a gelmez.
+            </td>
+          </tr>
+          <tr>
             <th>Google</th>
             <td>Yalnızca kullanıcı &quot;Google ile devam et&quot; ile giriş yaparsa: ad ve e-posta bilgisi</td>
           </tr>

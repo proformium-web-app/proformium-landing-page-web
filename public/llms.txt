@@ -27,7 +27,7 @@
 
 - Free: süresiz ücretsiz; her takvim ayında 3 teklif ve 3 teklif talebi, en fazla 5 müşteri ve 10 ürün/hizmet, PDF ve müşteri sayfasında "Proformium ile hazırlandı" ibaresi, raporlar yok.
 - Pro: yıllık 1.600 TL (aylık yaklaşık 133 TL'ye denk); sınırsız teklif ve talep, ibaresiz belge, raporlar.
-- Ödeme ve iade: ödemeyi Merchant of Record (Polar; yedek Dodo Payments) alır; ilk yıllık ödemeden sonra 14 gün içinde koşulsuz tam iade.
+- Ödeme ve iade: Pro'ya uygulamada (Ayarlar → Paket → Pro'ya geç) kartla geçilir; ödemeyi Merchant of Record olarak Polar alır. İlk yıllık ödemeden sonra 14 gün içinde koşulsuz tam iade; yenilemede, yenilemeden sonra Pro kullanılmadıysa 14 gün içinde tam iade. İade ve iptal: Ayarlar → Paket → Aboneliği yönet.
 - Deneme: Pro 14 gün ücretsiz denenir (işletme başına bir kez), kredi kartı gerekmez. Deneme ya da Pro bitince hesap kapanmaz, Free'ye geçer; teklifler ve müşteriye giden linkler çalışmaya devam eder.
 
 ## Güven

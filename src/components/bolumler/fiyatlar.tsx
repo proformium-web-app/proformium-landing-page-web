@@ -106,10 +106,10 @@ export function Fiyatlar() {
                     {VERI_INDIRME_NOTU}
                   </p>
                   <Link
-                    href="/destek"
+                    href={UYGULAMA.url}
                     className="text-center text-sm font-semibold text-primary underline-offset-4 hover:underline"
                   >
-                    Pro&apos;ya geçmek için bize yazın
+                    Pro&apos;ya uygulamadan kartla geçebilirsiniz
                   </Link>
                 </div>
               ) : (

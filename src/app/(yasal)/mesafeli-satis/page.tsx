@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { FIYAT, tlBicimle } from "@/content/fiyatlar";
-import { LEGAL_COMPANY, LEGAL_PLACEHOLDER } from "@/lib/legal";
+import { AKTIF_MOR, IADE, LEGAL_COMPANY, MOR } from "@/lib/legal";
 
 export const metadata: Metadata = {
   title: "Mesafeli satış sözleşmesi",
@@ -10,11 +10,12 @@ export const metadata: Metadata = {
 
 /**
  * TASLAK. Ödeme alınmadan önce mali müşavir/avukat onayından geçmeli;
- * PayTR / iyzico başvurusunda bu sayfa kontrol ediliyor.
- * Fiyat ve abonelik şartları netleşince [DOLDURULACAK] yerleri doldurulmalı.
+ * Ödemeyi Merchant of Record olarak Polar alır (yedek Dodo Payments; src/lib/legal.ts AKTIF_MOR).
+ * İade kuralları uygulamadaki /iptal-iade ile aynı (uygulama 0.15.8, 04.11.2026).
  */
 export default function MesafeliSatisPage() {
   const c = LEGAL_COMPANY;
+  const mor = MOR[AKTIF_MOR];
 
   return (
     <>
@@ -70,7 +71,11 @@ export default function MesafeliSatisPage() {
           </tr>
           <tr>
             <th>Ödeme şekli</th>
-            <td>{LEGAL_PLACEHOLDER}</td>
+            <td>
+              Kredi kartı / banka kartı ile online ödeme. Ödeme, satıcı sıfatıyla ödeme hizmet sağlayıcısı {mor.ad}{" "}
+              (Merchant of Record) üzerinden alınır; makbuz / fatura bu sağlayıcı tarafından düzenlenir ve banka
+              ekstresinde sağlayıcının adı görünebilir.
+            </td>
           </tr>
         </tbody>
       </table>
@@ -89,15 +94,19 @@ export default function MesafeliSatisPage() {
       <p>
         6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği&apos;nin 15/1-ğ maddesi
         uyarınca, elektronik ortamda anında ifa edilen hizmetlerde cayma hakkı bulunmamaktadır. Buna rağmen {c.brand},
-        alıcı memnun kalmazsa {LEGAL_PLACEHOLDER} gün içinde iade imkânı tanır; ayrıntılar iptal ve iade sayfasındadır.
+        şu iade imkânını tanır: ilk yıllık ödemeden sonraki {IADE.gun} gün içinde gerekçe göstermeden tam iade; yenileme
+        ödemesinde, yenilemeden sonraki {IADE.gun} gün içinde ve yenilemeden sonra Pro paketi kullanılmadıysa tam iade.
+        Bu sürelerden sonra iade yapılmaz. Ayrıntılar iptal ve iade sayfasındadır.
       </p>
       <p>Ayrıca hizmet, ücretsiz deneme süresiyle sunulur; alıcı satın almadan önce hizmeti deneyebilir.</p>
 
       <h2>6. Aboneliğin sona ermesi</h2>
       <p>
-        Alıcı aboneliğini dilediği zaman iptal edebilir. İptal, ödenmiş dönemin sonunda geçerli olur; dönem sonuna
-        kadar hizmet kullanılmaya devam edilir. Abonelik sona erdiğinde alıcının verileri {LEGAL_PLACEHOLDER} süreyle
-        saklanır, bu süre içinde dışa aktarılabilir.
+        Abonelik, iptal edilmedikçe her yıl kendiliğinden yenilenir. Alıcı aboneliğini dilediği zaman uygulamada
+        Ayarlar → Paket → &quot;Aboneliği yönet&quot; ekranından, {mor.ad} makbuzundaki bağlantıdan ya da {c.email}{" "}
+        adresine yazarak iptal edebilir. İptal, ödenmiş dönemin sonunda geçerli olur; dönem sonuna kadar hizmet
+        kullanılmaya devam edilir, ardından hesap Free pakete geçer. Abonelik sona erdiğinde alıcının verileri silinmez;
+        Ayarlar → Tüm verileri indir ile her zaman Excel olarak dışa aktarılabilir.
       </p>
 
       <h2>7. Satıcının yükümlülükleri</h2>

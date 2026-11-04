@@ -2,6 +2,20 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.3.5 — 04.11.2026 · Uygulamayla eşitleme: kartla ödeme (Polar), iade kuralları
+
+Uygulama 0.15.8'deki metin esas alındı:
+- Fiyat kartı: "Pro'ya geçmek için bize yazın" yerine "Pro'ya uygulamadan kartla geçebilirsiniz" (app.proformium.com).
+- Türkçe İptal ve İade baştan yazıldı: Free süresiz, deneme işletme başına bir kez; fiyat ve ödeme (yıllık 1.600 TL,
+  Polar MoR, otomatik yenileme); iade ilk ödemede 14 gün koşulsuz, yenilemede Pro kullanılmadıysa 14 gün; iade nasıl
+  istenir (Ayarlar → Paket → Aboneliği yönet → İade talep et; iade talebi yenilemeyi durdurur); iptal yolları; veriler
+  silinmez, Excel indirme; ters ibraz.
+- Mesafeli satış: ödeme şekli (kart, Polar MoR), cayma maddesinde 14 gün kuralı, iptal/veri maddesi.
+- İngilizce Refund ve Terms: uygulama içi iade ve iptal yolu; "Requesting a refund stops the automatic renewal".
+- KVKK sağlayıcı tablosuna Polar. Güven bölümünden "AB dışına çıkmaz" kalktı.
+- SSS: iptal sorusuna yer, yeni soru "Nasıl ödeme yaparım, iade alabilir miyim?". llms.txt güncellendi.
+- Yasal sayfa tarihleri 04.11.2026; fiyatlar.ts'teki eski PRO_PRICE uyarısı silindi.
+
 ## 0.3.4 — 23.10.2026 · Sitenin iletişim adresi info@proformium.com
 
 - Sitedeki tüm destek@proformium.com geçişleri info@proformium.com oldu (Adem): alt bilgi, iletişim bölümü, /destek,

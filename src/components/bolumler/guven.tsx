@@ -6,7 +6,7 @@ import { Kapsayici } from "@/components/ui/parcalar";
 import { cn } from "@/lib/cn";
 
 const MADDELER: { ikon: LucideIcon; ton: string; baslik: string; aciklama: string }[] = [
-  { ikon: MapPin, ton: "bg-blue-50 text-blue-600", baslik: "Veriler Avrupa Birliği'nde", aciklama: "Sunucu ve veritabanı Frankfurt'ta (Almanya). AB dışına çıkmaz." },
+  { ikon: MapPin, ton: "bg-blue-50 text-blue-600", baslik: "Veriler Avrupa Birliği'nde", aciklama: "Veritabanı ve sunucular Frankfurt'ta (Almanya)." },
   { ikon: Building2, ton: "bg-amber-50 text-amber-600", baslik: "Her işletmenin verisi ayrı", aciklama: "Ayrım veritabanı düzeyinde kuralla sağlanır; bir işletme diğerinin kaydını göremez." },
   { ikon: Link2, ton: "bg-rose-50 text-primary", baslik: "Tahmin edilemez müşteri linki", aciklama: "Teklif linkleri rastgele anahtar içerir, arama motorlarına kapalıdır. Taslaklar linkle açılmaz." },
   { ikon: ShieldCheck, ton: "bg-emerald-50 text-emerald-600", baslik: "KVKK'ya uygun", aciklama: "Aydınlatma metni ve gizlilik politikası açık. Sitede reklam ya da izleme çerezi yok." },
