@@ -6,6 +6,7 @@ import { Kapsayici } from "@/components/ui/parcalar";
 import { COZUMLER } from "@/content/cozumler";
 import { MENU, SITE, UYGULAMA, YASAL_SAYFALAR } from "@/content/site";
 import { LEGAL_COMPANY, LEGAL_PLACEHOLDER } from "@/lib/legal";
+import { version as SURUM } from "../../../package.json";
 
 const baslik = "font-display text-lg font-bold text-slate-900";
 const liste = "mt-5 space-y-3.5 text-[15px] text-slate-500";
@@ -103,7 +104,10 @@ export function AltBilgi() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-slate-200 pt-8 text-[15px] text-slate-400 lg:flex-row lg:items-center lg:justify-between">
-          <p>© {SITE.kurulusYili} {unvan ?? SITE.ad}. Tüm hakları saklıdır.</p>
+          <p>
+            © {SITE.kurulusYili} {unvan ?? SITE.ad}. Tüm hakları saklıdır.{" "}
+            <span className="text-slate-400" title="Site sürümü">· v{SURUM}</span>
+          </p>
           <nav aria-label="English legal pages" lang="en" className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <Link href="/terms" className={baglanti}>Terms of Service</Link>
             <Link href="/privacy" className={baglanti}>Privacy Policy</Link>

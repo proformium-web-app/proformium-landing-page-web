@@ -2,6 +2,11 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.3.7 — 05.11.2026 · Sürüm numarası alt bilgide
+
+- Alt bilgide telif satırının yanında site sürümü (ör. "v0.3.7"); kaynak package.json "version". Her yayında
+  package.json sürümü ve bu dosya birlikte artırılır. Canlıda hangi sürümün olduğu buradan görülür.
+
 ## 0.3.6 — 05.11.2026 · Yeni blog yazısı: tedarikçiden fiyat teklifi
 
 - /blog/tedarikciden-fiyat-teklifi-nasil-alinir: 6 adım, kopyalanabilir teklif isteme yazısı, karşılaştırma tablosu,
