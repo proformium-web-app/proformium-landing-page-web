@@ -47,6 +47,11 @@ const isler = [
     hedef: "public/blog/fiyat-teklifi-nasil-hazirlanir.webp",
     genislik: 1400,
   },
+  {
+    kaynak: "content/blog/tedarikciden-fiyat-teklifi-nasil-alinir.jpg",
+    hedef: "public/blog/tedarikciden-fiyat-teklifi-nasil-alinir.webp",
+    genislik: 1400,
+  },
 ];
 
 await mkdir("public/gorseller", { recursive: true });

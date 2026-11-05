@@ -2,6 +2,12 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.3.6 — 05.11.2026 · Yeni blog yazısı: tedarikçiden fiyat teklifi
+
+- /blog/tedarikciden-fiyat-teklifi-nasil-alinir: 6 adım, kopyalanabilir teklif isteme yazısı, karşılaştırma tablosu,
+  SSS; Teklif İste özelliklerine ve /tedarikci-teklif-toplama sayfasına bağlantı. Görsel Adem'den (depo), WebP.
+  llms.txt'e eklendi; site haritasına kendiliğinden girer.
+
 ## 0.3.5 — 04.11.2026 · Uygulamayla eşitleme: kartla ödeme (Polar), iade kuralları
 
 Uygulama 0.15.8'deki metin esas alındı:
