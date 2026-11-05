@@ -7,6 +7,7 @@ Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 - /blog/tedarikciden-fiyat-teklifi-nasil-alinir: 6 adım, kopyalanabilir teklif isteme yazısı, karşılaştırma tablosu,
   SSS; Teklif İste özelliklerine ve /tedarikci-teklif-toplama sayfasına bağlantı. Görsel Adem'den (depo), WebP.
   llms.txt'e eklendi; site haritasına kendiliğinden girer.
+- Blog yazılarındaki tablolara stil (başlık zemini, hücre boşluğu, satır çizgileri); önceden sütunlar birbirine yapışıktı.
 
 ## 0.3.5 — 04.11.2026 · Uygulamayla eşitleme: kartla ödeme (Polar), iade kuralları
 

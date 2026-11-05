@@ -115,6 +115,19 @@ body {
 .yazi-govde blockquote { border-left: 3px solid var(--color-primary); padding-left: 1em; color: #64748b; font-style: italic; }
 .yazi-govde img { border-radius: 1rem; border: 1px solid #e2e8f0; }
 .yazi-govde hr { border: 0; border-top: 1px solid #e2e8f0; margin: 2.5em 0; }
+.yazi-govde table {
+  width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.95rem; line-height: 1.55;
+  border: 1px solid #e2e8f0; border-radius: 1rem; overflow: hidden;
+}
+.yazi-govde th, .yazi-govde td { padding: 0.75rem 1rem; text-align: left; vertical-align: top; }
+.yazi-govde thead th { background: #f8fafc; color: #0f172a; font-weight: 700; border-bottom: 1px solid #e2e8f0; }
+.yazi-govde tbody td { border-top: 1px solid #f1f5f9; }
+.yazi-govde tbody tr:first-child td { border-top: 0; }
+.yazi-govde tbody td:first-child { color: #0f172a; font-weight: 600; width: 42%; }
+@media (max-width: 640px) {
+  .yazi-govde th, .yazi-govde td { padding: 0.6rem 0.7rem; }
+  .yazi-govde table { font-size: 0.875rem; }
+}
 
 /* Yasal metin gövdesi */
 .yasal-govde { font-size: 0.9375rem; line-height: 1.7; color: #475569; }
