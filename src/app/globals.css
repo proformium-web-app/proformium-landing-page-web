@@ -142,3 +142,10 @@ body {
 .yasal-govde th { font-weight: 600; color: #0f172a; padding: 0.5rem 0.75rem 0.5rem 0; width: 11rem; vertical-align: top; }
 .yasal-govde td { border-top: 1px solid #e2e8f0; padding: 0.5rem 0; vertical-align: top; }
 .yasal-govde tr:first-child td { border-top: 0; }
+
+/* Teklif görünümü (17.11.2026, Adem: "pdf ekrana tam sığsın"): A4 sayfa (1000×1413) ekran yüksekliğine sığar.
+   Genişlik = en fazla 640 px ve (ekran yüksekliği - üst menü ve boşluk) × sayfa oranı. */
+.belge-kutu { width: 100%; max-width: 640px; }
+@media (min-width: 1024px) {
+  .belge-kutu { width: min(100%, 640px, calc((100svh - 9.5rem) * 0.7077)); }
+}

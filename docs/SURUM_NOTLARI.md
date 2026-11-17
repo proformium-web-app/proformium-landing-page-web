@@ -2,6 +2,11 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.3.13 — 17.11.2026 · Teklif görünümü: belge ekrana tam sığar
+
+- Masaüstünde örnek teklif sayfası ekran yüksekliğine göre boyutlanır (genişlik en fazla 640 px ve
+  (ekran yüksekliği − 9,5rem) × A4 oranı; globals.css .belge-kutu). Adem: "pdf ekrana tam sığsın".
+
 ## 0.3.12 — 17.11.2026 · "Teklif görünümü" bölümü
 
 - Ana sayfada Özellikler'in altında yeni bölüm (src/components/bolumler/teklif-gorunumu.tsx, #teklif-gorunumu):

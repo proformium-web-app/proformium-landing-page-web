@@ -76,7 +76,7 @@ export function TeklifGorunumu() {
 
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-14">
           {/* Sol: seçim */}
-          <div data-belir className="space-y-8 lg:sticky lg:top-28 lg:col-span-5">
+          <div data-belir className="space-y-8 lg:col-span-5">
             <div>
               <p className="mb-3 text-sm font-bold text-slate-900">Şablon</p>
               <div role="tablist" aria-label="Teklif şablonu" className="flex flex-col gap-3">
@@ -173,7 +173,7 @@ export function TeklifGorunumu() {
           {/* Sağ: belge */}
           <div data-belir data-gecikme="2" className="relative lg:col-span-7">
             <div className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-primary/10 via-rose-100/40 to-transparent blur-2xl" />
-            <div className="relative mx-auto w-full max-w-[640px] overflow-hidden rounded-xl border border-slate-200/80 bg-white shadow-2xl">
+            <div className="belge-kutu relative mx-auto overflow-hidden rounded-xl border border-slate-200/80 bg-white shadow-2xl">
               <Image
                 key={renk.gorsel}
                 src={renk.gorsel}
