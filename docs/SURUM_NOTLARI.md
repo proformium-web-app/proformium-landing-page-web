@@ -2,6 +2,12 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.3.11 — 17.11.2026 · Tanıtım videosu müzikli sürüm
+
+- Tanıtım videosu arka plan müzikli sürümle değişti: public/video/proformium-tanitim-v2.mp4 (3,7 MB; kaynak
+  ../tanitim-video/cikti/proformium-tanitim-muzikli.mp4, görüntü aynı, 53 sn). Eski proformium-tanitim.mp4 silindi.
+  Kapak aynı. VideoObject uploadDate 2026-11-17T16:15:00+03:00.
+
 ## 0.3.10 — 17.11.2026 · "Nasıl Çalıştığını Gör" videoya gider
 
 - Hero'daki "Nasıl Çalıştığını Gör" düğmesi artık tanıtım videosu bölümüne (#video) kaydırıyor (Adem).
