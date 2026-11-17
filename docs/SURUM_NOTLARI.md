@@ -2,6 +2,15 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.3.12 — 17.11.2026 · "Teklif görünümü" bölümü
+
+- Ana sayfada Özellikler'in altında yeni bölüm (src/components/bolumler/teklif-gorunumu.tsx, #teklif-gorunumu):
+  Klasik / Ferah / Modern seçimi, şablon başına iki renk örneği, seçilen şablonun tek sayfası büyük (masaüstünde
+  640 px), "Örnek PDF'i incele" (public/ornek/, 3 gerçek PDF), Free/Pro notu. Görseller public/gorseller/sablonlar/
+  (kaynak ../site-icin-pdf-gorselleri/site-icin-webp, uygulama 0.15.20).
+- Özellikler'deki yelpaze görselinin üstündeki büyük kart küçük "3 şablon, 6 renk →" etiketine döndü (belgeleri
+  örtmüyor, yeni bölüme götürüyor). Sebep: Adem "PDF'ler küçük kaldı".
+
 ## 0.3.11 — 17.11.2026 · Tanıtım videosu müzikli sürüm
 
 - Tanıtım videosu arka plan müzikli sürümle değişti: public/video/proformium-tanitim-v2.mp4 (3,7 MB; kaynak

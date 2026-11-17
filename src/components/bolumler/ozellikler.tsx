@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BadgeCheck, Clock, History, MessageCircle, Palette, PenLine, QrCode, Sparkles } from "lucide-react";
+import { ArrowRight, BadgeCheck, Clock, History, MessageCircle, Palette, PenLine, QrCode, Sparkles } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
 import { IkonKaresi, Kapsayici } from "@/components/ui/parcalar";
@@ -45,20 +45,17 @@ export function Ozellikler() {
                 sizes="(min-width: 1024px) 600px, 100vw"
                 className="block h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               />
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-slate-200/80 bg-white/90 p-4 shadow-lg backdrop-blur-md sm:bottom-6 sm:left-6 sm:right-6">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <BadgeCheck className="size-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">3 şablon, 6 renk</h4>
-                    <p className="text-sm text-slate-500">Logo, kaşe, imza, IBAN ve QR kodlu teklif belgesi</p>
-                  </div>
-                </div>
-                <span className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-600 sm:inline-block">
-                  Anında hazır
+              {/* Küçük kart (17.11.2026): belgeleri örtmesin; ayrıntı "Teklif görünümü" bölümünde. */}
+              <a
+                href="#teklif-gorunumu"
+                className="absolute bottom-3 left-3 flex items-center gap-2.5 rounded-xl border border-slate-200/80 bg-white/90 px-3 py-2 shadow-lg backdrop-blur-md transition-colors hover:text-primary sm:bottom-4 sm:left-4"
+              >
+                <span className="flex size-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <BadgeCheck className="size-4" />
                 </span>
-              </div>
+                <span className="text-sm font-bold text-slate-900">3 şablon, 6 renk</span>
+                <ArrowRight className="size-4 text-primary" />
+              </a>
             </div>
           </div>
 

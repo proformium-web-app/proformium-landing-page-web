@@ -3,6 +3,7 @@ import { TanitimVideosu } from "@/components/bolumler/tanitim-videosu";
 import { Sorun } from "@/components/bolumler/sorun";
 import { NasilCalisir } from "@/components/bolumler/nasil-calisir";
 import { Ozellikler } from "@/components/bolumler/ozellikler";
+import { TeklifGorunumu } from "@/components/bolumler/teklif-gorunumu";
 import { Sektorler } from "@/components/bolumler/sektorler";
 import { Guven } from "@/components/bolumler/guven";
 import { Fiyatlar } from "@/components/bolumler/fiyatlar";
@@ -20,6 +21,7 @@ export default function AnaSayfa() {
       <Sorun />
       <NasilCalisir />
       <Ozellikler />
+      <TeklifGorunumu />
       <Sektorler />
       <Guven />
       <Fiyatlar />
