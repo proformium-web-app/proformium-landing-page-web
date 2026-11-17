@@ -145,6 +145,16 @@ Bu liste 15.09.2026 itibarıyla **canlıda çalışan** özelliklerdir. Sitede *
 - **Genel Bakış (ana ekran):** taslaklar, revize istenenler, gönderilenler, takip zamanı gelenler, son hareketler.
 - **Raporlar:** kaç teklif onaylandı/reddedildi/bekliyor, dönüşüm oranı, en çok satış yapılan müşteriler.
 
+> **Güncelleme 17.11.2026 (uygulama 0.15.20, kaynak: ../site-icin-pdf-gorselleri/BAGLAM.md).** Artık canlıda:
+> - **Müşteri teklif sayfasından onaylar ya da reddeder** (revize isteğine ek olarak).
+> - **Google ile giriş**; **kartla Pro aboneliği** (Polar, Ayarlar → Paket → Pro'ya geç).
+> - **Teklif PDF'i: 3 şablon (Klasik, Ferah, Modern), 6 renk**; Free'de Klasik + bordo, Pro ve denemede hepsi.
+>   Ayarlar → Teklif görünümü, kaydetmeden önce örnek PDF önizleme. Şablonu kullanıcı tasarlayamaz.
+> - **Ödeme bilgisi (IBAN)** teklifin altında, tüm paketlerde. IBAN QR'ı / QR ile ödeme **yok**.
+> - **PDF'te QR kodu:** o teklifin müşteri sayfasını açar (onay/ret/revize, "Görüntülendi"), tüm paketlerde, kapatılabilir.
+>
+> Bu dosyanın geri kalanı 15.09.2026 tarihli; çelişkide bu not ve sitedeki src/content dosyaları esas alınır.
+
 ### Teklif İste
 
 - **Tedarikçi kaydı:** firma, yetkili, telefon, e-posta, şehir ve **birden fazla sektör**.
@@ -174,11 +184,8 @@ Bu liste 15.09.2026 itibarıyla **canlıda çalışan** özelliklerdir. Sitede *
 | --- | --- |
 | Anlık bildirim (telefona push, SMS, otomatik e-posta/WhatsApp mesajı) | Pilotta n8n ile kurulacak; bugün bildirim uygulamaya girince görünüyor |
 | Otomatik WhatsApp mesajı gönderme | Yok; WhatsApp işletmenin kendi telefonundan açılıyor |
-| Müşterinin sayfadan "Onaylıyorum" demesi | Yok (pilot sonrası); onayı işletme işaretliyor |
-| Online ödeme / kartla abonelik | Yok; pilotta ödeme elle alınacak, PayTR/iyzico başvurusu yapılacak |
 | Free paket ve paket sınırları | **Uygulamada henüz yok** (bkz. bölüm 5) |
 | Ekip daveti / birden fazla çalışan | Yok (pilot sonrası) |
-| Google ile giriş | Yok |
 | e-Fatura, muhasebe, stok, cari | Yok ve planlanmıyor (bilinçli olarak kapsam dışı) |
 | Yapay zekâ ile fotoğraftan/belgeden ürün çıkarma | Yok (ileride) |
 | Mobil uygulama (App Store / Google Play) | Yok ve planlanmıyor |

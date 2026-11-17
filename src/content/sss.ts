@@ -29,7 +29,24 @@ export const SSS: Soru[] = [
     soru: "Müşterim teklifi görmek için üye olmak zorunda mı?",
     cevap:
       "Hayır. Müşterinize giden link üye olmadan, şifresiz açılır. Müşteriniz teklifi telefonda görür, PDF " +
-      "indirir, yazdırır ve isterse revize isteyebilir. Link tahmin edilemez ve arama motorlarına kapalıdır.",
+      "indirir, yazdırır, teklifi onaylar ya da reddeder, isterse revize ister. Link tahmin edilemez ve arama " +
+      "motorlarına kapalıdır.",
+  },
+  {
+    soru: "Müşterim kâğıttaki teklifi nasıl açar ve onaylar?",
+    cevap:
+      "Teklif PDF'inin altında küçük bir QR kodu bulunur. Yazdırıp elden verdiğiniz teklifteki QR'ı müşteriniz " +
+      "telefonunun kamerasıyla okutur; teklif sayfası açılır, oradan teklifi onaylar, reddeder ya da revize ister. " +
+      "Açıldığı anda teklif sizin panelinizde \"Görüntülendi\" olur. QR her zaman teklifin en son halini açar; " +
+      "isterseniz Ayarlar → Teklif görünümü'nden kapatabilirsiniz.",
+  },
+  {
+    soru: "Teklifimin görünümünü değiştirebilir miyim?",
+    cevap:
+      "Evet. Ayarlar → Teklif görünümü'nden üç şablon (Klasik, Ferah, Modern) ve altı renk (bordo, lacivert, " +
+      "antrasit, yeşil, mor, turuncu) arasından seçersiniz; kaydetmeden önce kendi logonuz ve kaşenizle örnek PDF'i " +
+      "önizleyebilirsiniz. Free pakette Klasik şablon ve bordo renk kullanılır; tüm şablon ve renkler Pro'da ve " +
+      "deneme süresinde açıktır. Banka adı, hesap sahibi ve IBAN'ınızı da teklifin altına ekleyebilirsiniz.",
   },
   {
     soru: "Tedarikçim fiyat vermek için üye olmak zorunda mı?",

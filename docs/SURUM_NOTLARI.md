@@ -2,6 +2,19 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.3.9 — 17.11.2026 · Teklif şablonları, IBAN ve QR (uygulama 0.15.20)
+
+Kaynak: ../site-icin-pdf-gorselleri/BAGLAM.md (uygulama sohbeti).
+- Özellikler: büyük görsel yenilendi (teklif-belgeleri-yeni.webp: Klasik, Ferah, Modern şablon); görsel kartı
+  "3 şablon, 6 renk / Logo, kaşe, imza, IBAN ve QR kodlu teklif belgesi". Yeni kartlar: "Kâğıttaki teklif de takipte" (QR),
+  "Size yakışan teklif görünümü" (şablon/renk Pro, IBAN).
+- Fiyat kartları: Free "Klasik teklif şablonu", "PDF'te IBAN ve QR kodu"; Pro "3 teklif şablonu ve 6 renk", "PDF'te IBAN ve QR kodu".
+- SSS: "Müşterim kâğıttaki teklifi nasıl açar ve onaylar?", "Teklifimin görünümünü değiştirebilir miyim?"; üyelik
+  cevabına müşterinin onaylayıp reddedebildiği eklendi.
+- llms.txt: müşteri onayı artık var ("onay veremez" satırı kalktı); şablon, IBAN, QR satırları. SITE_BAGLAMI.md
+  bölüm 4'e güncelleme notu; "olmayanlar" tablosundan müşteri onayı, kartla ödeme ve Google ile giriş çıktı.
+- Eski public/gorseller/teklif-belgeleri.webp silindi.
+
 ## 0.3.8 — 17.11.2026 · Tanıtım videosu
 
 - Ana sayfada hero'nun hemen altında "Proformium'u 1 dakikada görün" bölümü (src/components/bolumler/tanitim-videosu.tsx).

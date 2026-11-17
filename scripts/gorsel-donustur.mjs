@@ -17,11 +17,8 @@ const isler = [
     genislik: 1400,
   },
   // Adem'in eklediği görseller (Site İçin resimler telifsiz/, 16.09.2026)
-  {
-    kaynak: "Site İçin resimler telifsiz/screen.png",
-    hedef: "public/gorseller/teklif-belgeleri.webp",
-    genislik: 1200,
-  },
+  // teklif-belgeleri.webp yerine 17.11.2026'dan beri teklif-belgeleri-yeni.webp (hazır WebP, uygulama sohbetinden;
+  // kaynak: ../site-icin-pdf-gorselleri/site-icin-webp/). Dönüştürme gerekmez.
   {
     kaynak: "Site İçin resimler telifsiz/waiting for message smartphone business man.jpg",
     hedef: "public/gorseller/foto-telefon-bekleyen.webp",

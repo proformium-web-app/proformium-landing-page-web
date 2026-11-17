@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BadgeCheck, Clock, History, MessageCircle, PenLine, Sparkles } from "lucide-react";
+import { BadgeCheck, Clock, History, MessageCircle, Palette, PenLine, QrCode, Sparkles } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { BolumEtiketi } from "@/components/ui/bolum-etiketi";
 import { IkonKaresi, Kapsayici } from "@/components/ui/parcalar";
@@ -13,6 +13,8 @@ const ONE_CIKANLAR: Ozellik[] = [
   { ikon: MessageCircle, ton: "ok", baslik: "Tek tıkla WhatsApp paylaşımı", aciklama: "Ayrı ayrı dosya kaydetme derdi olmadan, hazır mesaj ve müşteriye özel linkle tek dokunuşla WhatsApp'tan paylaşın. E-posta ve PDF de bir tık." },
   { ikon: Sparkles, ton: "amber", baslik: "Müşteri ve ürün hafızası", aciklama: "Kalem adını yazmaya başlar başlamaz fiyatı ve birimi önerilir; bu müşteriye en son verdiğiniz fiyat da hatırlatılır. Müşteriyi listeden arayıp seçin, yenisini o an ekleyin." },
   { ikon: PenLine, ton: "rose", baslik: "Dijital kaşe & parmakla imza", aciklama: "Logonuzu ve kaşenizi yükleyin, telefon ekranına parmağınızla imza atın; saniyeler içinde resmi görünümlü, güven veren teklif belgesi." },
+  { ikon: QrCode, ton: "cyan", baslik: "Kâğıttaki teklif de takipte", aciklama: "PDF'teki QR kodunu okutan müşteriniz teklifi telefonunda açar, onaylar ya da revize ister; siz de teklifin görüntülendiğini görürsünüz. Yazdırıp elden verdiğiniz teklif bile takipte." },
+  { ikon: Palette, ton: "mor", baslik: "Size yakışan teklif görünümü", aciklama: "Klasik, Ferah ya da Modern şablon; altı renkten birini seçin (Pro). IBAN'ınız teklifin altında, ödeme bilgisiyle hazır." },
   { ikon: History, ton: "mavi", baslik: "Kusursuz revizyon ve sürüm takibi", aciklama: "Rev. 1, Rev. 2 geçmişi korunur. Müşterideki link her zaman en son hali gösterir; müşteri sayfadan revize isteyebilir." },
 ];
 
@@ -36,8 +38,8 @@ export function Ozellikler() {
             <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary/10 via-rose-100/50 to-transparent blur-2xl" />
             <div className="group relative w-full overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl transition-all duration-500 hover:shadow-glow">
               <Image
-                src="/gorseller/teklif-belgeleri.webp"
-                alt="Proformium ile hazırlanmış, logolu, kaşeli ve imzalı üç fiyat teklifi belgesi"
+                src="/gorseller/teklif-belgeleri-yeni.webp"
+                alt="Proformium ile hazırlanmış Klasik, Ferah ve Modern şablonda, logolu, kaşeli, imzalı ve QR kodlu üç fiyat teklifi"
                 width={1200}
                 height={896}
                 sizes="(min-width: 1024px) 600px, 100vw"
@@ -49,8 +51,8 @@ export function Ozellikler() {
                     <BadgeCheck className="size-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Resmi &amp; kurumsal görünüm</h4>
-                    <p className="text-sm text-slate-500">Logo, kaşe ve imzalı teklif belgesi</p>
+                    <h4 className="text-sm font-bold text-slate-900">3 şablon, 6 renk</h4>
+                    <p className="text-sm text-slate-500">Logo, kaşe, imza, IBAN ve QR kodlu teklif belgesi</p>
                   </div>
                 </div>
                 <span className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-600 sm:inline-block">

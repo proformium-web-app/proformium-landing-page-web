@@ -6,10 +6,13 @@
 
 - Teklif Ver: müşteri seç, ürün/hizmet satırları (miktar, birim, fiyat, KDV, iskonto), otomatik toplam ve teklif numarası; logo, kaşe ve imza (telefonda parmakla).
 - Paylaşım: tek tıkla WhatsApp (işletmenin kendi WhatsApp'ı hazır mesaj ve linkle açılır), Proformium'dan PDF ekli e-posta, kendi e-posta programıyla gönderme ya da PDF indirme.
-- Müşteri linki: müşteri üye olmadan telefonda açar, PDF indirir, revize isteyebilir. Link tahmin edilemez, arama motorlarına kapalı.
+- Müşteri linki: müşteri üye olmadan telefonda açar, PDF indirir, teklifi onaylar ya da reddeder, revize isteyebilir. Link tahmin edilemez, arama motorlarına kapalı.
 - Görüntülenme takibi: müşteri linki açınca teklif "Görüntülendi" olur; kaç kez ve ne zaman açıldığı görünür (WhatsApp önizlemesi ve işletmenin kendi açışı sayılmaz).
 - Takip hatırlatması: takip zamanı gelince hatırlatılır; "takip ettim", "3 gün ertele", "kazanıldı", "kaybedildi".
 - Revizyon: Rev. 1, Rev. 2 geçmişi saklanır; müşterinin linki hep son hali gösterir.
+- Teklif görünümü: 3 PDF şablonu (Klasik, Ferah, Modern) ve 6 renk; Free'de Klasik şablon ve bordo renk, Pro ve denemede hepsi. Şablonu kullanıcı kendisi tasarlayamaz.
+- Ödeme bilgisi: banka adı, hesap sahibi ve IBAN teklifin altında görünür (tüm paketlerde). IBAN için QR ya da QR ile ödeme yoktur.
+- PDF'te QR kodu: yazdırılan teklifteki QR okutulunca o teklifin müşteri sayfası açılır; müşteri onaylar, reddeder ya da revize ister, teklif "Görüntülendi" olur (tüm paketlerde, kapatılabilir).
 - Hafıza: ürün/hizmet adı yazılınca fiyat ve birim önerilir; seçili müşteriye (otomotivde aynı plakaya) en son verilen fiyat hatırlatılır.
 - Teklif İste: kalemleri yaz, sektöre göre tedarikçileri seç (bir talepte en fazla 10), her tedarikçiye kendi linki gider, tedarikçi üye olmadan fiyat yazar; fiyatlar yan yana karşılaştırılır, tek kazanan seçilir ve bilgilendirilir.
 - Excel şablonuyla toplu müşteri ve ürün yükleme; raporlar (onaylanan/reddedilen/bekleyen, dönüşüm oranı, en çok satış yapılan müşteriler).
@@ -20,7 +23,6 @@
 
 - CRM, muhasebe, ERP, stok, e-Fatura veya e-Arşiv programı değildir. Proforma ve teklif resmi fatura değildir; "e-proforma" ve "e-teklif" GİB'in tanımladığı e-belge türleri değildir.
 - Telefona anlık (push) bildirim ve otomatik WhatsApp mesajı göndermez; bildirimler uygulama içinde görünür.
-- Müşteri teklif sayfasından onay veremez; onayı işletme işaretler.
 - Ekip daveti ve İngilizce arayüz yoktur.
 
 ## Paketler (fiyatlar KDV dahil)
