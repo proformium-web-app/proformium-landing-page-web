@@ -2,6 +2,10 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.3.10 — 17.11.2026 · "Nasıl Çalıştığını Gör" videoya gider
+
+- Hero'daki "Nasıl Çalıştığını Gör" düğmesi artık tanıtım videosu bölümüne (#video) kaydırıyor (Adem).
+
 ## 0.3.9 — 17.11.2026 · Teklif şablonları, IBAN ve QR (uygulama 0.15.20)
 
 Kaynak: ../site-icin-pdf-gorselleri/BAGLAM.md (uygulama sohbeti).

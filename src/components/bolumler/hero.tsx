@@ -58,7 +58,7 @@ export function Hero() {
                 <ArrowRight className="size-5" />
               </Link>
               <Link
-                href="#nasil-calisir"
+                href="#video"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-4 text-base font-semibold text-slate-700 transition-all hover:bg-slate-50"
               >
                 <PlayCircle className="size-6 text-primary" />
