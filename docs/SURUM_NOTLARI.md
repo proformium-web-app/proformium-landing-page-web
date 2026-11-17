@@ -2,6 +2,14 @@
 
 Her yayında ne değiştiği burada kısa notla tutulur (yeniden eskiye).
 
+## 0.3.8 — 17.11.2026 · Tanıtım videosu
+
+- Ana sayfada hero'nun hemen altında "Proformium'u 1 dakikada görün" bölümü (src/components/bolumler/tanitim-videosu.tsx).
+  Video kendiliğinden başlamaz: kapak görseli + oynat düğmesi; basınca sesli oynar, standart kontroller açılır.
+  preload="none" (dosya basılana kadar inmez), 16:9 yer tutucu kutu.
+- Dosyalar public/video/ (proformium-tanitim.mp4 3,3 MB, tanitim-kapak.jpg); kaynak ../tanitim-video/cikti, yeniden
+  sıkıştırılmadı. Bilgiler src/content/video.ts. Ana sayfa JSON-LD'sine VideoObject eklendi.
+
 ## 0.3.7 — 05.11.2026 · Sürüm numarası alt bilgide
 
 - Alt bilgide telif satırının yanında site sürümü (ör. "v0.3.7"); kaynak package.json "version". Her yayında

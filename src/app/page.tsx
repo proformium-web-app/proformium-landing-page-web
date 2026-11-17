@@ -1,4 +1,5 @@
 import { Hero } from "@/components/bolumler/hero";
+import { TanitimVideosu } from "@/components/bolumler/tanitim-videosu";
 import { Sorun } from "@/components/bolumler/sorun";
 import { NasilCalisir } from "@/components/bolumler/nasil-calisir";
 import { Ozellikler } from "@/components/bolumler/ozellikler";
@@ -15,6 +16,7 @@ export default function AnaSayfa() {
     <>
       <JsonLd veri={anaSayfaJsonLd()} />
       <Hero />
+      <TanitimVideosu />
       <Sorun />
       <NasilCalisir />
       <Ozellikler />

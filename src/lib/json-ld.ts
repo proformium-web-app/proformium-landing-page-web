@@ -1,6 +1,7 @@
 import { FIYAT } from "@/content/fiyatlar";
 import { SITE, UYGULAMA } from "@/content/site";
 import { SSS } from "@/content/sss";
+import { TANITIM_VIDEO } from "@/content/video";
 
 const ORG_ID = `${SITE.url}/#organization`;
 
@@ -78,6 +79,18 @@ export function anaSayfaJsonLd() {
           "Tüm verileri Excel olarak indirme",
           "Google ile giriş",
         ],
+        publisher: { "@id": ORG_ID },
+      },
+      {
+        "@type": "VideoObject",
+        "@id": `${SITE.url}/#tanitim-videosu`,
+        name: TANITIM_VIDEO.ad,
+        description: TANITIM_VIDEO.aciklama,
+        thumbnailUrl: `${SITE.url}${TANITIM_VIDEO.kapak}`,
+        uploadDate: TANITIM_VIDEO.yuklemeTarihi,
+        duration: TANITIM_VIDEO.sure,
+        contentUrl: `${SITE.url}${TANITIM_VIDEO.dosya}`,
+        inLanguage: "tr",
         publisher: { "@id": ORG_ID },
       },
       {
